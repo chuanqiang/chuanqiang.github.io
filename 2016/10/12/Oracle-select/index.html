@@ -87,11 +87,13 @@
 
 
 <meta name="description" content="本文讲解 Oracle 查询语句的使用。">
+<meta name="keywords" content="数据库,Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle 查询">
 <meta property="og:url" content="http://chuanqiang.github.io/2016/10/12/Oracle-select/index.html">
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="本文讲解 Oracle 查询语句的使用。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-06-23-14-56.jpg">
 <meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-07-22-33-29.jpg">
 <meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-07-22-37-10.jpg">
@@ -516,7 +518,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查询工资比30号部门任意一个员工高的员工信息</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt; <span class="keyword">any</span> (<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查询工资比30号部门所有员工高的员工信息</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt; all (<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div><div class="line"><span class="comment">--等价于</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt;  (<span class="keyword">select</span> <span class="keyword">max</span>(mal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div></pre></td></tr></table></figure>
 <ul>
-<li>注意:子查询中的null值问题<br>只要子查询的结果集种包含控制，不要使用<code>NOT IN</code>操作符。<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">--查询不是老板的员工</div><div class="line">slect * from emp where empno not in (select mgr from emp where mgr is not null);</div><div class="line">-- not in 后面的集合不能有空值，否则查询不出结果</div></pre></td></tr></table></figure>
+<li>注意:子查询中的null值问题<br>只要子查询的结果集种包含控制，不要使用<code>NOT IN</code>操作符。<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--查询不是老板的员工</span></div><div class="line">slect * from emp where empno not in (select mgr from emp where mgr is not null);</div><div class="line"><span class="comment">-- not in 后面的集合不能有空值，否则查询不出结果</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><blockquote>

@@ -87,11 +87,13 @@
 
 
 <meta name="description" content="一个统一的编程风格不但能够增强代码可读性，也可以避免许多低级问题。一个严格遵从编码规范的团队，代码无论出自多少人之手，都像一个人写的一样。本文转载自 小土刀 的博客。">
+<meta name="keywords" content="java,编码风格">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 编码风格指南">
 <meta property="og:url" content="http://chuanqiang.github.io/2016/10/15/java-style-guide/index.html">
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="一个统一的编程风格不但能够增强代码可读性，也可以避免许多低级问题。一个严格遵从编码规范的团队，代码无论出自多少人之手，都像一个人写的一样。本文转载自 小土刀 的博客。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-10-15T02:38:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 编码风格指南">
@@ -554,7 +556,7 @@
 <p><strong>4.8.6 注释</strong></p>
 <p><em>4.8.6.1 块注释风格</em></p>
 <p>块注释与其周围的代码在同一缩进级别。它们可以是 /<em> … </em>/ 风格，也可以是 // … 风格。对于多行的 /<em> … </em>/ 注释，后续行必须从 <em> 开始， 并且与前一行的 </em> 对齐。以下示例注释都是 OK 的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"></div><div class="line">* This is // And so /* Or you can</div><div class="line"></div><div class="line">* okay. // is this. * even do this. */</div><div class="line"></div><div class="line">*/</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">* This is // And so /* Or you can</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">* okay. // is this. * even do this. */</span></div><div class="line"></div><div class="line">*/</div></pre></td></tr></table></figure>
 <p>注释不要封闭在由星号或其它字符绘制的框架里。</p>
 <blockquote>
 <p>Tip：在写多行注释时，如果你希望在必要时能重新换行(即注释像段落风格一样)，那么使用 /<em> … </em>/。<br><strong>4.8.7 Modifiers</strong></p>
@@ -623,7 +625,7 @@
 <p>Tip：不要使用 finalize。如果你非要使用它，请先仔细阅读和理解 Effective Java 第 7 条款：“Avoid Finalizers”，然后不要使用它。</p>
 </blockquote>
 <h2 id="Javadoc"><a href="#Javadoc" class="headerlink" title="Javadoc"></a>Javadoc</h2><h3 id="7-1-格式"><a href="#7-1-格式" class="headerlink" title="7.1 格式"></a>7.1 格式</h3><h4 id="7-1-1-一般形式"><a href="#7-1-1-一般形式" class="headerlink" title="7.1.1 一般形式"></a>7.1.1 一般形式</h4><p>Javadoc 块的基本格式如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"></div><div class="line">* Multiple lines of Javadoc text are written here,</div><div class="line"></div><div class="line">* wrapped normally...</div><div class="line"></div><div class="line">*/</div><div class="line"></div><div class="line">publicintmethod(String p1)&#123; ... &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">* Multiple lines of Javadoc text are written here,</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">* wrapped normally...</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">*/</span></div><div class="line"></div><div class="line">publicintmethod(String p1)&#123; ... &#125;</div></pre></td></tr></table></figure>
 <p>或者是以下单行形式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** An especially short bit of Javadoc. */</span></div></pre></td></tr></table></figure>
 <p>基本格式总是 OK 的。当整个 Javadoc 块能容纳于一行时(且没有 Javadoc 标记 @XXX)，可以使用单行形式。</p>

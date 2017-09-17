@@ -87,11 +87,13 @@
 
 
 <meta name="description" content="介绍Spring MVC 相关参数的绑定使用。">
+<meta name="keywords" content="技术,Spring MVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring MVC 之 参数绑定">
 <meta property="og:url" content="http://chuanqiang.github.io/2016/09/20/Spring MVC 之参数绑定/index.html">
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="介绍Spring MVC 相关参数的绑定使用。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-09-20T14:51:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring MVC 之 参数绑定">
@@ -390,7 +392,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"saysth.do"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> count)</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>表单代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action="saysth.do" method="post"&gt;</div><div class="line">    &lt;input name="count" value="10" type="text"/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"saysth.do"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">    &lt;input name=<span class="string">"count"</span> value=<span class="string">"10"</span> type=<span class="string">"text"</span>/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>表单中<code>input</code>的<code>name</code>值和<code>Controller</code>的参数变量名保持一致，就能完成数据绑定，如果不一致可以使用<code>@RequestParam</code>注解。需要注意的是，如果Controller方法参数中定义的是基本数据类型，但是从页面提交过来的数据为null或者””的话，会出现数据转换的异常。也就是必须保证表单传递过来的数据不能为null或””，所以，在开发过程中，对可能为空的数据，最好将参数数据类型定义成包装类型，具体参见下面的例子。</p>
@@ -399,7 +401,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Controller代码：</div><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"saysth.do"</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(Integer count)</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>表单代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action="saysth.do" method="post"&gt;</div><div class="line">    &lt;input name="count" value="10" type="text"/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"saysth.do"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">    &lt;input name=<span class="string">"count"</span> value=<span class="string">"10"</span> type=<span class="string">"text"</span>/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>和基本数据类型基本一样，不同之处在于，表单传递过来的数据可以为<code>null</code>或””，以上面代码为例，如果表单中<code>num</code>为””或者表单中无<code>num</code>这个<code>input</code>，那么，<code>Controller</code>方法参数中的<code>num</code>值则为<code>null</code>。</p>
@@ -411,7 +413,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RequestMapping</span>(<span class="string">"saysth.do"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(User user)</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>表单代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action="saysth.do" method="post"&gt;</div><div class="line">    &lt;input name="firstName" value="张" type="text"/&gt;</div><div class="line">    &lt;input name="lastName" value="三" type="text"/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"saysth.do"</span> method=<span class="string">"post"</span>&gt;</div><div class="line">    &lt;input name=<span class="string">"firstName"</span> value=<span class="string">"张"</span> type=<span class="string">"text"</span>/&gt;</div><div class="line">    &lt;input name=<span class="string">"lastName"</span> value=<span class="string">"三"</span> type=<span class="string">"text"</span>/&gt;</div><div class="line">......</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>非常简单，只需将对象的属性名和<code>input</code>的<code>name</code>值一一匹配即可。</p>

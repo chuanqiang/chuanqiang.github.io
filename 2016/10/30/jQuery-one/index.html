@@ -87,11 +87,13 @@
 
 
 <meta name="description" content="介绍 jQuery 的基础知识，包括认识 jQuery、jQuery 的优势，jQuery 样式篇和 jQuery DOM 篇。">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery ( 一 )">
 <meta property="og:url" content="http://chuanqiang.github.io/2016/10/30/jQuery-one/index.html">
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="介绍 jQuery 的基础知识，包括认识 jQuery、jQuery 的优势，jQuery 样式篇和 jQuery DOM 篇。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20161024-221453876.png">
 <meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20161024-224113410.png">
 <meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20161024-225235611.png">
@@ -411,7 +413,7 @@
 <li>很多公司都通过自己的CDN（Content Delivery Networks，内容分发网络）来托管其库文件，让开发人员能更方便地使用它。托管在CDN上的文件由于分布式和缓存的原因有速度优势</li>
 <li>jQuery从2.0版开始不再支持IE6、IE7和IE8。</li>
 </ul>
-<h4 id="an-example"><a href="#an-example" class="headerlink" title="an example"></a>an example</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(document).ready(function()&#123;</div><div class="line">    $('div.poem-stanza').addClass('highlight');</div><div class="line">&#125;);</div><div class="line">.highlight &#123;</div><div class="line">background-color: #ccc;</div><div class="line">border: 1px solid #888;</div><div class="line">font-style: italic;</div><div class="line">margin: 0.5em 0;</div><div class="line">padding: 0.5em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="an-example"><a href="#an-example" class="headerlink" title="an example"></a>an example</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'div.poem-stanza'</span>).addClass(<span class="string">'highlight'</span>);</div><div class="line">&#125;);</div><div class="line">.highlight &#123;</div><div class="line">background-color: #ccc;</div><div class="line">border: 1px solid #888;</div><div class="line">font-style: italic;</div><div class="line">margin: <span class="number">0.5</span>em <span class="number">0</span>;</div><div class="line">padding: <span class="number">0.5</span>em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>$(document).ready()</code>为我们提供了很好的跨浏览器解决方案，涉及如下功能：</p>
 <ul>
 <li>尽可能使用浏览器原生的DOM就绪实现，并以<code>window.onload</code>事件处理程序作为后备；</li>
@@ -676,16 +678,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/23/no-east-west/" rel="next" title="书摘：不分东西">
-                <i class="fa fa-chevron-left"></i> 书摘：不分东西
+              <a href="/2016/10/30/jQuery-two/" rel="next" title="jQuery ( 二 )">
+                <i class="fa fa-chevron-left"></i> jQuery ( 二 )
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/30/jQuery-two/" rel="prev" title="jQuery ( 二 )">
-                jQuery ( 二 ) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/02/Git/" rel="prev" title="Git笔记">
+                Git笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
