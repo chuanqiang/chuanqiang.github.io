@@ -1,0 +1,1096 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据库,Oracle," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文讲解 Oracle 查询语句的使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 查询">
+<meta property="og:url" content="http://chuanqiang.github.io/2016/10/12/Oracle-select/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="本文讲解 Oracle 查询语句的使用。">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-06-23-14-56.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-07-22-33-29.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-07-22-37-10.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-10-12-22-02-31.jpg">
+<meta property="og:updated_time" content="2016-10-12T15:33:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle 查询">
+<meta name="twitter:description" content="本文讲解 Oracle 查询语句的使用。">
+<meta name="twitter:image" content="http://chuanqiang.github.io/image/2016-09-06-23-14-56.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2016/10/12/Oracle-select/"/>
+
+  <title> Oracle 查询 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Oracle 查询
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-12T23:01:32+08:00" content="2016-10-12">
+              2016-10-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/12/Oracle-select/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/12/Oracle-select/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文讲解 Oracle 查询语句的使用。</p>
+<a id="more"></a>
+<hr>
+<h1 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h1><h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
+<p>分组函数作用于一组数据，并对一组函数返回一个值。</p>
+</blockquote>
+<h3 id="常用的分组函数"><a href="#常用的分组函数" class="headerlink" title="常用的分组函数"></a>常用的分组函数</h3><ul>
+<li>avg</li>
+<li>sum</li>
+<li>min</li>
+<li>max</li>
+<li>count</li>
+<li>wm_concat(行转列)<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(sal), <span class="keyword">sum</span>(sal) , <span class="keyword">max</span>(sal) ,<span class="keyword">min</span>(sal) <span class="keyword">from</span> emp;</div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp;</div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> empno) <span class="keyword">from</span> emp; <span class="comment">--去重部门数统计</span></div><div class="line"><span class="keyword">select</span> depno 部门号, wm_concat(ename) 部门中员工的姓名 <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">部门号   |   部门中员工的姓名</div><div class="line">10  |   张三，李四</div><div class="line">20 | 王五，赵六</div></pre></td></tr></table></figure>
+<p><strong>注意</strong>:NVL函数 使分组函数无法忽略空值。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(nvl(comm,<span class="number">0</span>)) <span class="keyword">from</span> emp; <span class="comment">--comm若为空，置为0</span></div></pre></td></tr></table></figure></p>
+<h3 id="分组数据"><a href="#分组数据" class="headerlink" title="分组数据"></a>分组数据</h3><ul>
+<li>group by<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> deptno, job, <span class="keyword">sum</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno, job <span class="keyword">order</span> <span class="keyword">by</span> deptno;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>当多个列分组时，用逗号分开。</strong><br><strong>select 列表中所有未包含在组函数中的列都应包含在group by 子句中。</strong><br><strong>eg:<code>select depno count(ename) from emp</code> 就会执行错误 </strong></p>
+</blockquote>
+<h3 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> depno, <span class="keyword">avg</span>(sal) <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> <span class="keyword">avg</span>(sal) &gt; <span class="number">2000</span>;  <span class="comment">--平均工资大于两千的部门</span></div></pre></td></tr></table></figure>
+<p><strong>where和having的区别</strong></p>
+<blockquote>
+<p>不能在where语句中使用组函数；<br>where不能放在group by 之后；<br>可以在having语句中使用组函数；<br>从SQL优化的角度，尽量使用where(where先过滤，后分组；having先分组后过滤)</p>
+</blockquote>
+<h3 id="分组查询中排序"><a href="#分组查询中排序" class="headerlink" title="分组查询中排序"></a>分组查询中排序</h3><blockquote>
+<p>可以按照:列、别名、表达式、序号 进行排序</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> depno <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">avg</span>(<span class="keyword">sql</span>);</div><div class="line"><span class="keyword">select</span> depno <span class="keyword">avg</span>(sal) 平均工资 <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">order</span> <span class="keyword">by</span> 平均工资;</div><div class="line"><span class="keyword">select</span> depno <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">order</span> <span class="keyword">by</span> <span class="number">2</span> <span class="keyword">desc</span>;</div></pre></td></tr></table></figure>
+<p><strong>分组函数嵌套</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">max</span>(<span class="keyword">avg</span>(sal)) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno; <span class="comment">--求平均工资的最大值</span></div></pre></td></tr></table></figure></p>
+<h3 id="GROUP-BY-语句增强"><a href="#GROUP-BY-语句增强" class="headerlink" title="GROUP BY 语句增强"></a>GROUP BY 语句增强</h3><ul>
+<li>语法<ul>
+<li><code>group by rollup(a,b)</code></li>
+</ul>
+</li>
+<li>等价于以下三句相加:<ul>
+<li>group by a,b （按照a和b分组）</li>
+<li>group by a  （按照a分组）</li>
+<li>group by null  （不按照任何条件直接分组）<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> deptno, job, <span class="keyword">sum</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">rollup</span>(deptno,job);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>用于报表</strong><br><img src="/image/2016-09-06-23-14-56.jpg" alt=""></p>
+<h2 id="多表连接查询"><a href="#多表连接查询" class="headerlink" title="多表连接查询"></a>多表连接查询</h2><h3 id="笛卡儿积"><a href="#笛卡儿积" class="headerlink" title="笛卡儿积"></a>笛卡儿积</h3><ul>
+<li>为了避免笛卡儿集，可以在where中加入有效的连接条件</li>
+<li>在实际运行环境下，应避免使用笛卡尔全集</li>
+<li>连接条件至少有n(表的个数)-1个<h3 id="等值连接"><a href="#等值连接" class="headerlink" title="等值连接"></a>等值连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span>  e.empno, e.empname, d.dname</div><div class="line">    <span class="keyword">from</span> emp e, dept d </div><div class="line">    <span class="keyword">where</span> e.deptno = d.deptno;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="不等值连接"><a href="#不等值连接" class="headerlink" title="不等值连接"></a>不等值连接</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> e.empno, e.ename, e.sal, s.grade </div><div class="line">    <span class="keyword">from</span> emp e, salgrade s </div><div class="line">    <span class="keyword">where</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal; </div><div class="line"><span class="comment">-- 显示薪水级别</span></div><div class="line"><span class="comment">-- between and 中小值在前</span></div></pre></td></tr></table></figure>
+<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><p><strong>核心</strong></p>
+<ul>
+<li>通过外连接，把对于连接不成立的记录，仍然包含在最后的结果中。</li>
+<li>左外连接:当连接条件不成立的时候，等号左边的表仍然被包含</li>
+<li>右外连接:当连接条件不成立的时候，等号右边的表仍然被包含<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> d.deptno 部门号, d.dname 部门名称， <span class="keyword">count</span>(e.empno) 人数</div><div class="line">    <span class="keyword">from</span> emp e, dept t</div><div class="line">    <span class="keyword">where</span> e.deptno(+)=d.deptno</div><div class="line">    <span class="keyword">group</span> <span class="keyword">by</span> d.deptno, d.dname; </div><div class="line"><span class="comment">-- 按照部门统计员工人数，要求显示:部门号，部门名称，人数</span></div><div class="line"><span class="comment">-- 右外连接，防止部门人数为0时不显示</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">部门号|部门名称|人数</div><div class="line">10|accounting|3</div><div class="line">40|operations|0</div><div class="line">20|research|5</div></pre></td></tr></table></figure>
+<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p><strong>核心:通过别名，将同一张表视为多张表</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> e.ename 员工姓名, b,ename 老板姓名</div><div class="line">    <span class="keyword">from</span> emp e, emp b</div><div class="line">    <span class="keyword">where</span> e.mgr = b.empno</div><div class="line"><span class="comment">-- 查询员工的姓名和员工老板的姓名</span></div><div class="line"><span class="comment">-- mgr:老板号(老板也在员工中)</span></div></pre></td></tr></table></figure></p>
+<p><strong>自连接存在的问题</strong></p>
+<ul>
+<li>不适合操作大表(笛卡尔集)</li>
+<li>解决办法:层次查询<h3 id="层次查询"><a href="#层次查询" class="headerlink" title="层次查询"></a>层次查询</h3></li>
+<li>某些情况下，可以代替自连接</li>
+<li>本质上，是一个单表查询</li>
+</ul>
+<p><img src="/image/2016-09-07-22-33-29.jpg" alt=""></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">level</span>, empno, ename, sal mgr</div><div class="line">    <span class="keyword">from</span> emp</div><div class="line">    <span class="keyword">connect</span> <span class="keyword">by</span> <span class="keyword">prior</span> empno = mgr</div><div class="line">    <span class="keyword">start</span> <span class="keyword">with</span> mgr <span class="keyword">is</span> <span class="literal">null</span></div><div class="line">    <span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p><img src="/image/2016-09-07-22-37-10.jpg" alt=""></p>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><blockquote>
+<p>eg:谁的工资比SCOTT高?</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * </div><div class="line"><span class="keyword">from</span> emp </div><div class="line"><span class="keyword">where</span> sal &gt;(<span class="keyword">select</span> sal </div><div class="line">                    <span class="keyword">from</span> emp</div><div class="line">                    <span class="keyword">where</span> ename=<span class="string">'SCOTT'</span>);</div></pre></td></tr></table></figure>
+<h3 id="子查询中的十个问题"><a href="#子查询中的十个问题" class="headerlink" title="子查询中的十个问题"></a>子查询中的十个问题</h3><ul>
+<li>子查询语法中的小括号必须有</li>
+<li>子查询的书写风格</li>
+<li><p>可以使用子查询的位置:where,select,having,from</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> empno,ename, (<span class="keyword">select</span> job <span class="keyword">from</span> emp <span class="keyword">where</span> empno = <span class="number">7839</span>) 第四列 <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- select中使用子查询(必须为单行子查询)</span></div><div class="line"><span class="keyword">select</span> deptno,<span class="keyword">avg</span>(<span class="keyword">sql</span>) frpm emp</div><div class="line"><span class="keyword">group</span> <span class="keyword">by</span> deptno </div><div class="line"><span class="keyword">having</span> <span class="keyword">avg</span>(sal) &gt; (<span class="keyword">select</span> <span class="keyword">max</span>(sal)</div><div class="line">                            <span class="keyword">from</span> emp</div><div class="line">                            <span class="keyword">where</span> deptno=<span class="number">30</span>);</div><div class="line"><span class="comment">-- having中使用子查询。不能用where代替，因为where中不能使用分组函数</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span>(<span class="keyword">select</span> empno, ename, sal <span class="keyword">from</span> emp);</div><div class="line"><span class="comment">-- 在from语句中使用子查询</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>不可以使用子查询的位置:group by</p>
+</li>
+<li>from后面的子查询</li>
+<li>主查询和子查询可以不是同一张表<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 查询部门名称是sales的员工信息</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp </div><div class="line">    <span class="keyword">where</span> deptno=(<span class="keyword">select</span> deptno <span class="keyword">from</span> dept </div><div class="line">                        <span class="keyword">where</span> dname=<span class="string">'sales'</span>)</div><div class="line"><span class="comment">-- 用表连接的方法</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp e,deptno d </div><div class="line">    <span class="keyword">where</span> e.deptno=d.deptno <span class="keyword">and</span> d.dname=<span class="string">'sales'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>:原则上使用表连接的方法性能高。因为只用一个<code>from</code>，只对数据库访问一次。<br>  但是多表查询会产生多卡尔集，从而影响性能。</p>
+</blockquote>
+<ul>
+<li>一般不在子查询中，使用排序；但在Top-N分析问题中，必须对子查询排序<br><strong><code>rownum</code></strong>：行号，伪劣。</li>
+</ul>
+<ol>
+<li>行号永远按照默认的顺序生成(不随位置变化而变化)</li>
+<li>行号只能用<code>&lt;,&lt;=</code>，不能用<code>&gt;,&gt;=</code></li>
+</ol>
+<blockquote>
+<p>因为行号在Oracle数据库中永远从1开始，所以不能用<code>&gt;,&gt;=</code></p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 找出员工表种工资最高的前三名</span></div><div class="line"><span class="comment">-- 此方法错误，因为行号不随位置变化而变化</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">rownum</span>,eno,ename,sal </div><div class="line"><span class="keyword">from</span> emp <span class="keyword">where</span> <span class="keyword">rownum</span>&gt;<span class="number">3</span></div><div class="line"><span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>;</div><div class="line"><span class="comment">--以下方法为正确</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">rownum</span>,eno,ename,sal</div><div class="line"><span class="keyword">from</span> (<span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span> <span class="keyword">where</span> <span class="keyword">rownum</span>&gt;<span class="number">3</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>一般先执行子查询，再执行主查询；但相关子查询例外</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 找到员工表种薪水大于本部门平均薪水的员工</span></div><div class="line"><span class="keyword">select</span> empno,ename,sal,(<span class="keyword">select</span> <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno = e.deptno)</div><div class="line"><span class="keyword">from</span> emp e</div><div class="line"><span class="keyword">where</span> sal&gt;(<span class="keyword">select</span> <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno = e.deptno);</div></pre></td></tr></table></figure>
+</li>
+<li><p>单行子查询只能使用单行操作符；多行子查询只能使用多行操作符</p>
+<ul>
+<li>单行子查询：只返回一条记录<ul>
+<li>单行操作符：<code>=,&gt;,&gt;=,&lt;,&lt;=,&lt;&gt;</code></li>
+</ul>
+</li>
+<li>多行子查询：返回多行记录<ul>
+<li>多行操作符：<code>IN,ANY,ALL</code><br><strong>单行子查询的相关例子</strong><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 查询员工信息，要求：职位与7566一样；薪水大于7782员工薪水</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> job=(<span class="keyword">select</span> job <span class="keyword">from</span> emp <span class="keyword">where</span> empno=<span class="string">'7566'</span>)</div><div class="line"><span class="keyword">and</span>  sal &gt; (<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> empno=<span class="string">'7782'</span>)</div><div class="line"><span class="comment">-- 查询最低工资大于20号部门最低工资的部门号和部门最低工资</span></div><div class="line"><span class="keyword">select</span> deptno,<span class="keyword">min</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno </div><div class="line"><span class="keyword">having</span> <span class="keyword">min</span>(sal)&gt;(<span class="keyword">select</span> <span class="keyword">min</span>(sal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'20'</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>单行子查询之能用单行操作符<br>在一个主查询种可以有多个子查询</p>
+</blockquote>
+<p><strong>多行子查询的相关例子</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">--查询部门名称是sales和accounting的员工信息</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp </div><div class="line"><span class="keyword">where</span> deptno <span class="keyword">in</span> (<span class="keyword">select</span> deptno <span class="keyword">from</span> dept <span class="keyword">where</span> dname=<span class="string">'sales'</span> <span class="keyword">or</span> dname=<span class="string">'accounting'</span>)</div><div class="line"><span class="comment">--等价于</span></div><div class="line"><span class="keyword">select</span> e.* <span class="keyword">from</span> emp e,dept d</div><div class="line"><span class="keyword">where</span> e.deptno = d.deptno <span class="keyword">and</span> (d.dname=<span class="string">'sales'</span> <span class="keyword">or</span> d.dname=<span class="string">'accounting'</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查询工资比30号部门任意一个员工高的员工信息</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt; <span class="keyword">any</span> (<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查询工资比30号部门所有员工高的员工信息</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt; all (<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div><div class="line"><span class="comment">--等价于</span></div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> sal &gt;  (<span class="keyword">select</span> <span class="keyword">max</span>(mal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno=<span class="string">'30'</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li>注意:子查询中的null值问题<br>只要子查询的结果集种包含控制，不要使用<code>NOT IN</code>操作符。<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">--查询不是老板的员工</div><div class="line">slect * from emp where empno not in (select mgr from emp where mgr is not null);</div><div class="line">-- not in 后面的集合不能有空值，否则查询不出结果</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><blockquote>
+<p>分页显示员工信息：显示员工号，姓名，月薪<br>每页显示四条记录<br>显示第二页的员工<br>按照月薪降序排列</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- Oracle 通过子查询的方式实现分页</span></div><div class="line"><span class="keyword">select</span> r,empno,ename,<span class="keyword">sql</span> </div><div class="line"><span class="keyword">from</span> (<span class="keyword">select</span>  <span class="keyword">rownum</span> r,empno,ename,sal </div><div class="line">          <span class="keyword">from</span> (  <span class="keyword">select</span> <span class="keyword">rownum</span> ,empno,ename,sal <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span> ) e1</div><div class="line">         <span class="keyword">where</span> r &lt; <span class="number">8</span>) e2</div><div class="line"><span class="keyword">where</span> r &gt;= <span class="number">5</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>找到员工表中薪水大于本部门平均薪水的员工</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 使用相关子查询方法</span></div><div class="line"><span class="keyword">select</span> empno,ename,sal ,(<span class="keyword">select</span> <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno = e.deptno) avgsal <span class="keyword">from</span> emp e</div><div class="line"><span class="keyword">where</span> sal &gt; (<span class="keyword">select</span> <span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">where</span> deptno = e.deptno)</div><div class="line"><span class="comment">-- 使用嵌套子查询方法</span></div><div class="line"><span class="keyword">select</span> e.empno,e.ename,e.sal,d.avgsal</div><div class="line"><span class="keyword">from</span> emp e , ( <span class="keyword">select</span> deptno, <span class="keyword">avg</span>(sal) avgsal <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno ) d </div><div class="line"><span class="keyword">where</span> e.deptno = d.deptno <span class="keyword">and</span> e.sal&gt;d.avgsal</div><div class="line"><span class="comment">-- 第一种（相关子查询）的性能好，执行块</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>按照部门统计员工人数，按照如下格式输出</p>
+</blockquote>
+<p><img src="/image/2016-10-12-22-02-31.jpg" alt=""></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) Total,</div><div class="line">    <span class="keyword">sum</span>(<span class="keyword">decode</span>(to_char(hiredate,<span class="string">'YYYY'</span>),<span class="string">'1980'</span>,<span class="number">1</span>,<span class="number">0</span>)) <span class="string">"1980"</span>,</div><div class="line">    <span class="keyword">sum</span>(<span class="keyword">decode</span>(to_char(hiredate,<span class="string">'YYYY'</span>),<span class="string">'1981'</span>,<span class="number">1</span>,<span class="number">0</span>)) <span class="string">"1981"</span>,</div><div class="line">    <span class="keyword">sum</span>(<span class="keyword">decode</span>(to_char(hiredate,<span class="string">'YYYY'</span>),<span class="string">'1982'</span>,<span class="number">1</span>,<span class="number">0</span>)) <span class="string">"1982"</span>,</div><div class="line">    <span class="keyword">sum</span>(<span class="keyword">decode</span>(to_char(hiredate,<span class="string">'YYYY'</span>),<span class="string">'1987'</span>,<span class="number">1</span>,<span class="number">0</span>)) <span class="string">"1987"</span></div><div class="line"><span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- or</span></div><div class="line"><span class="keyword">select</span> </div><div class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp) Total,</div><div class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp <span class="keyword">where</span> to_char(hiredate,<span class="string">'YYYY'</span>)=<span class="string">'1980'</span>) <span class="string">"1980"</span>,  </div><div class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp <span class="keyword">where</span> to_char(hiredate,<span class="string">'YYYY'</span>)=<span class="string">'1981'</span>) <span class="string">"1981"</span>, </div><div class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp <span class="keyword">where</span> to_char(hiredate,<span class="string">'YYYY'</span>)=<span class="string">'1982'</span>) <span class="string">"1982"</span>, </div><div class="line">    (<span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> emp <span class="keyword">where</span> to_char(hiredate,<span class="string">'YYYY'</span>)=<span class="string">'1987'</span>) <span class="string">"1987"</span>,  </div><div class="line"><span class="keyword">from</span> dual;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag">#数据库</a>
+          
+            <a href="/tags/Oracle/" rel="tag">#Oracle</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/08/necessary-skills/" rel="next" title="一名3年工作经验的程序员应该具备的技能">
+                <i class="fa fa-chevron-left"></i> 一名3年工作经验的程序员应该具备的技能
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/java-style-guide/" rel="prev" title="Java 编码风格指南">
+                Java 编码风格指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/12/Oracle-select/"
+           data-title="Oracle 查询" data-url="http://chuanqiang.github.io/2016/10/12/Oracle-select/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">132</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查询"><span class="nav-number">1.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分组查询"><span class="nav-number">1.1.</span> <span class="nav-text">分组查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的分组函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">常用的分组函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组数据"><span class="nav-number">1.1.3.</span> <span class="nav-text">分组数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤分组"><span class="nav-number">1.1.4.</span> <span class="nav-text">过滤分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组查询中排序"><span class="nav-number">1.1.5.</span> <span class="nav-text">分组查询中排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GROUP-BY-语句增强"><span class="nav-number">1.1.6.</span> <span class="nav-text">GROUP BY 语句增强</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表连接查询"><span class="nav-number">1.2.</span> <span class="nav-text">多表连接查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#笛卡儿积"><span class="nav-number">1.2.1.</span> <span class="nav-text">笛卡儿积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等值连接"><span class="nav-number">1.2.2.</span> <span class="nav-text">等值连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不等值连接"><span class="nav-number">1.2.3.</span> <span class="nav-text">不等值连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外连接"><span class="nav-number">1.2.4.</span> <span class="nav-text">外连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自连接"><span class="nav-number">1.2.5.</span> <span class="nav-text">自连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次查询"><span class="nav-number">1.2.6.</span> <span class="nav-text">层次查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子查询"><span class="nav-number">1.3.</span> <span class="nav-text">子查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子查询中的十个问题"><span class="nav-number">1.3.1.</span> <span class="nav-text">子查询中的十个问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.4.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zcqduoshuo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

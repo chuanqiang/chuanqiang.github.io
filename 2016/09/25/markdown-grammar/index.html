@@ -1,0 +1,1076 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Markdown,语法," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="如果你是一个经常用电脑进行文字书写的人，那不管你是不是理工科，不管你懂不懂编程，只要你会用电脑打字，我都建议你学习和使用Markdown语法。不要被语法、语言、Markdown这些词汇所迷惑，Markdown的语法十分简单。常用标记符号也不超过十个，学习成本十分低，却是一劳永逸，受益无穷。就像从二指禅打键盘到使用盲打的转变，只是Markdown的学习更加容易而已。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 语法">
+<meta property="og:url" content="http://chuanqiang.github.io/2016/09/25/markdown-grammar/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="如果你是一个经常用电脑进行文字书写的人，那不管你是不是理工科，不管你懂不懂编程，只要你会用电脑打字，我都建议你学习和使用Markdown语法。不要被语法、语言、Markdown这些词汇所迷惑，Markdown的语法十分简单。常用标记符号也不超过十个，学习成本十分低，却是一劳永逸，受益无穷。就像从二指禅打键盘到使用盲打的转变，只是Markdown的学习更加容易而已。">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-26-23-18-44.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-26-23-34-01.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-26-23-49-40.jpg">
+<meta property="og:updated_time" content="2016-09-27T14:49:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown 语法">
+<meta name="twitter:description" content="如果你是一个经常用电脑进行文字书写的人，那不管你是不是理工科，不管你懂不懂编程，只要你会用电脑打字，我都建议你学习和使用Markdown语法。不要被语法、语言、Markdown这些词汇所迷惑，Markdown的语法十分简单。常用标记符号也不超过十个，学习成本十分低，却是一劳永逸，受益无穷。就像从二指禅打键盘到使用盲打的转变，只是Markdown的学习更加容易而已。">
+<meta name="twitter:image" content="http://chuanqiang.github.io/image/2016-09-26-23-18-44.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2016/09/25/markdown-grammar/"/>
+
+  <title> Markdown 语法 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Markdown 语法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-25T21:08:07+08:00" content="2016-09-25">
+              2016-09-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/25/markdown-grammar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/markdown-grammar/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>如果你是一个经常用电脑进行文字书写的人，那不管你是不是理工科，不管你懂不懂编程，只要你会用电脑打字，我都建议你学习和使用Markdown语法。不要被语法、语言、Markdown这些词汇所迷惑，Markdown的语法十分简单。常用标记符号也不超过十个，学习成本十分低，却是一劳永逸，受益无穷。就像从二指禅打键盘到使用盲打的转变，只是Markdown的学习更加容易而已。</p>
+<a id="more"></a>
+<h2 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h2><p>Markdown 是一种轻量级的「标记语言」，是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。用Markdown码字不需要不需要你用鼠标进行复杂耗时的排版工作，你用键盘啪啪打出就已经是排版好的文档，能满足码字手速和排版流畅度的要求。</p>
+<h2 id="Markdown特点"><a href="#Markdown特点" class="headerlink" title="Markdown特点"></a>Markdown特点</h2><ol>
+<li>高效率，自动排版。</li>
+<li>语法简洁优雅，轻量级，记忆负担小。</li>
+<li>更专注于内容，标签对内容的侵入性低。</li>
+<li>纯文本，不受编辑工具限制。</li>
+<li>Markdown 转 HTML 非常方便。HTML 是整个万维网（web）的标记语言，但更重要的是，它也是目前主流电子书格式所用的标记语言。若采用 Markdown，对于日后的文件转换工作也大有裨益。</li>
+</ol>
+<h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 一级标题</div><div class="line">## 二级标题</div><div class="line">### 三级标题</div><div class="line">#### 四级标题</div><div class="line">##### 五级标题</div><div class="line">###### 六级标题</div></pre></td></tr></table></figure>
+<p>分别对应HTML中的<code>&lt;h1&gt;一级标题&lt;/h1&gt;</code>，以此类推。</p>
+<h3 id="粗体、斜体和删除线"><a href="#粗体、斜体和删除线" class="headerlink" title="粗体、斜体和删除线"></a>粗体、斜体和删除线</h3><p><img src="/image/2016-09-26-23-18-44.jpg" alt=""><br>用两个星号标记起来，表示加粗，一个星号，表示斜体，两个<code>~~</code>表示删除线。</p>
+<h3 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h3><p><strong>语法</strong>：<code>[链接](http://url.com/)</code><br><strong>效果</strong>：这是一个 <a href="http://url.com/" target="_blank" rel="external">链接</a></p>
+<h4 id="快速链接"><a href="#快速链接" class="headerlink" title="快速链接"></a>快速链接</h4><blockquote>
+<p>只需要在网址头尾用尖括号包裹即可</p>
+</blockquote>
+<p><strong>语法</strong>：<code>&lt;http://url.com&gt;</code><br><strong>效果</strong>： <a href="http://url.com" target="_blank" rel="external">http://url.com</a></p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><blockquote>
+<p>插入图片的语法跟插链接很像，在有些编辑器中，可以通过拖拽的方式进行插图，不一定会看到这个语法，而可能直接看到图片本身。</p>
+</blockquote>
+<p><strong>语法</strong>：<code>![图片的alt信息，可空)](图片的url)</code><br><strong>效果</strong>：<br><img src="/image/2016-09-26-23-34-01.jpg" alt=""></p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><blockquote>
+<p>一个<code>-</code>加一个空格</p>
+</blockquote>
+<p><strong>语法</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- Red</div><div class="line">- Green</div><div class="line">- Blue</div></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>：</p>
+<ul>
+<li>Red</li>
+<li>Green</li>
+<li>Blue<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><blockquote>
+<p>则使用数字接着一个英文句点加空格</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>语法</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.  Bird</div><div class="line">2.  McHale</div><div class="line">3.  Parish</div></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>：</p>
+<ol>
+<li>Bird</li>
+<li>McHale</li>
+<li>Parish</li>
+</ol>
+<h4 id="列表混合使用"><a href="#列表混合使用" class="headerlink" title="列表混合使用"></a>列表混合使用</h4><p><strong>语法</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">-   Bird</div><div class="line">    - blue bird</div><div class="line">-   McHale</div><div class="line">    1.  a man</div><div class="line">    2.  HoustonRockets</div><div class="line">-   Parish</div></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>：</p>
+<ul>
+<li>Bird<ul>
+<li>blue bird</li>
+</ul>
+</li>
+<li>McHale<ol>
+<li>a man</li>
+<li>HoustonRockets</li>
+</ol>
+</li>
+<li>Parish</li>
+</ul>
+<h3 id="内容引用"><a href="#内容引用" class="headerlink" title="内容引用"></a>内容引用</h3><p>用<code>&gt;</code>放在段首，之后是空格，输入文字:<br><strong>语法</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; 你</div><div class="line">&gt; 一会看我</div><div class="line">&gt; 一会看云</div><div class="line"></div><div class="line">&gt;  我觉得</div><div class="line">&gt;  你看我时很远</div><div class="line">&gt;  你看云时很近</div></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>：</p>
+<blockquote>
+<p>你<br>一会看我<br>一会看云</p>
+<p> 我觉得<br> 你看我时很远<br> 你看云时很近</p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><blockquote>
+<p><code>-</code>加上空格组成，三个以上</p>
+</blockquote>
+<p><strong>语法：</strong><code>---</code><br><strong>效果</strong>：</p>
+<hr>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><blockquote>
+<p>注释后的内容，最终会以 HTML 的注释格式<code>&lt;!--我是内容--&gt;</code>存在，不会显示在正文中，但包含在 HTML 的源码中；<br><strong>语法</strong>：<code>&lt;!--我是内容--&gt;</code></p>
+</blockquote>
+<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><blockquote>
+<p>分代码块和行级代码两种</p>
+</blockquote>
+<p><strong>如图</strong>：</p>
+<p><img src="/image/2016-09-26-23-49-40.jpg" alt=""></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p><strong>语法</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">书名 | 作者 | 内容 | 简评</div><div class="line">:---:|:---:|:---:|:---:</div><div class="line">周鸿祎自述：我的互联网方法论|周鸿祎|[书摘](/2016/09/22/周鸿祎自述：我的互联网方法论/)| 周鸿祎的互联网思维</div><div class="line">从0到1| 彼得·蒂尔;布莱克·马斯特斯  | [书摘](/2015/06/24/从0到1/) | 最反主流的行动不是抵制潮流，而是在潮流中不丢弃自己的独立思考</div><div class="line">大数据时代| 维克托·迈尔-舍恩伯格 | [书评](/2015/05/06/《大数据时代》——生活、工作与思维的大变革/) | 世界的又一种形态——数据</div><div class="line">风口上的猪| 无 | [书评](/2015/05/26/风口上的猪——一本书看懂互联网金融/) |一本书看懂互联网金融</div><div class="line">黑客与画家| Paul Graham  | [书摘](/2015/10/15/黑客与画家/) | 重新思考计算机编程的本质</div></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>：（表格还可以混入链接）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">书名</th>
+<th style="text-align:center">作者</th>
+<th style="text-align:center">内容</th>
+<th style="text-align:center">简评</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">周鸿祎自述：我的互联网方法论</td>
+<td style="text-align:center">周鸿祎</td>
+<td style="text-align:center"><a href="http://qixiantong.info/2016/09/22/周鸿祎自述：我的互联网方法论/" target="_blank" rel="external">书摘</a></td>
+<td style="text-align:center">周鸿祎的互联网思维</td>
+</tr>
+<tr>
+<td style="text-align:center">从0到1</td>
+<td style="text-align:center">彼得·蒂尔;布莱克·马斯特斯</td>
+<td style="text-align:center"><a href="http://qixiantong.info/2015/06/24/从0到1/" target="_blank" rel="external">书摘</a></td>
+<td style="text-align:center">最反主流的行动不是抵制潮流，而是在潮流中不丢弃自己的独立思考</td>
+</tr>
+<tr>
+<td style="text-align:center">大数据时代</td>
+<td style="text-align:center">维克托·迈尔-舍恩伯格</td>
+<td style="text-align:center"><a href="http://qixiantong.info/2015/05/06/《大数据时代》——生活、工作与思维的大变革/" target="_blank" rel="external">书评</a></td>
+<td style="text-align:center">世界的又一种形态——数据</td>
+</tr>
+<tr>
+<td style="text-align:center">风口上的猪</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center"><a href="http://qixiantong.info/2015/05/26/风口上的猪——一本书看懂互联网金融/" target="_blank" rel="external">书评</a></td>
+<td style="text-align:center">一本书看懂互联网金融</td>
+</tr>
+<tr>
+<td style="text-align:center">黑客与画家</td>
+<td style="text-align:center">Paul Graham</td>
+<td style="text-align:center"><a href="http://qixiantong.info/2015/10/15/黑客与画家/" target="_blank" rel="external">书摘</a></td>
+<td style="text-align:center">重新思考计算机编程的本质</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>表格可以设置居中居左居右的状态。</p>
+</blockquote>
+<p><strong><code>:---:</code>为居中；<code>:--</code>为居左；<code>--:</code>为居右。</strong></p>
+<hr>
+<p>Markdown的语法大致就这么多，简洁而优雅。学会只是第一步，重点是在码字的时候熟练使用，这样以后就可以<code>下笔如有神</code>了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+          
+            <a href="/tags/语法/" rel="tag">#语法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/25/about-writing-blog/" rel="next" title="关于写博客">
+                <i class="fa fa-chevron-left"></i> 关于写博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/29/Blockchain/" rel="prev" title="区块链浅析">
+                区块链浅析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/25/markdown-grammar/"
+           data-title="Markdown 语法" data-url="http://chuanqiang.github.io/2016/09/25/markdown-grammar/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">132</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-介绍"><span class="nav-number">1.</span> <span class="nav-text">Markdown 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown特点"><span class="nav-number">2.</span> <span class="nav-text">Markdown特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-语法"><span class="nav-number">3.</span> <span class="nav-text">Markdown 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题"><span class="nav-number">3.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#粗体、斜体和删除线"><span class="nav-number">3.2.</span> <span class="nav-text">粗体、斜体和删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入链接"><span class="nav-number">3.3.</span> <span class="nav-text">插入链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快速链接"><span class="nav-number">3.3.1.</span> <span class="nav-text">快速链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入图片"><span class="nav-number">3.4.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">3.5.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序列表"><span class="nav-number">3.6.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序列表"><span class="nav-number">3.7.</span> <span class="nav-text">有序列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表混合使用"><span class="nav-number">3.7.1.</span> <span class="nav-text">列表混合使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容引用"><span class="nav-number">3.8.</span> <span class="nav-text">内容引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分割线"><span class="nav-number">3.9.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.10.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码高亮"><span class="nav-number">3.11.</span> <span class="nav-text">代码高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">3.12.</span> <span class="nav-text">表格</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zcqduoshuo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

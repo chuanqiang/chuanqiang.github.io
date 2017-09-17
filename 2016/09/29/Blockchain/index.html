@@ -1,0 +1,1103 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="比特币,区域链," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="关于比特币，大家都听说过，但要说清楚比特币是什么，若是没有仔细研究研究，很难说得出。区块链（Blockchain）是比特币的一个重要概念，作为比特币的底层技术，要想弄清楚比特币，就不得不去研究区域链。况且，区域链作为一项技术，它的价值及价值潜力，远不止货币。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链浅析">
+<meta property="og:url" content="http://chuanqiang.github.io/2016/09/29/Blockchain/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="关于比特币，大家都听说过，但要说清楚比特币是什么，若是没有仔细研究研究，很难说得出。区块链（Blockchain）是比特币的一个重要概念，作为比特币的底层技术，要想弄清楚比特币，就不得不去研究区域链。况且，区域链作为一项技术，它的价值及价值潜力，远不止货币。">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-21-59-51.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-00-20.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-01-23.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-10-41.jpg?r=67">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-16-01.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-19-18.jpg?r=74">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-20-44.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-22-37.jpg">
+<meta property="og:image" content="http://chuanqiang.github.io/image/2016-09-29-22-23-16.jpg">
+<meta property="og:updated_time" content="2016-10-02T12:04:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="区块链浅析">
+<meta name="twitter:description" content="关于比特币，大家都听说过，但要说清楚比特币是什么，若是没有仔细研究研究，很难说得出。区块链（Blockchain）是比特币的一个重要概念，作为比特币的底层技术，要想弄清楚比特币，就不得不去研究区域链。况且，区域链作为一项技术，它的价值及价值潜力，远不止货币。">
+<meta name="twitter:image" content="http://chuanqiang.github.io/image/2016-09-29-21-59-51.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2016/09/29/Blockchain/"/>
+
+  <title> 区块链浅析 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                区块链浅析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-29T00:00:00+08:00" content="2016-09-29">
+              2016-09-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/29/Blockchain/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/29/Blockchain/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于比特币，大家都听说过，但要说清楚比特币是什么，若是没有仔细研究研究，很难说得出。区块链（Blockchain）是比特币的一个重要概念，作为比特币的底层技术，要想弄清楚比特币，就不得不去研究区域链。况且，区域链作为一项技术，它的价值及价值潜力，远不止货币。</p>
+<a id="more"></a>
+<hr>
+<h2 id="区域链是什么"><a href="#区域链是什么" class="headerlink" title="区域链是什么"></a>区域链是什么</h2><p>区块链（Blockchain）是由去中心化的网络协议和n个存储节点组成的分布式数据库系统，也可以将其理解为去中心化的账簿系统（ledger）。它的特点是存储的信息不可更改，不可伪造。</p>
+<p><img src="/image/2016-09-29-21-59-51.jpg" alt=""><br><strong>区块链的宣传与实际情况（2016）</strong><br><img src="/image/2016-09-29-22-00-20.jpg" alt=""></p>
+<h2 id="区块链的特点"><a href="#区块链的特点" class="headerlink" title="区块链的特点"></a>区块链的特点</h2><ol>
+<li>去中心化：没有中介机构，所有节点的权利和义务都相等，任一节点停止工作都会不影响系统整体的运作；</li>
+</ol>
+<p><img src="/image/2016-09-29-22-01-23.jpg" alt=""></p>
+<ol>
+<li>去信任：系统中所有节点之间无需信任也可以进行交易，因为数据库和整个系统的运作是公开透明的，在系统的规则和时间范围内，节点之间无法欺骗彼此；</li>
+<li>集体维护（Collectively Maintain）：系统是由其中所有具有维护功能的节点共同维护的，系统中所有人共同参与维护工作；</li>
+<li>可靠数据库（Reliable Database）：系统中每一个节点都拥有最新的完整数据库拷贝，修改单个节点的数据库是无效的，因为系统会自动比较，认为最多次出现的相同数据记录为真。<h2 id="朴素地理解区块链"><a href="#朴素地理解区块链" class="headerlink" title="朴素地理解区块链"></a>朴素地理解区块链</h2><blockquote>
+<p>区块链是个分布式账簿</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>账簿放在那里？<br>  分布式存储上，保存了多份</li>
+<li>谁来记账？<br>  POW或者POS的方式决定一个人记账，其他人抄录</li>
+</ul>
+<h2 id="区块链源自何处"><a href="#区块链源自何处" class="headerlink" title="区块链源自何处"></a>区块链源自何处</h2><p>区块链源自于比特币<br>比特币源自于对电子货币的持续探索</p>
+<h3 id="电子货币"><a href="#电子货币" class="headerlink" title="电子货币"></a>电子货币</h3><p>自互联网诞生以来，电子货币因其方便和难以追踪，并能脱离政府和银行的监管，而成为一个热门话题。<br>上世纪90年代，一个名为“密码朋克”（CypherPunk）的密码破译组织就致力于创建电子货币，但付出的努力没有收到任何成效。之后出现的各种对于电子货币的尝试，也无一例外地失败了，直到比特币的出现。</p>
+<h3 id="历史上的电子货币"><a href="#历史上的电子货币" class="headerlink" title="历史上的电子货币"></a>历史上的电子货币</h3><p><em>亚当·贝克（Adam Back）</em><br>    1997年，hashcash，工作量证明机制（proof of work）。<br>哈伯和斯托尼塔（Haber and Stornetta）<br>    1997年，时间戳的方法保证数字文件安全的协议。<br><em>戴伟（Wei Dai）</em><br>    1998年，加密货币——B-money，点对点的交易和不可更改的交易记录。中本聪发明比特币的时候，借鉴了很多戴伟的设计，并和戴伟有很多交流。<br><em>哈尔·芬尼（Hal Finney）</em><br>    2004年，可重复使用的工作量证明机制（RPOW）。是第一笔比特币转账的接受者，在比特币发展的早期与中本聪有大量互动与交流。</p>
+<p>2008年10月31日纽约时间下午2点10分，一个自称中本聪（Satoshi Nakamoto）的人在一个“密码朋克”的电子邮件组上发出了一封电子邮件，“我一直在研究一个新的电子现金系统，这完全是点对点的，无需任何可信的第三方”，然后他将他们引向一个九页的白皮书：《Bitcoin: A Peer-to-Peer Electronic Cash System》。</p>
+<p>2009年1月3日，中本聪在位于芬兰赫尔辛基的一个小型服务器上挖出了比特币的第一个区块——创世区块(Genesis Block)，并获得了首矿奖励——50个比特币。</p>
+<p>如今，比特币已经成为数字货币领域的翘楚，拥有数十亿美元的市值，但中本聪却于2010年选择隐退。</p>
+<h3 id="比特币与区块链"><a href="#比特币与区块链" class="headerlink" title="比特币与区块链"></a>比特币与区块链</h3><p>在比特币的系统中，最重要的并不是“币”的概念，而是一个没有中心存储机构的“帐簿”的概念。<br>区块链是比特币的核心与基础架构，是一个去中心化的账簿系统。<br>区块链脱胎于比特币，但区块链无论作为一个系统还是作为一项技术，它的应用领域及发展潜力，远不止货币。</p>
+<h3 id="区块链的发展历史"><a href="#区块链的发展历史" class="headerlink" title="区块链的发展历史"></a>区块链的发展历史</h3><ul>
+<li>2008年 Blockchain 1.0<br>加密货币<br>去中心化的电子货币交易体系</li>
+<li>2012年 Blockchain 2.0<br>币外应用：智能合约<br>交易市场去中心化</li>
+<li>2014年 Blockchain 3.0<br>由智能合约扩展为去中心化的应用<br>用于政府、医疗、科学、文化和艺术等领域</li>
+</ul>
+<h2 id="比特币与区块链-1"><a href="#比特币与区块链-1" class="headerlink" title="比特币与区块链"></a>比特币与区块链</h2><p><img src="/image/2016-09-29-22-10-41.jpg?r=67" alt=""></p>
+<h3 id="区块链四种不同的解释："><a href="#区块链四种不同的解释：" class="headerlink" title="区块链四种不同的解释："></a>区块链四种不同的解释：</h3><blockquote>
+<p>针对区块链的讨论常常会陷入混淆</p>
+</blockquote>
+<ul>
+<li>狭义范围下：比特币中记录交易的账本</li>
+<li>竞争技术：其他metacoin平台的分布式总账的替代机制</li>
+<li>Blockchain-washing：对IT技术的重新包装</li>
+<li>一厢情愿的想法：一种看不见的神秘物质，会以某种方式解决我们的问题</li>
+</ul>
+<h3 id="银行和其他金融组织为什么会有兴趣？"><a href="#银行和其他金融组织为什么会有兴趣？" class="headerlink" title="银行和其他金融组织为什么会有兴趣？"></a>银行和其他金融组织为什么会有兴趣？</h3><ol>
+<li>“恐惧”：管理和阻止潜在的干扰，提前掌控新技术</li>
+<li>“贪婪”：期望借助外部共享资源来节约基础设施投入和运营成本</li>
+<li>“贪婪”：可能是新的商业机会</li>
+</ol>
+<h2 id="区块链详解"><a href="#区块链详解" class="headerlink" title="区块链详解"></a>区块链详解</h2><h3 id="区块（Block）"><a href="#区块（Block）" class="headerlink" title="区块（Block）"></a>区块（Block）</h3><p>区块链由n（n&gt;0）个区块组成。<br>区块是一个可以将数据（交易记录、资产等）永久记录在网络上的文件。一个区块写满之后，就会通过工作量证明机制（记账）产生新的区块，新的区块会被添加到区块链的末端，所有的区块一旦形成就很难修改或移除。<br>例：比特币区块大小：1M</p>
+<h3 id="区块的结构"><a href="#区块的结构" class="headerlink" title="区块的结构"></a>区块的结构</h3><p>以比特币使用的区块链为例，区块由区块头和交易记录两部分组成。<br>交易记录在区块头之后。其中的第一笔交易是Coinbase交易，这是一笔为了让矿工获得奖励及手续费的特殊交易。<br>区块的大致结构如右图所示。</p>
+<p><img src="/image/2016-09-29-22-16-01.jpg" alt=""></p>
+<h3 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h3><p>哈希函数（Hash Function），也称为散列函数，给定一个输入x，它会算出相应的输出H(x)。哈希函数的主要特征是：</p>
+<ul>
+<li>输入x可以是任意长度的字符串</li>
+<li>输出结果即H(x)的长度是固定的</li>
+<li>计算H(x)的过程是高效的（对于长度为n的字符串x，计算出H(x)的时间复杂度应为O(n)）</li>
+</ul>
+<p>对于比特币这种加密系统所使用的哈希函数，它需要另外具备以下的性质：</p>
+<ol>
+<li>免碰撞。即不会出现输入x≠y，但是H(x)=H(y)<blockquote>
+<p>其实这个特点在理论上并不成立。比如，比特币使用的SHA256算法，会有2^256种输出，如果我们进行2^256+1次输入，那么必然会产生一次碰撞；甚至从概率的角度看，进行2^130次输入就会有99%的可能发生一次碰撞。不过我们可以计算一下，假设一台计算机以每秒10000次的速度进行哈希运算，要经过10^27年才能完成2^128次哈希！甚至可以这么说，即便是人类制造的所有计算机自宇宙诞生开始一直运算到今天，发现碰撞的几率也是极其小的。</p>
+</blockquote>
+</li>
+<li>隐匿性。也就是说，对于一个给定的输出结果H(x)，想要逆推出输入x，在计算上是不可能的。</li>
+<li>不存在比穷举更好的，可以使哈希结果H(x)落在特定范围的方法。</li>
+</ol>
+<h3 id="工作量证明（比特币）"><a href="#工作量证明（比特币）" class="headerlink" title="工作量证明（比特币）"></a>工作量证明（比特币）</h3><ul>
+<li>生成Coinbase交易，并与其他所有准备打包进区块的交易组成交易列表，通过Merkle Tree算法生成Merkle Root Hash</li>
+<li>把Merkle Root Hash及其他相关字段组装成区块头，将区块头的80字节数据（Block Header）作为工作量证明的输入</li>
+<li>不停的变更区块头中的随机数，即nonce的数值，并对每次变更后的的区块头做双重SHA256运算（即SHA256(SHA256(Block_Header))），将结果值与当前网络的目标值做对比，如果小于目标值，则解题成功，工作量证明完成。<h3 id="Merkle-tree"><a href="#Merkle-tree" class="headerlink" title="Merkle tree"></a>Merkle tree</h3></li>
+</ul>
+<p><img src="/image/2016-09-29-22-19-18.jpg?r=74" alt=""></p>
+<h3 id="一笔新交易"><a href="#一笔新交易" class="headerlink" title="一笔新交易"></a>一笔新交易</h3><p>某节点产生一笔新交易时，会先被广播到区块链网络中的其它参与节点。<br>每个节点会将数笔未验证的交易收集到区块中，每个区块可以包含数百笔或上千笔交易。<br>各节点进行POW的计算来决定谁可以验证交易，由最快算出结果的节点来验证交易，这就是取得共识的做法。<br>取得验证权的节点将区块广播给所有节点。其他节点会确认这个区块所包含的交易是否有效，确认没被重复花费且具有效数位签章后，接受该区块，此时区块才正式接上区块链。<br>所有节点一旦接受该区块后，先前没算完POW工作的区块会失效，各节点会重新建立一个区块，继续下一回POW计算工作。</p>
+<h3 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h3><p><img src="/image/2016-09-29-22-20-44.jpg" alt=""></p>
+<h3 id="区块链的衍生概念"><a href="#区块链的衍生概念" class="headerlink" title="区块链的衍生概念"></a>区块链的衍生概念</h3><p><strong>公链</strong>（public blockchain），是指全世界任何人都可读取、发送交易且能获得有效确认的共识区块链。这些区块链通常被认为是“完全去中心化”的。<br><strong>共同体区块链</strong>（Consortium blockchains），是指其共识过程受到预选节点控制的区块链；例如，有15个金融机构组成一个共同体，每个机构都运行着一个节点，而且为了使每个区块生效需要获得其中10个机构的确认。这些区块链可视为“部分去中心化”。<br><strong>私链</strong>（private blockchain)，又称无代币区块链（Token-less blockchain） 完全私有的区块链 , 是指其写入权限仅在一个组织手里的区块链。</p>
+<h3 id="区块链的问题"><a href="#区块链的问题" class="headerlink" title="区块链的问题"></a>区块链的问题</h3><ul>
+<li>区块链分叉</li>
+<li>51%攻击</li>
+<li>区块生成速度慢的问题</li>
+<li>挖矿（POW）的高碳排放</li>
+</ul>
+<h2 id="区块链的应用场景"><a href="#区块链的应用场景" class="headerlink" title="区块链的应用场景"></a>区块链的应用场景</h2><h3 id="区块链技术栈"><a href="#区块链技术栈" class="headerlink" title="区块链技术栈"></a>区块链技术栈</h3><p><img src="/image/2016-09-29-22-22-37.jpg" alt=""><br><strong>应用场景</strong></p>
+<p><img src="/image/2016-09-29-22-23-16.jpg" alt=""></p>
+<ul>
+<li>电子货币<ul>
+<li>比特币（POW）</li>
+<li>莱特毕（POW）</li>
+<li>以太坊（POW + POS）</li>
+</ul>
+</li>
+<li>清算（清分 + 结算）<ul>
+<li>银行间结算</li>
+<li>跨境结算</li>
+</ul>
+</li>
+<li>产权交易<ul>
+<li>股权交易</li>
+<li>房产交易</li>
+<li>专利交易</li>
+<li>版权交易</li>
+</ul>
+</li>
+<li>智能合约<ul>
+<li>代扣业务</li>
+<li>工资代发</li>
+<li>定投彩票</li>
+<li>共享经济</li>
+<li>众筹</li>
+<li>物联网<blockquote>
+<p>尼克·萨博（Nick Szabo）：“一个智能合约是一套以数字形式定义的承诺（promises） ，包括合约参与方可以在上面执行这些承诺的协议。”</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>可信信息记录<ul>
+<li>健康记录</li>
+<li>反腐</li>
+<li>反洗钱</li>
+<li>公正</li>
+<li>自证</li>
+<li>物流追踪</li>
+<li>药品、食物追踪</li>
+</ul>
+</li>
+</ul>
+<p><strong>信用保险——保前阶段</strong><br>资信：假定对于大多数的公司，其经营信息越公开，越受信任，越容易融资，也就越容易快速发展。那么在此假定下，这些公司会倾向于将经营信息记录在区块链上，并对外公开。那么我司就可以利用这些信息形成资信报告。<br>如果公司的交易信息也可以记录在区块链上，那么就可以通过对这些交易信息进行数据挖掘，从而识别虚假交易，或者预判一个公司的经营状况。<br>保单：如果买方的经营信息，出口企业和买方的交易信息都，以及海关的出运信息都记录在区块链上，那么通过这些信息，就可以形成智能合约。<br>这份智能合约的可编程部分为：实际出运的金额对应保户应缴纳的保费和我司应承担的责任。<br><strong>信用保险——保后阶段</strong><br>可损：如果交易信息记录在区块链上，那么当出口企业未在收汇日期内收汇时，可以直接形成可损。<br>保后跟踪：如果交易信息记录在区块链上，就能直接获知被保险人的收汇情况，从而控制风险。<br><strong>信用保险——其他</strong><br>保单融资：如果通过区块链记录交易信息，或者进行资金的流转（基于法币），交易的可信度更高，那么可以据此给买方更高的信用限额，也可以据此获得更多银行的授信。<br>如果通过保单融资获得的资金，其使用情况全部记录在区块链，那么就可以轻而易举地监控资金的流向，便于降低风险。<br>通知书：我司发给保户、合作机构的各种通知书，如果通过区块链进行发送，那么可以降低成本和流程的复杂度。</p>
+<h2 id="区块链的发展现状"><a href="#区块链的发展现状" class="headerlink" title="区块链的发展现状"></a>区块链的发展现状</h2><p>区块链技术已引起了全世界的高度重视，美国、欧盟、荷兰、波兰、德国、英国、澳大利亚、加拿大、俄罗斯、日本、韩国、新加坡、日本和印度等国家都在开展区块链相关的研究。</p>
+<p>各知名银行、保险公司、证券交易所、IT公司也都已经加入到了区块链的研究。包括高盛、摩根大通、汇丰银行、花旗银行、纽约梅隆银行、巴克莱银行、瑞银（UBS）、苏格兰皇家银行、摩根士丹利在内的众多金融机构，均与区块链公司进行了合作，研究区块链技术在金融市场的应用。</p>
+<p>世界经济论坛更是大胆预测，到2027年世界GDP的10％将被存储在区块链网络上。</p>
+<blockquote>
+<p>2016.01.20 中国人民银行数字货币研讨会在北京召开。<br>2016.05.24 中国平安保险(集团)股份有限公司正式加入R3分布式分类账联盟。<br>2016.05.31 金融区块链合作联盟（深圳）正式成立，该联盟由京东金融，微众银行等25家企业共同发起，腾讯和华为等6加机构作为成员单位加入。<br>2016.07.05 瑞士全球银行和金融机构Vontobel已经推出了一种允许其用户间接交易比特币的新产品。<br>2016.07.09 蚂蚁金服在杭州举办的首届全球XIN公益大会上宣布区块链技术即将上线，并首先用于支付宝的爱心捐赠平台。</p>
+</blockquote>
+<h2 id="区块链应用"><a href="#区块链应用" class="headerlink" title="区块链应用"></a>区块链应用</h2><p>公证防伪：公证通（factom）、Monegraph、Stampery、Bitproof、Uproov、Chronicled、Blockai;<br>智能合约：彩色币（coloredcoin）、闪电网络（lightning-network）、侧链（sidechain）、Tendermint、Chronicled、SuperNET、Blocknet、Tezos、Openchain、Crypti、Rubix、MultiChain、超级账本（hyperledger）、The DAO（the-dao）、WAVES;<br>物联网：ADEPT、Filament、Tilepay、Slock.it（slock-it）;<br>身份验证：BlockScore、Shocard、LaunchKey、BitNation;<br>预测市场：Augur、Truthcoin、Futarchy;<br>资产交易：OpenLedger、Medici、SETL、Symbiont、DAH、SETL、小蚁（antshares）、SWARM、Koinify、Lighthouse、Safe Cash（safe-cash）、tØ（t0）、Linq、Colu;</p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><ul>
+<li>富有战略性地思考，富有战术性地行动</li>
+<li>无论你选择哪种区块链技术，它都将在18到24个月后过时</li>
+<li>但是，了解这一技术非常重要</li>
+<li>从主要平台上学习证明的概念</li>
+<li>在可控制的真实的平台上实践部署</li>
+<li>时刻准备在24个月内可离开该平台</li>
+<li>学习和构想在可编程经济环境中的业务流程、业务模式、市场和产品</li>
+<li>时刻准备好你的组织可能遭受业务、经济的瓦解和流动性问题</li>
+<li>采用不同的管理理念，关注灵活性、创新性和自主性</li>
+<li>规划和测试一个不同的非层次结构模型作为简政放权的一部分</li>
+<li>在长期的时间内，重新思考商业模式、市场和生态系统</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/比特币/" rel="tag">#比特币</a>
+          
+            <a href="/tags/区域链/" rel="tag">#区域链</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/25/markdown-grammar/" rel="next" title="Markdown 语法">
+                <i class="fa fa-chevron-left"></i> Markdown 语法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/02/GuLong-duoqingjkwqj/" rel="prev" title="古龙·断章·小札【壹】：多情剑客无情剑">
+                古龙·断章·小札【壹】：多情剑客无情剑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/29/Blockchain/"
+           data-title="区块链浅析" data-url="http://chuanqiang.github.io/2016/09/29/Blockchain/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">132</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#区域链是什么"><span class="nav-number">1.</span> <span class="nav-text">区域链是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链的特点"><span class="nav-number">2.</span> <span class="nav-text">区块链的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素地理解区块链"><span class="nav-number">3.</span> <span class="nav-text">朴素地理解区块链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链源自何处"><span class="nav-number">4.</span> <span class="nav-text">区块链源自何处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电子货币"><span class="nav-number">4.1.</span> <span class="nav-text">电子货币</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史上的电子货币"><span class="nav-number">4.2.</span> <span class="nav-text">历史上的电子货币</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比特币与区块链"><span class="nav-number">4.3.</span> <span class="nav-text">比特币与区块链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链的发展历史"><span class="nav-number">4.4.</span> <span class="nav-text">区块链的发展历史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比特币与区块链-1"><span class="nav-number">5.</span> <span class="nav-text">比特币与区块链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链四种不同的解释："><span class="nav-number">5.1.</span> <span class="nav-text">区块链四种不同的解释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#银行和其他金融组织为什么会有兴趣？"><span class="nav-number">5.2.</span> <span class="nav-text">银行和其他金融组织为什么会有兴趣？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链详解"><span class="nav-number">6.</span> <span class="nav-text">区块链详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块（Block）"><span class="nav-number">6.1.</span> <span class="nav-text">区块（Block）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块的结构"><span class="nav-number">6.2.</span> <span class="nav-text">区块的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希算法"><span class="nav-number">6.3.</span> <span class="nav-text">哈希算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作量证明（比特币）"><span class="nav-number">6.4.</span> <span class="nav-text">工作量证明（比特币）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merkle-tree"><span class="nav-number">6.5.</span> <span class="nav-text">Merkle tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一笔新交易"><span class="nav-number">6.6.</span> <span class="nav-text">一笔新交易</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Blockchain"><span class="nav-number">6.7.</span> <span class="nav-text">Blockchain</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链的衍生概念"><span class="nav-number">6.8.</span> <span class="nav-text">区块链的衍生概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链的问题"><span class="nav-number">6.9.</span> <span class="nav-text">区块链的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链的应用场景"><span class="nav-number">7.</span> <span class="nav-text">区块链的应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块链技术栈"><span class="nav-number">7.1.</span> <span class="nav-text">区块链技术栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链的发展现状"><span class="nav-number">8.</span> <span class="nav-text">区块链的发展现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块链应用"><span class="nav-number">9.</span> <span class="nav-text">区块链应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">10.</span> <span class="nav-text">建议</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zcqduoshuo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

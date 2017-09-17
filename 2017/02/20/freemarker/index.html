@@ -1,0 +1,1188 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="freemarker," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文详细讲解了 FreeMarker 的使用和相关的语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeMarker 基础">
+<meta property="og:url" content="http://chuanqiang.github.io/2017/02/20/freemarker/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="本文详细讲解了 FreeMarker 的使用和相关的语法。">
+<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20161105-104618667.jpg">
+<meta property="og:updated_time" content="2017-02-20T13:45:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FreeMarker 基础">
+<meta name="twitter:description" content="本文详细讲解了 FreeMarker 的使用和相关的语法。">
+<meta name="twitter:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20161105-104618667.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2017/02/20/freemarker/"/>
+
+  <title> FreeMarker 基础 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                FreeMarker 基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-20T21:28:44+08:00" content="2017-02-20">
+              2017-02-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/20/freemarker/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/freemarker/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文详细讲解了 FreeMarker 的使用和相关的语法。</p>
+<a id="more"></a>
+<h2 id="jsp-freemarker-velocity-比较"><a href="#jsp-freemarker-velocity-比较" class="headerlink" title="jsp freemarker velocity 比较"></a>jsp freemarker velocity 比较</h2><p>在 Java 领域，表现层的技术主要有三种: jsp、freemarker、veloctity.</p>
+<h3 id="jsp-最常用的技术"><a href="#jsp-最常用的技术" class="headerlink" title="jsp 最常用的技术"></a>jsp 最常用的技术</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>功能强大，可以写java代码</li>
+<li>支持jsp标签（jsp tag）</li>
+<li>支持表达式语言（el）</li>
+<li>官方标准，用户群广，丰富的第三方jsp标签库</li>
+<li>性能良好。jsp编译成class文件执行，有很好的性能表现</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>jsp没有明显缺点，非要挑点骨头那就是，由于可以编写java代码，如使用不当容易破坏mvc结构。</p>
+<h3 id="velocity-较早期出现的用于替代jsp的模板语言"><a href="#velocity-较早期出现的用于替代jsp的模板语言" class="headerlink" title="velocity 较早期出现的用于替代jsp的模板语言"></a>velocity 较早期出现的用于替代jsp的模板语言</h3><h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>不能编写java代码，可以实现严格的mvc分离</li>
+<li>性能良好，据说比jsp性能还要好些</li>
+<li>使用表达式语言，据说jsp的表达式语言就是学velocity的<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>不是官方标准</li>
+<li>用户群体和第三方标签库没有jsp多。</li>
+<li>对jsp标签支持不够好</li>
+</ol>
+<h3 id="freemarker"><a href="#freemarker" class="headerlink" title="freemarker"></a>freemarker</h3><h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>不能编写java代码，可以实现严格的mvc分离</li>
+<li>性能非常不错</li>
+<li>对jsp标签支持良好</li>
+<li>内置大量常用功能，使用非常方便</li>
+<li>宏定义（类似jsp标签）非常方便</li>
+<li>使用表达式语言<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>不是官方标准</li>
+<li>用户群体和第三方标签库没有jsp多</li>
+</ol>
+<h3 id="选择freemarker的原因"><a href="#选择freemarker的原因" class="headerlink" title="选择freemarker的原因"></a>选择freemarker的原因</h3><ol>
+<li>性能。velocity应该是最好的，其次是jsp，普通的页面freemarker性能最差（虽然只是几毫秒到十几毫秒的差距）。但是在复杂页面上（包含大量判断、日期金额格式化）的页面上，freemarker的性能比使用tag和el的jsp好。</li>
+<li>宏定义比jsp tag方便</li>
+<li>内置大量常用功能。比如html过滤，日期金额格式化等等，使用非常方便</li>
+<li>支持jsp标签</li>
+<li>可以实现严格的mvc分离</li>
+</ol>
+<h2 id="FreeMarker-介绍"><a href="#FreeMarker-介绍" class="headerlink" title="FreeMarker 介绍"></a>FreeMarker 介绍</h2><p>FreeMarker是一款模板引擎：即一种基于模板、用来生成输出文本(任何来自于HTML格式的文本用来自动生成源代码)的通用工具。<br>使用MVC模式的动态页面的设计构思使得你可以将前端设计师(编写HTML页面的人员)从程序员中分离出来。</p>
+<p>数据模型可以被看做是树状结构的。<br>标量存储单一的值，这种类型的值可以是字符串，数字，日期/时间或者是布尔值。<br>哈希表是存储变量和与其相关且有唯一标识名称变量的容器。<br>序列是存储有序变量的容器。存储的变量可以通过数字索引来检索，索引通常从零开始。</p>
+<h3 id="模板一览"><a href="#模板一览" class="headerlink" title="模板一览"></a>模板一览</h3><p><code>${…}</code>：FreeMarker将会输出真实的值来替换花括号内的表达式<br>FTL tags 标签（FreeMarker模板的语言标签）：FTL标签和HTML标签有一点相似，但是它们是FreeMarker的指令而且是不会直接输出出来的东西。这些标签的使用一般以符号#开头<br>Comments注释：FreeMarker的注释和HTML的注释相似，但是它用&lt;#–和–&gt;来分隔的。<br>irectives指令：就是所指的FTL标签</p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><h4 id="if-指令"><a href="#if-指令" class="headerlink" title="if 指令"></a>if 指令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;#if ...&gt;</div><div class="line">	...</div><div class="line">&lt;#else&gt;</div><div class="line">	...</div><div class="line">&lt;#if&gt;</div></pre></td></tr></table></figure>
+<h4 id="list-指令"><a href="#list-指令" class="headerlink" title="list 指令"></a>list 指令</h4><p>list指令的一般格式为：<br><code>&lt;#list sequence as loopVariable&gt;repeatThis&lt;/#list&gt;</code><br><code>repeatThis</code>部分将会在给定的<code>sequence</code>遍历时在每项中重复，从第一项开始，一个接着一个。在所有的重复中，<code>loopVariable</code>将持有当前项的值。这个循环变量仅存在于<code>&lt;#list …&gt;和&lt;/#list&gt;</code>标签之间。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;#list animals as being&gt;</div><div class="line">&lt;tr&gt;&lt;td&gt;$&#123;being.name&#125;&lt;td&gt;$&#123;being.price&#125; Euros</div><div class="line">&lt;/#list&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="include-指令"><a href="#include-指令" class="headerlink" title="include 指令"></a>include 指令</h4><p>在当前的模板中插入其他文件的内容。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">#include</span> "/<span class="attr">copyright_footer.html</span>"&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="处理不存在的变量"><a href="#处理不存在的变量" class="headerlink" title="处理不存在的变量"></a>处理不存在的变量</h4><p>一个不存在的变量和一个是null的变量，对于FreeMarker来说是一样的。此时，指定一个默认值来避免变量丢失这种情况。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">通过在变量名后面跟着一个!和默认值</div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome $&#123;user!"Anonymous"&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>也可以在变量名后面通过放置??来询问FreeMarker一个变量是否存在。将它和if指令合并，那么如果user变量不存在的话将会忽略整个问候代码段：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">#if</span> <span class="attr">user</span>??&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Welcome $&#123;user&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">#if</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong><br>关于多级访问的变量不存在时<br><code>animals.python.price!0</code> 不存在时制定为0，但如果animals或者python不存在，那么模板处理过程将会以“未定义的变量”错误而停止。<br>可以这样来书写代码<code>(animals.python.price)!0</code>。这种情况下当animals或python不存在时表达式的结果仍然是0.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;#assign seq = [&apos;a&apos;, &apos;b&apos;]&gt;</div><div class="line">$&#123;seq[0]!&apos;-&apos;&#125;</div><div class="line">$&#123;seq[1]!&apos;-&apos;&#125;</div><div class="line">$&#123;seq[2]!&apos;-&apos;&#125;</div><div class="line">$&#123;seq[3]!&apos;-&apos;&#125;</div></pre></td></tr></table></figure>
+<p>输出为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">b</div><div class="line">-</div><div class="line">-</div></pre></td></tr></table></figure></p>
+<h2 id="数值和类型"><a href="#数值和类型" class="headerlink" title="数值和类型"></a>数值和类型</h2><h3 id="支持的类型"><a href="#支持的类型" class="headerlink" title="支持的类型"></a>支持的类型</h3><ul>
+<li>标量：<ul>
+<li>字符串</li>
+<li>数字</li>
+<li>布尔值</li>
+<li>日期</li>
+</ul>
+</li>
+<li>容器：<ul>
+<li>哈希表<br>  每个子变量都可以通过一个唯一的名称来查找（就像HashMap）</li>
+<li>序列</li>
+<li>集</li>
+</ul>
+</li>
+<li>子程序：<ul>
+<li>方法和函数</li>
+<li>用户自定义指令</li>
+</ul>
+</li>
+<li>其它/很少使用：</li>
+<li>节点</li>
+</ul>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="1-总体结构"><a href="#1-总体结构" class="headerlink" title="1. 总体结构"></a>1. 总体结构</h3><p><strong>Text文本</strong>：文本会照着原样来输出。<br><strong>Interpolation插值</strong>：这部分的输出会被计算的值来替换。插值由${和}所分隔（或者#{和}，这种风格已经不建议再使用了）。<br><strong>FTL tags标签</strong>：FTL标签和HTML标签很相似，但是它们却是给FreeMarker的指示，而且不会打印在输出内容中。<br><strong>Comments注释</strong>：FTL的注释和HTML的注释也很相似，但它们是由&lt;#–和–&gt;来分隔的<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/20161105-104618667.jpg" alt=""><br>FTL是区分大小写的.</p>
+<h3 id="2-表达式"><a href="#2-表达式" class="headerlink" title="2. 表达式"></a>2. 表达式</h3><ul>
+<li>直接指定值<br> 字符串：”Foo” 或者 ‘Foo’ 或者 “It’s \”quoted\”” 或者 r”C:\raw\string”<br> 数字：123.45 &lt;#list[BR] animals as[BR] being[BR] &gt;[BR] ${being.name} for ${being.price} Euros[BR] &lt;/#list &gt;<br> 布尔值：true, false<br> 序列：[“foo”, “bar”, 123.45], 1..100<br> 哈希表：{“name”:”green mouse”, “price”:150}</li>
+<li>检索变量<br> 顶层变量：user<br> 从哈希表中检索数据：user.name, user[“name”]<br> 从序列中检索：products[5]<br> 特殊变量：.main</li>
+<li>字符串操作<br> 插值（或连接）：”Hello ${user}!”（或”Free” + “Marker”）<br> 获取一个字符：name[0]</li>
+<li>序列操作<br> 连接：users + [“guest”]<br> 序列切分：products[10..19] 或 products[5..]</li>
+<li>哈希表操作<br> 连接：passwords + {“joe”:”secret42”}</li>
+<li>算数运算: (x * 1.5 + 10) / 2 - y % 100</li>
+<li>比较运算：x == y, x != y, x &lt; y, x &gt; y, x &gt;= y, x &lt;= y, x &lt; y, 等等</li>
+<li>逻辑操作：!registered &amp;&amp; (firstVisit || fromEurope)</li>
+<li>内建函数：name?upper_case</li>
+<li>方法调用：repeat(“What”, 3)</li>
+<li>处理不存在的值<br> 默认值：name!”unknown” 或者(user.name)!”unknown” 或者name! 或者 (user.name)!<br> 检测不存在的值：name?? 或者(user.name)??</li>
+</ul>
+<h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> \</td>
+<td>引号（u0022）</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>单引号（又称为撇号）（u0027）</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠（u005C）</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符（u000A）</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车（u000D）</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>水平制表符（又称为标签）（u0009）</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格（u0008）</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页（u000C）</td>
+</tr>
+<tr>
+<td>\l</td>
+<td>小于号：&lt;</td>
+</tr>
+<tr>
+<td>\g</td>
+<td>大于号：&gt;</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>和号：&amp;</td>
+</tr>
+<tr>
+<td>\xCode</td>
+<td>字符的16进制Unicode码（UCS码）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="检索变量"><a href="#检索变量" class="headerlink" title="检索变量"></a>检索变量</h3><h4 id="在哈希表中检索数据"><a href="#在哈希表中检索数据" class="headerlink" title="在哈希表中检索数据"></a>在哈希表中检索数据</h4><p>(root)<br>|<br>+- book<br>| |<br>| +- title = “Breeding green mouses”<br>| |<br>| +- author<br>| |<br>| +- name = “Julia Smith”<br>| |<br>| +- info = “Biologist, 1923-1985, Canada”<br>|<br>+- test = “title”</p>
+<p>下面这些示例它们含义都是相等的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">book.author.name, </div><div class="line">book[&quot;author&quot;].name, </div><div class="line">book.author.[&quot;name&quot;], </div><div class="line">book[&quot;author&quot;][&quot;name&quot;]</div></pre></td></tr></table></figure></p>
+<h4 id="从序列中检索数据"><a href="#从序列中检索数据" class="headerlink" title="从序列中检索数据"></a>从序列中检索数据</h4><p>animals[0].name</p>
+<h2 id="字符串和数值操作"><a href="#字符串和数值操作" class="headerlink" title="字符串和数值操作"></a>字符串和数值操作</h2><h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>获取一个字符 <code>${str[0]}</code><br>获取一定范围的字符<code>substring</code></p>
+<h4 id="数值计算"><a href="#数值计算" class="headerlink" title="数值计算"></a>数值计算</h4><p>加减乘数 （数字+字符=字符）<br>${100 – x*x}<br>${x/2}<br>${12%10}</p>
+<p>只取整数部分的数值： ${(x/2)?int}<br><strong>比较操作</strong><br>相等：<code>=</code>或<code>==</code>无区别<br>不等：<code>!=</code><br>大于小于问题：FreeMarker解释<code>&gt;</code>的时候可以把它当作FTL标签的结束符。为了避免这种问题，不得不将表达式放到括号内：<code>&lt;#if (x &gt; y)&gt;</code>，或者可以在比较关系处使用<code>&amp;gt;</code>和<code>&amp;lt;</code></p>
+<h2 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h2><p>内建函数提供始终可用的内置功能。用<code>?</code>号来代替点。例如得到字符串的大写形式：<code>user?upper_case</code></p>
+<ul>
+<li>字符串使用的内建函数：<br> html: 字符串中所有的特殊HTML字符都需要用实体引用来代替（比如&lt;代替&lt;）。<br> cap_first:字符串的第一个字母变为大写形式<br> lower_case:字符串的小写形式<br> upper_case:字符串的大写形式<br> trim:去掉字符串首尾的空格</li>
+<li>序列使用的内建函数：<br> size：序列中元素的个数</li>
+<li>数字使用的内建函数：<br> int:数字的整数部分（比如-1.9?int就是-1）</li>
+</ul>
+<p><strong>方法调用：</strong><code>${repeat(&quot;What&quot;, 3)}</code></p>
+<h3 id="操作符的优先级"><a href="#操作符的优先级" class="headerlink" title="操作符的优先级"></a>操作符的优先级</h3><table>
+<thead>
+<tr>
+<th>运算符组</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最高优先级运算符</td>
+<td>[subvarName][subStringRange].?(methodParams) expr! expr??</td>
+</tr>
+<tr>
+<td>一元前缀运算符</td>
+<td>+expr -expr !expr</td>
+</tr>
+<tr>
+<td>乘除法，求模</td>
+<td>* / %</td>
+</tr>
+<tr>
+<td>加减法</td>
+<td>+ -</td>
+</tr>
+<tr>
+<td>关系运算符</td>
+<td>&lt; &gt; &lt;= &gt;= (相当于: gt, lt, 等)</td>
+</tr>
+<tr>
+<td>相等，不等</td>
+<td>== (也可以是: =) !=</td>
+</tr>
+<tr>
+<td>逻辑与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>逻辑或</td>
+<td>`</td>
+<td></td>
+<td>`</td>
+</tr>
+<tr>
+<td>数字范围</td>
+<td>..</td>
+</tr>
+</tbody>
+</table>
+<p><strong>精确的转换规则</strong></p>
+<ol>
+<li>如果这个值是数字，那么它会按照指定的<code>number_format</code>设置规则来转换为字符串。所以这些转换通常是对用户进行的，而不是对计算机。</li>
+<li>如果这个值是日期，时间或时间日期类型的一种，那么它们会按照指定的time_format，date_format和datetime_format设置规则来转换为字符串，这要看日期信息中是只包含时间，日期还是全包括了。如果它不能被探测出来是哪种日期类型（日期或时间或日期时间）时，就会发生错误了。</li>
+<li>如果值本来就是字符串类型的，不需要转换。</li>
+<li>如果FreeMarker引擎在传统兼容模式下：</li>
+<li>如果值是布尔类型，那么就转换成<code>true</code>，false值将会转换为空串。</li>
+<li>如果表达式未被定义（null或者变量未定义），那么就转换为空串。</li>
+<li>否则就会发生错误中止模板执行。</li>
+<li>否则就会发生错误中止模板执行。</li>
+</ol>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><h4 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h4><p>定义宏<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;#macro greet&gt;</div><div class="line">&lt;font size="+2"&gt;Hello Joe!&lt;/font&gt; （这个地方必须有加号）</div><div class="line">&lt;/#macro&gt;</div></pre></td></tr></table></figure></p>
+<p>宏调用<br><code>&lt;@greet&gt;&lt;/@greet&gt;</code></p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;#macro greet person&gt;</div><div class="line">&lt;font size="+2"&gt;Hello $&#123;person&#125;!&lt;/font&gt;</div><div class="line">&lt;/#macro&gt;</div><div class="line"></div><div class="line">&lt;@greet person="Fred"/&gt; and &lt;@greet person="Batman"/&gt;</div></pre></td></tr></table></figure>
+<h4 id="嵌套内容"><a href="#嵌套内容" class="headerlink" title="嵌套内容"></a>嵌套内容</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;#macro border&gt;</div><div class="line">&lt;table border=4 cellspacing=0 cellpadding=4&gt;&lt;tr&gt;&lt;td&gt;</div><div class="line">&lt;#nested&gt;</div><div class="line">&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</div><div class="line">&lt;/#macro&gt;</div></pre></td></tr></table></figure>
+<p><code>&lt;#nested&gt;</code>指令执行位于开始和结束标记指令之间的模板代码段。（固定不变）</p>
+<p>使用：<code>&lt;@border&gt;The bordered text&lt;/@border&gt;</code><br>效果：给<code>The bordered text</code>加了边框</p>
+<p>在嵌套的内容中，宏的局部变量是不可变的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;#macro repeat count&gt;</div><div class="line">&lt;#local y = &quot;test&quot;&gt;</div><div class="line">&lt;#list 1..count as x&gt;</div><div class="line">$&#123;y&#125; $&#123;count&#125;/$&#123;x&#125;: &lt;#nested&gt;</div><div class="line">&lt;/#list&gt;</div><div class="line">&lt;/#macro&gt;</div><div class="line"></div><div class="line">&lt;@repeat count=3&gt;$&#123;y!&quot;?&quot;&#125; $&#123;x!&quot;?&quot;&#125; $&#123;count!&quot;?&quot;&#125;&lt;/@repeat&gt;</div></pre></td></tr></table></figure></p>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">test 3/1: ? ? ?</div><div class="line">test 3/2: ? ? ?</div><div class="line">test 3/3: ? ? ?</div></pre></td></tr></table></figure>
+<h4 id="宏和循环变量"><a href="#宏和循环变量" class="headerlink" title="宏和循环变量"></a>宏和循环变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;#macro do_thrice&gt;</div><div class="line">&lt;#nested 1&gt;</div><div class="line">&lt;#nested 2&gt;</div><div class="line">&lt;#nested 3&gt;</div><div class="line">&lt;/#macro&gt;</div><div class="line">&lt;@do_thrice ; x&gt; &lt;#-- 用户自定义指令 使用&quot;;&quot;代替&quot;as&quot; --&gt;</div><div class="line">$&#123;x&#125; Anything.</div><div class="line">&lt;/@do_thrice&gt;</div></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 Anything.</div><div class="line">2 Anything.</div><div class="line">3 Anything.</div></pre></td></tr></table></figure></p>
+<h4 id="在模板中定义变量"><a href="#在模板中定义变量" class="headerlink" title="在模板中定义变量"></a>在模板中定义变量</h4><p>模板中变量的优先级 &gt; 数据模型中的。即 如果你恰巧定义了一个名为”foo”的变量，而在数据模型中也有一个名为”foo”的变量，那么模板中的变量就会将数据模型根上的变量隐藏（而不是覆盖！）。</p>
+<p>在模板中可以定义三种类型的变量：</p>
+<ul>
+<li>简单变量：它能从模板中的任何位置来访问，或者从使用include指令引入的模板访问。可以使用assign或macro指令来创建或替换这些变量。</li>
+<li>局部变量：它们只能被设置在宏定义体内，而且只在宏内可见。一个局部变量的生存周期只是宏的调用过程。可以使用local指令在宏定义体内创建或替换局部变量。</li>
+<li>循环变量：循环变量是由指令（如list）自动创建的，而且它们只在指令的开始和结束标记内有效。宏的参数是局部变量而不是循环变量。</li>
+</ul>
+<p>使用assign创建和替换变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;#assign x = 1&gt; &lt;#-- 创建变量 x --&gt;</div><div class="line">$&#123;x&#125;</div><div class="line">&lt;#assign x = x + 3&gt; &lt;#-- 替换变量 x --&gt;</div><div class="line">$&#123;x&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h4><p><strong>创建一个库</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;#macro copyright date&gt;</div><div class="line">&lt;p&gt;Copyright (C) $&#123;date&#125; Julia Smith. All rights reserved.&lt;/p&gt;</div><div class="line">&lt;/#macro&gt;</div><div class="line">&lt;#assign mail = &quot;jsmith@acme.com&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>把上面的这些定义存储在文件lib/my_test.ftl中<br>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;#import &quot;/lib/my_test.ftl&quot; as my&gt;</div><div class="line">&lt;#-- 被称为&quot;my&quot;的哈希表就会是那个&quot;大门&quot; --&gt;</div><div class="line">&lt;@my.copyright date=&quot;1999-2002&quot;/&gt;</div><div class="line">$&#123;my.mail&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h3><ol>
+<li><code>${(user.name)!&quot;&quot;}</code>： <code>user.name</code> 为<code>null</code>的时候赋值为空字符串<code>&quot; &quot;</code>；</li>
+<li><code>${user.name?string(&quot;0.##&quot;)}</code>: <code>user.name</code>不为<code>&quot;&quot;</code>时按保留两位小数的格式格式化</li>
+</ol>
+<h4 id="List-lt-Object-gt-转化为List-lt-Map-lt-String-String-gt-gt-数据后传至前台模板输出"><a href="#List-lt-Object-gt-转化为List-lt-Map-lt-String-String-gt-gt-数据后传至前台模板输出" class="headerlink" title="List&lt;Object&gt;转化为List&lt;Map&lt;String,String&gt;&gt;数据后传至前台模板输出"></a><code>List&lt;Object&gt;</code>转化为<code>List&lt;Map&lt;String,String&gt;&gt;</code>数据后传至前台模板输出</h4><p>转化：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> List&lt;Map&lt;String, String&gt;&gt; getAllCountryOrder() &#123;</div><div class="line">    List&lt;CountryCode&gt; countrycodeList = countryInterface.getAllCountryCode(<span class="string">""</span>);</div><div class="line"></div><div class="line">    List&lt;Map&lt;String, String&gt;&gt; countryMapList = <span class="keyword">new</span> ArrayList&lt;Map&lt;String, String&gt;&gt;();</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (CountryCode countrycode : countrycodeList) &#123;</div><div class="line">        Map&lt;String, String&gt; tempMap = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(countrycode.getCode())) &#123;</div><div class="line">            tempMap.put(countrycode.getCode(), countrycode.getChineseName());</div><div class="line">        &#125;</div><div class="line">        countryMapList.add(tempMap);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> countryMapList;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>传至前台<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">model.addAttribute(<span class="string">"countryList"</span>, countryCodeUtil.getAllCountryOrder());<span class="comment">// 项目所在国</span></div></pre></td></tr></table></figure></p>
+<p>前台freemarker模板输出<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pull-left"</span>&gt;</span></div><div class="line">   	<span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"countrySelect"</span> <span class="attr">name</span>=<span class="string">"countryCode"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择<span class="tag">&lt;/<span class="name">option</span>&gt;</span> <span class="tag">&lt;<span class="name">#list</span> <span class="attr">countryList</span> <span class="attr">as</span> <span class="attr">countryMap</span>&gt;</span> <span class="tag">&lt;<span class="name">#list</span> <span class="attr">countryMap</span>?<span class="attr">keys</span> <span class="attr">as</span> <span class="attr">countryCode</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"$&#123;countryCode&#125;"</span>&gt;</span>$&#123;countryMap[countryCode]&#125;<span class="tag">&lt;/<span class="name">option</span>&gt;</span><span class="tag">&lt;/<span class="name">#list</span>&gt;</span> <span class="tag">&lt;/<span class="name">#list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/freemarker/" rel="tag">#freemarker</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/07/git-command/" rel="next" title="常用 Git 命令清单">
+                <i class="fa fa-chevron-left"></i> 常用 Git 命令清单
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/20/thread/" rel="prev" title="Java 基础之多线程">
+                Java 基础之多线程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/20/freemarker/"
+           data-title="FreeMarker 基础" data-url="http://chuanqiang.github.io/2017/02/20/freemarker/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">132</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">95</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-freemarker-velocity-比较"><span class="nav-number">1.</span> <span class="nav-text">jsp freemarker velocity 比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp-最常用的技术"><span class="nav-number">1.1.</span> <span class="nav-text">jsp 最常用的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">1.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">1.1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#velocity-较早期出现的用于替代jsp的模板语言"><span class="nav-number">1.2.</span> <span class="nav-text">velocity 较早期出现的用于替代jsp的模板语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#freemarker"><span class="nav-number">1.3.</span> <span class="nav-text">freemarker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择freemarker的原因"><span class="nav-number">1.4.</span> <span class="nav-text">选择freemarker的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeMarker-介绍"><span class="nav-number">2.</span> <span class="nav-text">FreeMarker 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板一览"><span class="nav-number">2.1.</span> <span class="nav-text">模板一览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用指令"><span class="nav-number">2.2.</span> <span class="nav-text">常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-指令"><span class="nav-number">2.2.1.</span> <span class="nav-text">if 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list-指令"><span class="nav-number">2.2.2.</span> <span class="nav-text">list 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#include-指令"><span class="nav-number">2.2.3.</span> <span class="nav-text">include 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理不存在的变量"><span class="nav-number">2.2.4.</span> <span class="nav-text">处理不存在的变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值和类型"><span class="nav-number">3.</span> <span class="nav-text">数值和类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#支持的类型"><span class="nav-number">3.1.</span> <span class="nav-text">支持的类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">4.</span> <span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-总体结构"><span class="nav-number">4.1.</span> <span class="nav-text">1. 总体结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-表达式"><span class="nav-number">4.2.</span> <span class="nav-text">2. 表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义"><span class="nav-number">4.3.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检索变量"><span class="nav-number">4.4.</span> <span class="nav-text">检索变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在哈希表中检索数据"><span class="nav-number">4.4.1.</span> <span class="nav-text">在哈希表中检索数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从序列中检索数据"><span class="nav-number">4.4.2.</span> <span class="nav-text">从序列中检索数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串和数值操作"><span class="nav-number">5.</span> <span class="nav-text">字符串和数值操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">5.0.1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值计算"><span class="nav-number">5.0.2.</span> <span class="nav-text">数值计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内建函数"><span class="nav-number">6.</span> <span class="nav-text">内建函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符的优先级"><span class="nav-number">6.1.</span> <span class="nav-text">操作符的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number">6.2.</span> <span class="nav-text">自定义指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本内容"><span class="nav-number">6.2.1.</span> <span class="nav-text">基本内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">6.2.2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套内容"><span class="nav-number">6.2.3.</span> <span class="nav-text">嵌套内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宏和循环变量"><span class="nav-number">6.2.4.</span> <span class="nav-text">宏和循环变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在模板中定义变量"><span class="nav-number">6.2.5.</span> <span class="nav-text">在模板中定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名空间"><span class="nav-number">6.2.6.</span> <span class="nav-text">命名空间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用总结"><span class="nav-number">6.3.</span> <span class="nav-text">使用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List-lt-Object-gt-转化为List-lt-Map-lt-String-String-gt-gt-数据后传至前台模板输出"><span class="nav-number">6.3.1.</span> <span class="nav-text">List<Object>转化为List<Map<String,String>>数据后传至前台模板输出</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zcqduoshuo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
