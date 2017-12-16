@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chuanqiang.github.io/"/>
-  <updated>2017-12-10T12:12:29.656Z</updated>
+  <updated>2017-12-16T15:58:31.109Z</updated>
   <id>http://chuanqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第二十周 - 絮叨絮叨</title>
+    <link href="http://chuanqiang.github.io/2017/12/16/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%91%A8%20-%20%E7%B5%AE%E5%8F%A8%E7%B5%AE%E5%8F%A8/"/>
+    <id>http://chuanqiang.github.io/2017/12/16/第二十周 - 絮叨絮叨/</id>
+    <published>2017-12-16T15:56:57.000Z</published>
+    <updated>2017-12-16T15:58:31.109Z</updated>
+    
+    <content type="html"><![CDATA[<p>这几天的天气格外的冷，尤其是有风的时候。冬天降临，但却仍旧未下一场雪。我总觉得凡是不以下雪为目的的降温都是耍流氓。天干物燥，容易生病感冒，告诫自己和身边的人多喝水，适量运动。</p><a id="more"></a><p>这段时间，脖子酸痛，眼睛干涩。知道是上班长时间低头伏案所致，但是有没有好的解决办法。不禁对自己开玩笑，难道我的职业生涯就快要结束了？在如何避免职业病的前提下有效的工作是我这段时间需要思考的一个问题。</p><p>时间的不够用和兴趣泛滥成了现阶段的主要矛盾。想学习，想看书，想学习英语，想看美剧，想听播客，想玩游戏，想出去旅游，想睡懒觉，想陪芝芝。但是一个人的时间和精力都是有限的，经常因为想做的事情没法做而感到失落。目前想到的是提高精力值和效率，做事强分清主次，区别对待，顺序处理。整个工作流需要优化。</p><p>北京政府又愚蠢了一次，推出『最美天际线』整治活动，把所谓的不符合广告牌管理规范的统统撤掉。问题是这个规范既没有相关的法律作为依据，有没有民意参与，是一个彻彻底底的政府专断意淫出的一个愚蠢之极的产物。但是在政府机器面前，人民也只能无奈的遵从，搞的怨声载道，口诛笔伐。几天之后，可能执政者也发现这次的行动搞的确实欠考虑，于是又在今天发出通知：不用摘牌子了，你们想挂就再挂回去吧，摘的时候虽然是政府找人摘的，但是得要你们自己挂回去了。商家和企业：😤，你大爷的！！!</p><p>周三举办了一月一度的生日趴，冬季是出生率高发的季节，这个月有许多个寿星。我猜测是因为冬季农活闲置，天气寒冷，人们百无聊赖，只有在家造小人了😂<br><img src="http://oeckzejn4.bkt.clouddn.com/2017121615134394419515.jpg" alt="生日趴.jpg"></p><p>人很多，显得蛋糕很小，不过幸运的分了一块。我从小特别喜欢吃蛋糕，尤其是奶油。小时候，最期望过得日子，一个是过年，另一个就是我姥爷的寿辰，因为举家相聚，并且会买一个特大的蛋糕，作为孩子的我们往往受宠会分到的很多，剩下的刀叉也会玩的不亦乐乎。</p><p>周四晚上，拖了很久的 crm 终于发版了，搞到后半夜三点多，才疲惫的打车回家。回去的路上一直听周董的歌，诺发的北京，夜深人静，只剩下霓虹灯闪烁，窗外的夜色飞逝，就像一去不回的过往。周董的歌声响起，旋律熟悉，耳机里荡漾的不光有歌，更是一段回忆。</p><p>余光中说：</p><blockquote><p>人生有许多事情，正如船后的波纹，总要过后才觉得美的</p></blockquote><p>世上本没有思念的，只是因为有了别理。人们本没有人生，只是因为有了回忆。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这几天的天气格外的冷，尤其是有风的时候。冬天降临，但却仍旧未下一场雪。我总觉得凡是不以下雪为目的的降温都是耍流氓。天干物燥，容易生病感冒，告诫自己和身边的人多喝水，适量运动。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="周志" scheme="http://chuanqiang.github.io/categories/%E5%91%A8%E5%BF%97/"/>
+    
+    
+      <category term="独白" scheme="http://chuanqiang.github.io/tags/%E7%8B%AC%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生成二维码</title>
+    <link href="http://chuanqiang.github.io/2017/12/16/%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+    <id>http://chuanqiang.github.io/2017/12/16/生成二维码/</id>
+    <published>2017-12-16T15:35:09.000Z</published>
+    <updated>2017-12-16T15:37:51.108Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文介绍了二维码的相关知识，并给出了通过 Java 和 jsp 两种方式来生成二维码的实例。</p><a id="more"></a><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul><li>一维码：一维条码是由一组粗细不同、黑白（或彩色）相间的条、空及其相应的字符（数字字母）组成的标记，即传统条码。</li><li>二维码：用某种特定的几何形状按一定规律在平面（二维方向）上分布的条、空相间的图形来记录数据符号信息。</li></ul><p>二维条码有许多不同的码制，就码制的原理而言，通常分为三种类型：</p><ul><li>线性堆叠式二维码</li><li>矩阵式二维码</li><li>邮政码</li></ul><p>其中，矩阵式二维码为主要使用类型：<br><img src="http://oeckzejn4.bkt.clouddn.com/20171216151343701753361.png" alt="矩阵二维码类型.png"></p><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p><img src="http://oeckzejn4.bkt.clouddn.com/20171216151343709448054.png" alt="优点.png"></p><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>二维码技术成为手机病毒、钓鱼网站传播的新渠道</li><li>信息泄露</li></ul><h4 id="目前流行的三大国际标准："><a href="#目前流行的三大国际标准：" class="headerlink" title="目前流行的三大国际标准："></a>目前流行的三大国际标准：</h4><ul><li>PDF417：不支持中文</li><li>MD：专利未公开，需支付专利费用</li><li>QR code：专利公开，支持中文</li></ul><p>其中，QR code 是日本 Denso 公司研制一种矩阵二维码符号码，全称是 Quick Response Code。</p><p>相比其他二维码，具有识别读取速度快，数据密度大，占用空间小的优势</p><p><img src="http://oeckzejn4.bkt.clouddn.com/20171216151343722087111.png" alt="结构.png"></p><h2 id="二、生成二维码的方法"><a href="#二、生成二维码的方法" class="headerlink" title="二、生成二维码的方法"></a>二、生成二维码的方法</h2><h3 id="1-Java-后台通过-zxing"><a href="#1-Java-后台通过-zxing" class="headerlink" title="1.  Java 后台通过 zxing"></a>1.  Java 后台通过 zxing</h3><p>ZXing Project： <a href="https://github.com/zxing" target="_blank" rel="external">https://github.com/zxing</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> com.google.zxing.*;</div><div class="line"><span class="keyword">import</span> com.google.zxing.client.j2se.BufferedImageLuminanceSource;</div><div class="line"><span class="keyword">import</span> com.google.zxing.client.j2se.MatrixToImageWriter;</div><div class="line"><span class="keyword">import</span> com.google.zxing.common.BitMatrix;</div><div class="line"><span class="keyword">import</span> com.google.zxing.common.HybridBinarizer;</div><div class="line"><span class="keyword">import</span> com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</div><div class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.nio.file.Path;</div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* <span class="doctag">@Description</span>:二维码相关</span></div><div class="line"><span class="comment">* <span class="doctag">@Authod</span>:zhang_cq</span></div><div class="line"><span class="comment">* <span class="doctag">@Date</span>:2017/12/16 下午4:38</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateQRCodeUtil</span> </span>&#123;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * <span class="doctag">@Description</span>:生成二维码</span></div><div class="line"><span class="comment"> * <span class="doctag">@Authod</span>:zhang_cq</span></div><div class="line"><span class="comment"> * <span class="doctag">@Method</span>:createQRCode</span></div><div class="line"><span class="comment"> * <span class="doctag">@Date</span>:2017/12/16 下午4:38</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createQRCode</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="keyword">int</span> width = <span class="number">300</span>;</div><div class="line"><span class="keyword">int</span> height = <span class="number">300</span>;</div><div class="line">String format = <span class="string">"png"</span>;</div><div class="line">String content = <span class="string">"www.qixiantong.info"</span>;</div><div class="line">Path file = <span class="keyword">new</span> File(<span class="string">"/Users/zhangchuanqiang/IdeaProjects/springboot/target/img.png"</span>).toPath();</div><div class="line"></div><div class="line"><span class="comment">// 定义二维码的参数</span></div><div class="line">Map hints = <span class="keyword">new</span> HashMap();</div><div class="line">hints.put(EncodeHintType.CHARACTER_SET, <span class="string">"utf-8"</span>); <span class="comment">// 编码格式</span></div><div class="line">hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M); <span class="comment">// 纠错等级</span></div><div class="line">hints.put(EncodeHintType.MARGIN, <span class="number">2</span>); <span class="comment">// 边框</span></div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">BitMatrix bitMatrix = <span class="keyword">new</span> MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);</div><div class="line">MatrixToImageWriter.writeToPath(bitMatrix, format, file);</div><div class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">e.printStackTrace();</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* <span class="doctag">@Description</span>:读取二维码</span></div><div class="line"><span class="comment">* <span class="doctag">@Method</span>:ReadQRCode</span></div><div class="line"><span class="comment">* <span class="doctag">@Authod</span>:zhang_cq</span></div><div class="line"><span class="comment">* <span class="doctag">@Date</span>:2017/12/16 下午4:58</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ReadQRCode</span><span class="params">()</span></span>&#123;</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">MultiFormatReader formatReader = <span class="keyword">new</span> MultiFormatReader();</div><div class="line">File file = <span class="keyword">new</span> File(<span class="string">"/Users/zhangchuanqiang/IdeaProjects/springboot/target/img.png"</span>);</div><div class="line">BufferedImage image = ImageIO.read(file);</div><div class="line">BinaryBitmap binaryBitmap = <span class="keyword">new</span> BinaryBitmap(<span class="keyword">new</span> HybridBinarizer(<span class="keyword">new</span> BufferedImageLuminanceSource(image)));</div><div class="line"><span class="comment">// 定义二维码的参数</span></div><div class="line">Map hints = <span class="keyword">new</span> HashMap();</div><div class="line">hints.put(EncodeHintType.CHARACTER_SET, <span class="string">"utf-8"</span>); <span class="comment">// 编码格式</span></div><div class="line">Result result = formatReader.decode(binaryBitmap, hints);</div><div class="line">System.out.println(<span class="string">"解析结果："</span> + result.toString());</div><div class="line">System.out.println(<span class="string">"二维码格式类型："</span> + result.getBarcodeFormat());</div><div class="line">System.out.println(<span class="string">"二维码格式内容："</span> + result.getText());</div><div class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">e.printStackTrace();</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">ReadQRCode();</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><ol><li>页面通过 jquery.qrcode.js 生成<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>生成二维码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&lt;%=request.getContextPath()%&gt;/javascripts/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&lt;%=request.getContextPath()%&gt;/javascripts/jquery.qrcode.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">生成的二维码如下：<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"qrcode"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    jQuery(<span class="string">'qrcode'</span>).qrcode(<span class="string">"www.qixiantong.info"</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></li></ol><p>相关 jar 包和 js 的分享如下：</p><blockquote><p><a href="https://pan.baidu.com/s/1dF1x1kP" target="_blank" rel="external">百度云链接</a></p><p>密码 ：crif</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文介绍了二维码的相关知识，并给出了通过 Java 和 jsp 两种方式来生成二维码的实例。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://chuanqiang.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="二维码" scheme="http://chuanqiang.github.io/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>第十九周 - Bear 和英语学习</title>
@@ -438,60 +482,6 @@
       <category term="周记" scheme="http://chuanqiang.github.io/tags/%E5%91%A8%E8%AE%B0/"/>
     
       <category term="大事件" scheme="http://chuanqiang.github.io/tags/%E5%A4%A7%E4%BA%8B%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第八周 - 仗剑走天涯</title>
-    <link href="http://chuanqiang.github.io/2017/08/13/to%20wander%20with%20a%20sword/"/>
-    <id>http://chuanqiang.github.io/2017/08/13/to wander with a sword/</id>
-    <published>2017-08-13T15:32:36.000Z</published>
-    <updated>2017-08-14T02:20:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>曾梦想仗剑走天涯<br>看一看世界的繁华<br>年少的心总有些轻狂<br>如今已四海为家</p></blockquote><a id="more"></a><p>这周过的，怎么说呢，此起彼伏。项目只是一个小版本的迭代，由于一开始产品那边有一些需求没有确定，所以开始的开发任务很是轻松，慢悠悠的捣鼓新 IED 工具的使用，但是到了上线当天的下午，突如其来的需求，有点让我措手不及。没办法，加急改呗。生活就是这样，总是不按常理出牌，你永远不知道在峰回路转处埋伏的是惊喜还是惊吓。</p><p>在大学之前，我从没有想过自己会从事程序开发的工作，那时候想的是当个人民教师，教书育人，因为讲台上的老师很神气啊，或者当个医生，救死扶伤。后来到了大学，开始越来越迷茫，我相信大多数人那个时候都迷茫，一边是热血青春，荷尔蒙爆棚，另一边“英雄无用武之地”，不知道到哪里去发挥自己的光和热，所以只能挥汗于球场，或奋战于游戏，或沉溺于情爱，或在酒杯碰撞间觥筹交错了。之后开始了解和学习编程，当时觉得这东西玩智商，能做别人不懂的事情，很酷； 一些程序员都是在空调房里敲敲键盘就有可能冷不丁改变了世界，像马化腾、扎克伯格，并且还坚信，我能让这个世界变得好了一点点。后来工作之后发现，理想很丰满，显示忒他妈骨感，都瘦的柴了。抱怨的不想说太多，但抛开傲慢与偏见，我依然认为程序员是这个时代里不错的职业。无论程序员自嘲也好，被误解也罢，虽然普遍给人衣着邋遢、气质差的印象，但不可否认的是，程序员依旧是互联网时代的宠儿。</p><p>作为一个程序员，除去加班和职业病的隐患，有时候一个人闷头撸代码还挺享受的。不会考虑外界的纷纷扰扰，没有了交际的繁杂，只要按时保质的完成你的工作，没人催你，更没人盯着你、管着你。你只需把全部精力放在一尺见方的屏幕上，指尖在茶轴的机械键盘上光影闪烁，神经末梢感触着键程的起伏和段落感，同样也感触着内心的思考和表达。抽象的思考通过手指的舞蹈伴随键盘敲击的清脆，在四四方方的屏幕上刻画出了具体的影像。有时，障碍重重，debug了n多次，头绪好像都见了周公，键盘的声音都充满了代码块战死沙场的悲怆。有时一路的风生水起，披荆斩棘，指尖下行云流水，一路的悦耳叮咚。</p><p>如果把写代码比做金庸笔下刀光剑影的武侠世界，那一件趁手锋利的武器，必是每个侠客梦寐以求的梦想， 剑气纵横三万里，一剑光寒十九州，好的武器能助你在代码的武侠世界里挥刀斩棘，剑出风惊。对于我来说，这把梦寐的利器当然就是 Mac Book Pro 了。其实从大学开始，就对苹果的产品入迷，但当时作为一个穷学生，也只有仰之弥高了。如今工作之后，具备了条件，当然是时不我待，准备入手。<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/170813/L16mlDD2IF.png?imageslim" alt="mark"></p><p>当然，对于入手 Mac Book Pro ，我是做过思考的。平心而论，首先这款产品，并不具有性价比，同样的价格可以买两台性能不错的 Windows电脑了。其次，从Window迁移到 mac os x 系统，有一定的学习成本和割舍，毕竟系统有差异，许多软件不具备跨平台，意味着你要告别一些软件，开始一些新的软件的探索。另外，你要步入苹果封闭的生态圈，可能你以后购买产品时都被圈养在这个圈里了。你的苹果设备上有许多软件，这些软件优质但只有ios和mac版，你的用户数据都存储在这些软件上，你的用户习惯已经养成，这个时候，你已经被牢牢的栓在了苹果的生态圈里，你的下一款设备毫无疑问是苹果。是的，你已经无法逃离。说的挺恐怖悲观的，但是，我还是想一头扎进去，并在心里默念：apple，俘获我吧。原因很简单:信仰，颜值，续航，屏幕，优秀的工业设计，稳定流畅的系统，生态下的优质软件，和其他苹果设备的无缝连接。。。当然更深层次的优劣必须长期使用后才能得出，凡是不以体验为结果的测评都是耍流氓。</p><p>我认为当下最好的投资，就是投资自己。我一直坚信成长比成功重要。所以我会毫不犹豫的选择mac，因为投资生产力准没错。</p><p>期待着我和它仗剑走天涯。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;曾梦想仗剑走天涯&lt;br&gt;看一看世界的繁华&lt;br&gt;年少的心总有些轻狂&lt;br&gt;如今已四海为家&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="独白" scheme="http://chuanqiang.github.io/categories/%E7%8B%AC%E7%99%BD/"/>
-    
-    
-      <category term="周记" scheme="http://chuanqiang.github.io/tags/%E5%91%A8%E8%AE%B0/"/>
-    
-      <category term="mac" scheme="http://chuanqiang.github.io/tags/mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第七周 - 软件之我见</title>
-    <link href="http://chuanqiang.github.io/2017/08/06/soft/"/>
-    <id>http://chuanqiang.github.io/2017/08/06/soft/</id>
-    <published>2017-08-06T14:31:07.000Z</published>
-    <updated>2017-08-06T14:39:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>不知从什么时候开始，我喜欢上了捣鼓软件，无论是手机APP还是PC软件。关注想『少数派』、『数字尾巴』、『小众软件』这些网站，喜欢折腾这些数据和指令的集合体，从陌生到熟悉，欣赏它们的UI设计，看它们的功能实现。在每一个软件中你能感受到开发者的理念，虽然各有美丑，但欣喜于软件在作用于生活后带来的改变，虽然可能很甚微，但总归让枯燥的生活变的不一样和有趣了一些。</p><p>有一句关于程序员自我意淫的话，但我依然喜欢叨念:</p><blockquote><p>程序员改变世界</p></blockquote><a id="more"></a><p>就像知乎上有一段话:</p><blockquote><p>每当大家觉得格局确定了，总会有那么一两个程序员走出来，翻动那个真正能彻底改变棋盘的子。过去的很多传统行业都经历了从新兴到高速发展再到稳定继而沉闷的各个阶段。如同海上贸易，钢铁，石油，化工，机械，半导体等等。然而互联网和这些如此的不同，以至于经过了快三十年的发展，依然不断涌现出挑战你世界观的产品和概念。</p></blockquote><p>改变世界或许很困难，但改变自己的生活就容易的多，有时候是一部电影，一本小说，也可能只是一个软件。这周接触到了不同的三款软件，在不同的领域，有不同的作用，但各赋异禀。</p><p>第一个是chrome浏览器上的一款插件，叫『Infinity』。它重新定义了新标签页，在极简、美观的前提下，提供了一站式服务的标签页，更好用、更强大、更优雅、更轻松的使用 chrome。<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/170806/kLm6LD5HAc.png?imageslim" alt="Infinity"></p><p>第二个是著名的 IDE 软件 IntelliJ IDEA，从Eclipse 转到这个上面真的不容易，长时间使用养成的习惯很难改变，但既然下决心『分手』，那就长痛不如短痛吧。耐下心来慢慢摸索，现在渐渐适应了Idea的使用，但仍感觉Idea相比Eclipse太过厚重，界面也不简约，但厚重在另一方面也就意味着功能强大，相信顺手之后会成为开发过程中的一件利器。<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/170806/9GLB1jaFAd.png?imageslim" alt="IDEA"></p><p>第三个是一款手机游戏——『皇室战争』，是由芬兰游戏公司Supercell所推出的，以《部落冲突》的角色和世界观为原型，加入即时策略、MOBA以及卡牌等元素的手机游戏，于2016年1月4日在App Store发布。在游戏中，玩家需通过不断的开启宝箱来获取卡片的方式来增强自己的战斗力，进而与其他在线的玩家进行匹配战斗。随着奖杯提升，开启不同场地的竞技场。这款游戏极具新意的融合了卡牌、塔防多种元素的对抗竞技玩法，具有上手容易精通难的特点，总之是一款很不错的游戏，可以打发无聊的琐碎时间。<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/170806/BHK3FH3iL3.jpg?imageslim" alt="皇室战争"></p><p>我们与互联网交互其实大都是通过软件实现的，无论是浏览器还是手机APP，他们是我们与数据交互的入口和平台，他们体验的好坏直接影响了你对于所处的互联网生活的感受是好还是坏。其实通过体验不同的软件，你会发现好的工具，一定是『有用』、『好用』和『耐用』的。</p><p>所谓有用是说对于我们用户来说首先得是以需求为先导的，华而不实的软件无法融入到你的生活，比如我有社交的需求，那我就选择了微信，我有写东西的需求，那我可能会选择『MarkEditor』，那我写完还想分享给别人，那我可能会选择『简书』，想要再PC上快速搜索东西，那我选择了『everything』，等等这些软件都是抓住了需求点的，有一款绘画类软件做的特别好，但是我对画画不感兴趣，那也不是我的菜，不会下载到手机上的。找对需求是你使用软件的第一步，当然，纯粹为了折腾，体验完删掉了，这种的不算。</p><p>其次是好用，同质化的软件那么多，凭什么你会脱颖而出，只有优秀的用户体验，简约美观的UI 才能抓住用户的心。稍后读类的软件有很多，比如pocket、Instapaper ，但我最后还是选择了『收趣』，就是因为本土化，用起来顺手，交互方便，并且颜值高。我的手机上文本编辑类软件有好多，ios自带的备忘录，Bear、有道云笔记，简书、wps，但平时写东西就喜欢用『Bear』，原因很简单，好看呗，写东西的时候心情舒服，左右滑动为主的交互简洁方便。</p><p>最后是耐用。可能会问，软件又不是实物，怎么存在耐不耐用的问题呢？当一款软件你长久的使用后，你会保留在这款软件上你的数据，包括操作习惯的设置，用户保存的数据。这些数据是这些软件流动的血液，是他们的灵魂。没有了数据，他们什么都不是。其实推此及彼，不只是在软件，整个互联网时代最重要的就是数据，是互联网公司的立命之本。像阿里巴巴、腾讯为什么市值这么高，肯定不是固定资产，说白了就是数据，他们都是靠用户的数据活着的，用户也是用因为这些数据才能网上购物、微信聊天的。再回到软件，一款软件怎么才能耐用、耐糙呢？关键是数据的保存。软件是建立在平台上的，不论是手机、电脑还是平板，它得有一个硬件来承载。软件在互联网上的寿命可以无穷尽，但是硬件不行，当你更换了硬件设备之后，如何还能无缝的启用你的数据信息，这是软件耐用的本质，因为它会延长我们对一款软件的使用时间，也就是提高了一款软件对于你而言的寿命。有两个条件：1.云存储。2.跨平台。云存储提高了软件的跨时间的能力，而跨平台加上了软件的跨空间的能力。这样用户无论迁移到哪一个平台，都能毫不费力的『复活』你的软件，也提高了一款软件作为商品的受众人群。</p><p>综上，我觉得，一款软件只有具备了以上三个特性：有用，好用，耐用，才是一款称得上优秀的软件。</p><p>生命不息，折腾不止。折腾软件，也折腾生活。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不知从什么时候开始，我喜欢上了捣鼓软件，无论是手机APP还是PC软件。关注想『少数派』、『数字尾巴』、『小众软件』这些网站，喜欢折腾这些数据和指令的集合体，从陌生到熟悉，欣赏它们的UI设计，看它们的功能实现。在每一个软件中你能感受到开发者的理念，虽然各有美丑，但欣喜于软件在作用于生活后带来的改变，虽然可能很甚微，但总归让枯燥的生活变的不一样和有趣了一些。&lt;/p&gt;
-&lt;p&gt;有一句关于程序员自我意淫的话，但我依然喜欢叨念:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;程序员改变世界&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="独白" scheme="http://chuanqiang.github.io/categories/%E7%8B%AC%E7%99%BD/"/>
-    
-    
-      <category term="周记" scheme="http://chuanqiang.github.io/tags/%E5%91%A8%E8%AE%B0/"/>
-    
-      <category term="软件" scheme="http://chuanqiang.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
