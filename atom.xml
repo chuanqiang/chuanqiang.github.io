@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chuanqiang.github.io/"/>
-  <updated>2018-05-26T08:49:18.955Z</updated>
+  <updated>2018-05-28T15:11:24.704Z</updated>
   <id>http://chuanqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何做一个优秀的开发工程师</title>
+    <link href="http://chuanqiang.github.io/2018/05/28/%E5%A6%82%E4%BD%95%E5%81%9A%E4%B8%80%E4%B8%AA%E4%BC%98%E7%A7%80%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88/"/>
+    <id>http://chuanqiang.github.io/2018/05/28/如何做一个优秀的开发工程师/</id>
+    <published>2018-05-28T14:55:19.000Z</published>
+    <updated>2018-05-28T15:11:24.704Z</updated>
+    
+    <content type="html"><![CDATA[<p>写代码是一个程序员的本职工作，但是除了写出出色的代码，还有其他什么也是一个优秀工程师的必备？最近刚从百度离职的大牛陆奇有一个百度内部的分享 Engineering Leadership Talk，我觉得对自己很有启发。他提到五点：<br><img src="http://oeckzejn4.bkt.clouddn.com/20180528152752026159444.png" alt="陆奇.png"><br><a id="more"></a></p><h3 id="Believe-in-技术"><a href="#Believe-in-技术" class="headerlink" title="Believe in 技术"></a>Believe in 技术</h3><p>盖茨提到微软公司的宗旨就是：<strong>写软件代表的是世界的将来</strong>。未来任何一个工业都会变成软件工业。盖茨是对的，因为任何工业任何行业自动化的程度会越来越高，最后你所处理的就是信息和知识。但现在软件的做法又往前提了一次，因为在人工智能时代，不光是写代码，你必须懂算法，懂硬件，懂数据，整个人工智能的开发过程有一个很大程度的提高，但是，技术，特别是我们这个工业所代表的技术一定是将来任何工业的前沿。</p><p>所以我们一定要有一个坚定不移的深刻的理念，相信<strong>整个世界终究是为技术所驱动的。</strong></p><h3 id="站在巨人的肩膀上做创新"><a href="#站在巨人的肩膀上做创新" class="headerlink" title="站在巨人的肩膀上做创新"></a>站在巨人的肩膀上做创新</h3><p>为什么现在创新速度那么快？主要是起点高了。我们可以使用的代码模块，使用的服务的能力，都是大大的提升。</p><p>我现在的要求是，每一次你写一行新的代码，第一要做的，先想一想你这行代码值得不值得写，是不是有人已经做了同样的工作，可能做得比你还好一点。有没有其他人已经解决这个问题，然后你可以<strong>把你的时间放在更好的创新上</strong>。</p><p>我再强调，在大公司内部，你写代码之前想一想，你这行代码要不要写，是不是别人已经有了，站在别人的肩膀上去做这件事情。</p><h3 id="追求Engineering-Excellence"><a href="#追求Engineering-Excellence" class="headerlink" title="追求Engineering Excellence"></a>追求Engineering Excellence</h3><p>Engineering Excellence，工程的技术的卓越性和能力。</p><p>所以 Engineering Excellence 是一个永无止境的、个人的、团队的，能力的追求和工具平台的创新，综合在一起可以给我们带来的长期的、核心的竞争力，为社会创造价值，最终的目的是给每个用户、每个企业、整个社会创造价值。</p><p>我另外还要在这里强调的一点就是Relentless pursuit of excellence：永无止境的不断的持续的追求。</p><h3 id="每天学习"><a href="#每天学习" class="headerlink" title="每天学习"></a>每天学习</h3><p>每天学习，可能是对每个人都是最最重要的。</p><p>我今天分享一下，我自己怎么想我自己的。就很简单一个概念，<strong>我把自己想象是一个软件、一个代码，今天的版本一定要比昨天版本好，明天的版本肯定会比今天好</strong>，因为即使犯了错误，我里面有If statement，说如果见到这个错误，绝对不要再犯。英语，另外有一句说法就是Life is too short, don’t live the same day twice. 同样一天不要重活两次。每天都是不一样，每天为什么不一样，因为每天都变成最好，每天都变得更好。今天的版本一定要比昨天好，每个好的、杰出的工程师，杰出的技术领袖，一定要保持自己学习的能力，特别是学习的范围。</p><h3 id="Ownership"><a href="#Ownership" class="headerlink" title="Ownership"></a>Ownership</h3><p>最后是从我做起。</p><p>我们公司有个非常大的使命，用科技让复杂的世界更简单。整个世界非常非常复杂，人其实所做的事情基本上都是Reduce entropy。</p><p>因为从热力学第二定律来讲，世界是会变得越来越乱的，我们想做的事情就是把它变的更简单，让我们生活变得更美好。</p><hr><p>Believe in 技术、站在巨人的肩膀上做创新、追求Engineering Excellence、每天学习、Ownership，陆奇送给每一位工程师的建议，你 get 到了吗 ？</p><ul><li><a href="https://mp.weixin.qq.com/s?__biz=MzAxNjc1OTc2Mg==&amp;mid=2653629370&amp;idx=1&amp;sn=24d58a79d7ac0cf30f6748ec6caa9898&amp;chksm=80306507b747ec11c0d3cfbea832d6a925d6e3873562018e1abfcadaed1f68c4962d0695fba4&amp;mpshare=1&amp;scene=1&amp;srcid=0528NpKUBXAUaOQNBqj83MZy#rd" target="_blank" rel="external">原文</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写代码是一个程序员的本职工作，但是除了写出出色的代码，还有其他什么也是一个优秀工程师的必备？最近刚从百度离职的大牛陆奇有一个百度内部的分享 Engineering Leadership Talk，我觉得对自己很有启发。他提到五点：&lt;br&gt;&lt;img src=&quot;http://oeckzejn4.bkt.clouddn.com/20180528152752026159444.png&quot; alt=&quot;陆奇.png&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="成长" scheme="http://chuanqiang.github.io/categories/%E6%88%90%E9%95%BF/"/>
+    
+    
+      <category term="成长" scheme="http://chuanqiang.github.io/tags/%E6%88%90%E9%95%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>我的第一块滑板</title>
@@ -356,11 +378,11 @@
       <category term="读书" scheme="http://chuanqiang.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
+      <category term="书摘" scheme="http://chuanqiang.github.io/tags/%E4%B9%A6%E6%91%98/"/>
+    
       <category term="游记" scheme="http://chuanqiang.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
     
       <category term="羌塘" scheme="http://chuanqiang.github.io/tags/%E7%BE%8C%E5%A1%98/"/>
-    
-      <category term="书摘" scheme="http://chuanqiang.github.io/tags/%E4%B9%A6%E6%91%98/"/>
     
   </entry>
   
@@ -485,28 +507,6 @@
       <category term="独白" scheme="http://chuanqiang.github.io/tags/%E7%8B%AC%E7%99%BD/"/>
     
       <category term="随笔" scheme="http://chuanqiang.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第二十周 - 絮叨絮叨</title>
-    <link href="http://chuanqiang.github.io/2017/12/16/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%91%A8%20-%20%E7%B5%AE%E5%8F%A8%E7%B5%AE%E5%8F%A8/"/>
-    <id>http://chuanqiang.github.io/2017/12/16/第二十周 - 絮叨絮叨/</id>
-    <published>2017-12-16T15:56:57.000Z</published>
-    <updated>2017-12-16T15:58:31.109Z</updated>
-    
-    <content type="html"><![CDATA[<p>这几天的天气格外的冷，尤其是有风的时候。冬天降临，但却仍旧未下一场雪。我总觉得凡是不以下雪为目的的降温都是耍流氓。天干物燥，容易生病感冒，告诫自己和身边的人多喝水，适量运动。</p><a id="more"></a><p>这段时间，脖子酸痛，眼睛干涩。知道是上班长时间低头伏案所致，但是有没有好的解决办法。不禁对自己开玩笑，难道我的职业生涯就快要结束了？在如何避免职业病的前提下有效的工作是我这段时间需要思考的一个问题。</p><p>时间的不够用和兴趣泛滥成了现阶段的主要矛盾。想学习，想看书，想学习英语，想看美剧，想听播客，想玩游戏，想出去旅游，想睡懒觉，想陪芝芝。但是一个人的时间和精力都是有限的，经常因为想做的事情没法做而感到失落。目前想到的是提高精力值和效率，做事强分清主次，区别对待，顺序处理。整个工作流需要优化。</p><p>北京政府又愚蠢了一次，推出『最美天际线』整治活动，把所谓的不符合广告牌管理规范的统统撤掉。问题是这个规范既没有相关的法律作为依据，有没有民意参与，是一个彻彻底底的政府专断意淫出的一个愚蠢之极的产物。但是在政府机器面前，人民也只能无奈的遵从，搞的怨声载道，口诛笔伐。几天之后，可能执政者也发现这次的行动搞的确实欠考虑，于是又在今天发出通知：不用摘牌子了，你们想挂就再挂回去吧，摘的时候虽然是政府找人摘的，但是得要你们自己挂回去了。商家和企业：😤，你大爷的！！!</p><p>周三举办了一月一度的生日趴，冬季是出生率高发的季节，这个月有许多个寿星。我猜测是因为冬季农活闲置，天气寒冷，人们百无聊赖，只有在家造小人了😂<br><img src="http://oeckzejn4.bkt.clouddn.com/2017121615134394419515.jpg" alt="生日趴.jpg"></p><p>人很多，显得蛋糕很小，不过幸运的分了一块。我从小特别喜欢吃蛋糕，尤其是奶油。小时候，最期望过得日子，一个是过年，另一个就是我姥爷的寿辰，因为举家相聚，并且会买一个特大的蛋糕，作为孩子的我们往往受宠会分到的很多，剩下的刀叉也会玩的不亦乐乎。</p><p>周四晚上，拖了很久的 crm 终于发版了，搞到后半夜三点多，才疲惫的打车回家。回去的路上一直听周董的歌，诺发的北京，夜深人静，只剩下霓虹灯闪烁，窗外的夜色飞逝，就像一去不回的过往。周董的歌声响起，旋律熟悉，耳机里荡漾的不光有歌，更是一段回忆。</p><p>余光中说：</p><blockquote><p>人生有许多事情，正如船后的波纹，总要过后才觉得美的</p></blockquote><p>世上本没有思念的，只是因为有了别理。人们本没有人生，只是因为有了回忆。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这几天的天气格外的冷，尤其是有风的时候。冬天降临，但却仍旧未下一场雪。我总觉得凡是不以下雪为目的的降温都是耍流氓。天干物燥，容易生病感冒，告诫自己和身边的人多喝水，适量运动。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="周志" scheme="http://chuanqiang.github.io/categories/%E5%91%A8%E5%BF%97/"/>
-    
-    
-      <category term="独白" scheme="http://chuanqiang.github.io/tags/%E7%8B%AC%E7%99%BD/"/>
     
   </entry>
   
