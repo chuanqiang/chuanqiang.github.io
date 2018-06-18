@@ -1,0 +1,979 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="solr,搜索," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一、介绍企业站内搜索技术选型在一些大型门户网站、电子商务网站等都需要站内搜索功能，使用传统的数据库查询方式实现搜索无法满足一些高级的搜索需求，比如：搜索速度要快、搜索结果按相关度排序、搜索内容格式不固定等，这里就需要使用全文检索技术实现搜索功能。">
+<meta name="keywords" content="solr,搜索">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solr 入门">
+<meta property="og:url" content="http://chuanqiang.github.io/2018/06/18/Solr 入门/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="一、介绍企业站内搜索技术选型在一些大型门户网站、电子商务网站等都需要站内搜索功能，使用传统的数据库查询方式实现搜索无法满足一些高级的搜索需求，比如：搜索速度要快、搜索结果按相关度排序、搜索内容格式不固定等，这里就需要使用全文检索技术实现搜索功能。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-6b12572c69b72862.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-ef8ccf420e832507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-76d7e403aa6b55f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-6a5a43ca8452ec60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-206cdceddb2ffc41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-c7341df0943093cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/763193-09d787dad75b7b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-06-18T05:10:54.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Solr 入门">
+<meta name="twitter:description" content="一、介绍企业站内搜索技术选型在一些大型门户网站、电子商务网站等都需要站内搜索功能，使用传统的数据库查询方式实现搜索无法满足一些高级的搜索需求，比如：搜索速度要快、搜索结果按相关度排序、搜索内容格式不固定等，这里就需要使用全文检索技术实现搜索功能。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/763193-6b12572c69b72862.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2018/06/18/Solr 入门/"/>
+
+  <title> Solr 入门 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c1de2e50d98f8abe301ec5554cbc5bfa";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Solr 入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-06-18T13:10:21+08:00" content="2018-06-18">
+              2018-06-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><h3 id="企业站内搜索技术选型"><a href="#企业站内搜索技术选型" class="headerlink" title="企业站内搜索技术选型"></a>企业站内搜索技术选型</h3><p>在一些大型门户网站、电子商务网站等都需要站内搜索功能，使用传统的数据库查询方式实现搜索无法满足一些高级的搜索需求，比如：搜索速度要快、搜索结果按相关度排序、搜索内容格式不固定等，这里就需要使用全文检索技术实现搜索功能。</p>
+<a id="more"></a>
+<h4 id="1-单独使用Lucene实现"><a href="#1-单独使用Lucene实现" class="headerlink" title="1. 单独使用Lucene实现"></a>1. 单独使用Lucene实现</h4><p>单独使用Lucene实现站内搜索需要<strong>开发的工作量较大</strong>，主要表现在：索引维护、索引性能优化、搜索性能优化等，因此<strong>不建议采用</strong>。</p>
+<h4 id="2-使用Google或Baidu接口"><a href="#2-使用Google或Baidu接口" class="headerlink" title="2. 使用Google或Baidu接口"></a>2. 使用Google或Baidu接口</h4><p>通过第三方搜索引擎提供的接口实现站内搜索，这样和第三方引擎系统依赖紧密，<strong>不方便扩展，不建议采用</strong>。</p>
+<h4 id="3-使用Solr实现"><a href="#3-使用Solr实现" class="headerlink" title="3. 使用Solr实现"></a>3. 使用Solr实现</h4><p>基于Solr实现站内搜索扩展性较好并且可以减少程序员的工作量，因为Solr提供了较为完备的搜索引擎解决方案，因此在门户、论坛等系统中常用此方案。</p>
+<h3 id="什么是Solr"><a href="#什么是Solr" class="headerlink" title="什么是Solr"></a>什么是Solr</h3><p>Solr 是Apache下的一个顶级开源项目，采用Java开发，它是基于<code>Lucene</code>的全文搜索服务器。Solr提供了比Lucene更为丰富的查询语言，同时实现了可配置、可扩展，并对索引、搜索性能进行了优化</p>
+<p>Solr可以独立运行，运行在 Jetty、Tomcat 等这些 Servlet 容器中，Solr 索引的实现方法很简单，用 POST 方法向 Solr 服务器发送一个描述 Field 及其内容的 XML 文档，Solr根据xml文档添加、删除、更新索引 。Solr 搜索只需要发送 HTTP GET 请求，然后对 Solr 返回 Xml、json 等格式的查询结果进行解析，组织页面布局。Solr不提供构建UI的功能，Solr提供了一个管理界面，通过管理界面可以查询Solr的配置和运行情况。</p>
+<p><strong>solr是基于lucene开发企业级搜索服务器，实际上就是封装了lucene。</strong></p>
+<p>Solr 是一个独立的企业级搜索应用服务器，它对外提供类似于 Web-service的API 接口。用户可以通过 http 请求，向搜索引擎服务器提交一定格式的文件，生成索引；也可以通过提出查找请求，并得到返回结果</p>
+<p>Solr类似 webservice，调用接口，实现增加，修改，删除，查询索引库。</p>
+<h5 id="solr特性"><a href="#solr特性" class="headerlink" title="solr特性"></a>solr特性</h5><ul>
+<li>高级的全文搜索功能</li>
+<li>专为高通量的网络流量进行的优化</li>
+<li>基于开放接口（xml和http）的标准</li>
+<li>综合的html管理界面</li>
+<li>可伸缩性－能够有效地复制到另外一个Solr搜索服务器</li>
+<li>使用xml配置达到灵活性和适配性</li>
+<li>可扩展的插件体系</li>
+</ul>
+<h3 id="Solr与Lucene的区别"><a href="#Solr与Lucene的区别" class="headerlink" title="Solr与Lucene的区别"></a>Solr与Lucene的区别</h3><p><strong>Lucene是一个开放源代码的全文检索引擎工具包，它不是一个完整的全文检索引擎</strong>，Lucene提供了完整的查询引擎和索引引擎，目的是为软件开发人员提供一个简单易用的工具包，以方便的在目标系统中实现全文检索的功能，或者以Lucene为基础构建全文检索引擎。</p>
+<p><strong>Solr的目标是打造一款企业级的搜索引擎系统，它是一个搜索引擎服务，可以独立运行</strong>，通过Solr可以非常快速的构建企业的搜索引擎，通过Solr也可以高效的完成站内搜索功能。</p>
+<p>Solr 类似 webservice，提供接口，调用接口，发送一些特点语句，实现增加，删除，修改，查询。</p>
+<h2 id="二、solr-安装（mac）"><a href="#二、solr-安装（mac）" class="headerlink" title="二、solr 安装（mac）"></a>二、solr 安装（mac）</h2><ul>
+<li><a href="http://lucene.apache.org/solr/" target="_blank" rel="external">官网</a></li>
+</ul>
+<ol>
+<li>首先安装 jdk 和 jre</li>
+<li>安装solr：<code>brew install solr</code>安装solr，可以通过<code>brew edit solr</code>修改要安装的版本</li>
+<li>启动 solr：<code>solr start</code>。<ul>
+<li>默认端口号<code>8083</code>，如果该端口被占用，则会自动切换可用的端口。<br><img src="http://upload-images.jianshu.io/upload_images/763193-6b12572c69b72862.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="solr start"></li>
+<li>启动成功后再浏览器输入URL<a href="http://127.0.0.1:8983" target="_blank" rel="external">http://127.0.0.1:8983</a>，访问 solr 后台管理界面<br><img src="http://upload-images.jianshu.io/upload_images/763193-ef8ccf420e832507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="浏览器效果"></li>
+</ul>
+</li>
+<li>创建 core(可以理解为mysql中的数据库，即一个服务可以有多个库)：<code>solr create -c test_core</code><br>  <img src="http://upload-images.jianshu.io/upload_images/763193-76d7e403aa6b55f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="创建成功的 core"></li>
+<li>测试分词<br> <img src="http://upload-images.jianshu.io/upload_images/763193-6a5a43ca8452ec60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="测试分词"></li>
+</ol>
+<p>由于solr自带的分词器无法将中文根据语义分词，需要引入中文分词器 IKAnalyzer</p>
+<h2 id="三、IKAnalyzer-安装"><a href="#三、IKAnalyzer-安装" class="headerlink" title="三、IKAnalyzer 安装"></a>三、IKAnalyzer 安装</h2><p>下载地址：<a href="https://github.com/jxlwqq/Installing-Solr-and-indexing-MySQL-on-macOS/tree/master/file" target="_blank" rel="external">https://github.com/jxlwqq/Installing-Solr-and-indexing-MySQL-on-macOS/tree/master/file</a></p>
+<h3 id="1-下载必要的组件"><a href="#1-下载必要的组件" class="headerlink" title="1. 下载必要的组件"></a>1. 下载必要的组件</h3><ul>
+<li>IKAnalyzer jar 包: ik-analyzer-solr5-5.x.jar</li>
+<li>IKAnalyzer 配置文件: IKAnalyzer.cfg.xml</li>
+<li>词库: mydict.dic 和 stopword.dic</li>
+</ul>
+<p>下载后，将相关文件复制到相应的目录中，操作目录如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cp ik-analyzer-solr5-5.x.jar /usr/local/Cellar/solr/7.3.1/server/solr-webapp/webapp/WEB-INF/lib/ </div><div class="line">mkdir /usr/local/Cellar/solr/7.3.1/server/solr-webapp/webapp/WEB-INF/lib/classes/</div><div class="line"></div><div class="line">cp IKAnalyzer.cfg.xml /usr/local/Cellar/solr/7.3.1/server/solr-webapp/webapp/WEB-INF/lib/classes/</div><div class="line">cp mydict.dic /usr/local/Cellar/solr/7.3.1/server/solr-webapp/webapp/WEB-INF/lib/classes/</div><div class="line">cp stopword.dic /usr/local/Cellar/solr/7.3.1/server/solr-webapp/webapp/WEB-INF/lib/classes/</div></pre></td></tr></table></figure></p>
+<h3 id="2-修改-managed-schema-文件"><a href="#2-修改-managed-schema-文件" class="headerlink" title="2. 修改 managed-schema 文件"></a>2. 修改 managed-schema 文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// test_core 仓库下</div><div class="line">vi /usr/local/Cellar/solr/7.3.1/server/solr/test_core/conf/managed-schema</div></pre></td></tr></table></figure>
+<p>在<code>schema</code>标签内追加以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;</div><div class="line">    &lt;analyzer class=&quot;org.wltea.analyzer.lucene.IKAnalyzer&quot;/&gt;</div><div class="line">&lt;/fieldType&gt;</div><div class="line">&lt;field name=&quot;text_ik&quot; type=&quot;text_ik&quot; indexed=&quot;true&quot; stored=&quot;true&quot; multiValued=&quot;false&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="3-重启测试"><a href="#3-重启测试" class="headerlink" title="3. 重启测试"></a>3. 重启测试</h3><p>进行重启：<code>solr restart</code><br>进行测试：刷新页面，进入到 test_core 仓库下<br><img src="http://upload-images.jianshu.io/upload_images/763193-206cdceddb2ffc41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="测试页面2"></p>
+<p>测试成功！</p>
+<h2 id="四、solr-常用命令"><a href="#四、solr-常用命令" class="headerlink" title="四、solr 常用命令"></a>四、solr 常用命令</h2><ol>
+<li>其他命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">查看版本：solr -version</div><div class="line">重启：solr -version</div><div class="line">关闭：solr stop -all（或者指定端口号：solr stop -p 8983）</div><div class="line">创建集合：solr create -c [集合名称]</div><div class="line">删除集合：solr delete -c [集合名称]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;delete&gt;</div><div class="line">    &lt;query&gt;*:*&lt;/query&gt;</div><div class="line">&lt;/delete&gt;</div><div class="line">&lt;commit/&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/763193-c7341df0943093cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="solr 删除数据"></p>
+<h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;delete-field&quot; : &#123;</div><div class="line">        &quot;name&quot; : &quot;字段名称&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;delete-field&quot; : &#123;</div><div class="line">        &quot;name&quot; : &quot;字段名称&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>提交的地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">POST    http://localhost:8983/solr/集合名称/schema</div></pre></td></tr></table></figure></p>
+<h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><blockquote>
+<p>name: 字段名称<br>type: 字段类型<br>stored: 是否保存<br>indexed: 是否索引</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;add-field&quot; : &#123;</div><div class="line">        &quot;name&quot; : &quot;字段名称&quot;,</div><div class="line">        &quot;type&quot; : &quot;text_ik&quot;,</div><div class="line">        &quot;stored&quot; : &quot;true&quot;,</div><div class="line">        &quot;indexed&quot; : &quot;true&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;add-field&quot; : &#123;</div><div class="line">        &quot;name&quot; : &quot;字段名称&quot;,</div><div class="line">        &quot;type&quot; : &quot;text_ik&quot;,</div><div class="line">        &quot;stored&quot; : &quot;true&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>提交地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">POST    http://localhost:8983/solr/集合名称/schema</div></pre></td></tr></table></figure></p>
+<p>还可以在管理员界面添加<br><img src="http://upload-images.jianshu.io/upload_images/763193-09d787dad75b7b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="solr 管理页面添加字段"></p>
+<hr>
+<p>参考资料</p>
+<ul>
+<li><a href="https://www.linuxidc.com/Linux/2016-11/137006.htm" target="_blank" rel="external">macOS安装Solr并索引MySQL</a></li>
+<li><a href="https://blog.csdn.net/yuruixin_china/article/details/80037873" target="_blank" rel="external">solr安装、使用、配置中文分词器</a></li>
+<li><a href="https://blog.csdn.net/column/details/14165.html" target="_blank" rel="external">solr 学习与测试</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/solr/" rel="tag">#solr</a>
+          
+            <a href="/tags/搜索/" rel="tag">#搜索</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/17/干杯，朋友/" rel="next" title="干杯，朋友">
+                <i class="fa fa-chevron-left"></i> 干杯，朋友
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">175</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">127</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、介绍"><span class="nav-number">1.</span> <span class="nav-text">一、介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#企业站内搜索技术选型"><span class="nav-number">1.1.</span> <span class="nav-text">企业站内搜索技术选型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-单独使用Lucene实现"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 单独使用Lucene实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用Google或Baidu接口"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 使用Google或Baidu接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用Solr实现"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 使用Solr实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Solr"><span class="nav-number">1.2.</span> <span class="nav-text">什么是Solr</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#solr特性"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">solr特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solr与Lucene的区别"><span class="nav-number">1.3.</span> <span class="nav-text">Solr与Lucene的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、solr-安装（mac）"><span class="nav-number">2.</span> <span class="nav-text">二、solr 安装（mac）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、IKAnalyzer-安装"><span class="nav-number">3.</span> <span class="nav-text">三、IKAnalyzer 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载必要的组件"><span class="nav-number">3.1.</span> <span class="nav-text">1. 下载必要的组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-修改-managed-schema-文件"><span class="nav-number">3.2.</span> <span class="nav-text">2. 修改 managed-schema 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-重启测试"><span class="nav-number">3.3.</span> <span class="nav-text">3. 重启测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、solr-常用命令"><span class="nav-number">4.</span> <span class="nav-text">四、solr 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">4.0.1.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除字段"><span class="nav-number">4.0.2.</span> <span class="nav-text">删除字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加字段"><span class="nav-number">4.0.3.</span> <span class="nav-text">添加字段</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
