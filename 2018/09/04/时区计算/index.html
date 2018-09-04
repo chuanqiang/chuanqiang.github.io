@@ -1,0 +1,944 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,时区," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文讲解了在 JS 和 JAVA 中关于时区的计算方法。">
+<meta name="keywords" content="java,时区">
+<meta property="og:type" content="article">
+<meta property="og:title" content="时区计算">
+<meta property="og:url" content="http://chuanqiang.github.io/2018/09/04/时区计算/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="本文讲解了在 JS 和 JAVA 中关于时区的计算方法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-04T08:19:16.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="时区计算">
+<meta name="twitter:description" content="本文讲解了在 JS 和 JAVA 中关于时区的计算方法。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2018/09/04/时区计算/"/>
+
+  <title> 时区计算 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c1de2e50d98f8abe301ec5554cbc5bfa";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                时区计算
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-09-04T16:18:50+08:00" content="2018-09-04">
+              2018-09-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文讲解了在 JS 和 JAVA 中关于时区的计算方法。</p>
+<a id="more"></a>
+<h2 id="一、-JS"><a href="#一、-JS" class="headerlink" title="一、 JS"></a>一、 JS</h2><h3 id="两个函数"><a href="#两个函数" class="headerlink" title="两个函数"></a>两个函数</h3><ol>
+<li>得到标准时区的时间</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//得到标准时区的时间</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocalTime</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">    <span class="comment">//参数i为时区值数字，比如北京为东八区则输入8,西5输入-5,现默认东八区北京时间</span></div><div class="line">    <span class="keyword">var</span> i=i?<span class="built_in">parseFloat</span>(i):<span class="number">8</span>; </div><div class="line"> </div><div class="line">    <span class="comment">//得到本地时间</span></div><div class="line">    <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"> </div><div class="line">    <span class="comment">//得到1970年一月一日到现在的秒数</span></div><div class="line">    <span class="keyword">var</span> local = d.getTime();</div><div class="line"> </div><div class="line">    <span class="comment">//本地时间与GMT时间的时间偏移差</span></div><div class="line">    <span class="keyword">var</span> offset = d.getTimezoneOffset() * <span class="number">60000</span>;</div><div class="line"> </div><div class="line">    <span class="comment">//得到现在的格林尼治时间</span></div><div class="line">    <span class="keyword">var</span> utcTime = local + offset;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(utcTime + <span class="number">3600000</span> * i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>转换服务器时区时间</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//转换服务器时区时间</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatTime</span>(<span class="params">t,utc</span>)</span>&#123;</div><div class="line">    <span class="comment">//t传入的时间参数,utc传入的时区参数</span></div><div class="line">    <span class="keyword">if</span>(!t) <span class="keyword">return</span>;</div><div class="line"> </div><div class="line">    <span class="comment">//获取本地时间</span></div><div class="line">    <span class="keyword">var</span> d=<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"> </div><div class="line">    <span class="comment">//获得本地时区</span></div><div class="line">    utc=utc?<span class="built_in">parseFloat</span>(utc):d.getTimezoneOffset()/<span class="number">60</span>;</div><div class="line"> </div><div class="line">    <span class="comment">//格式化传入时间</span></div><div class="line">    <span class="keyword">var</span> time=<span class="keyword">new</span> <span class="built_in">Date</span>(t);</div><div class="line"> </div><div class="line">    <span class="comment">//转换传入时间为本地时间（默认传入服务器时间为东八区时间）</span></div><div class="line">    time.setHours(time.getHours()+(utc<span class="number">-8</span>));</div><div class="line"> </div><div class="line">    <span class="comment">//输出时间</span></div><div class="line">    <span class="keyword">var</span> yy=time.getFullYear();</div><div class="line">    <span class="keyword">var</span> MM=time.getMonth()+<span class="number">1</span>;</div><div class="line">    MM=MM&lt;<span class="number">10</span>?<span class="string">'0'</span>+MM:MM;</div><div class="line">    <span class="keyword">var</span> dd=time.getDate();</div><div class="line">    dd=dd&lt;<span class="number">10</span>?<span class="string">'0'</span>+dd:dd;</div><div class="line">    <span class="keyword">var</span> hh=time.getHours();</div><div class="line">    hh=hh&lt;<span class="number">10</span>?<span class="string">'0'</span>+hh:hh;</div><div class="line">    <span class="keyword">var</span> mm=time.getMinutes();</div><div class="line">    mm=mm&lt;<span class="number">10</span>?<span class="string">'0'</span>+mm:mm;</div><div class="line">    <span class="keyword">var</span> ss=time.getSeconds();</div><div class="line">    ss=ss&lt;<span class="number">10</span>?<span class="string">'0'</span>+ss:ss;</div><div class="line">    <span class="keyword">var</span> date=yy+<span class="string">'-'</span>+MM+<span class="string">'-'</span>+dd+<span class="string">' '</span>+hh+<span class="string">':'</span>+mm+<span class="string">':'</span>+ss;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> date;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="利用Date对象得到本地时间"><a href="#利用Date对象得到本地时间" class="headerlink" title="利用Date对象得到本地时间"></a>利用Date对象得到本地时间</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">localTime = d.getTime(); <span class="comment">//通过调用Data()对象的getTime()方法，即可显示1970年1月1日后到此时时间之间的毫秒数。</span></div></pre></td></tr></table></figure>
+<p>接下来，通过Data()对象的getTimezoneOffset()方法来找出当地时间偏移值。在缺省情况下，此方法以分钟显示时区偏移值结果，因此在早先的计算中要将此值转换成毫秒。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">localOffset = d.getTimezoneOffset() * <span class="number">3600000</span>;</div></pre></td></tr></table></figure>
+<p>然后将当前时间与时区偏移量相加，得到国际标准时间（用毫秒表示的，因为后面还需要计算，所以这里不做转换），然后与你想要知道的时区的偏移量再进行相加，得到那个时间的时间，然后再利用Date对象将其转换为时间字符串。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">utc = localTime + localOffset; <span class="comment">//得到国际标准时间  </span></div><div class="line">offset = <span class="number">5.5</span>;  <span class="comment">// 已知的时区</span></div><div class="line">calctime = utc + (<span class="number">3600000</span>*offset);  </div><div class="line">nd = <span class="keyword">new</span> <span class="built_in">Date</span>(calctime);  </div><div class="line"><span class="built_in">document</span>.write(<span class="string">'指定时区时间是：'</span> + nd.toLocalString());</div></pre></td></tr></table></figure></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p><strong>场景描述</strong>：根据国外用户所在的时区，获取数据库（东八区录入）在当地所应展示的时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocalTime</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">//获得当前时间</span></div><div class="line">    <span class="keyword">var</span> gmtHours =-( d.getTimezoneOffset()/<span class="number">60</span>);<span class="comment">//根据当前时间得到你是哪个时区的</span></div><div class="line">    <span class="keyword">var</span> date = <span class="string">'2014-08-12 09:25:24'</span>;<span class="comment">//上课时间</span></div><div class="line">    date=date.replace(<span class="regexp">/-/g</span>,<span class="string">':'</span>).replace(<span class="string">' '</span>,<span class="string">':'</span>);</div><div class="line">    date=date.split(<span class="string">':'</span>);</div><div class="line">    <span class="keyword">var</span> time1 = <span class="keyword">new</span> <span class="built_in">Date</span>(date[<span class="number">0</span>],(date[<span class="number">1</span>]<span class="number">-1</span>),date[<span class="number">2</span>],date[<span class="number">3</span>],date[<span class="number">4</span>],date[<span class="number">5</span>]);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"时区："</span> + gmtHours);</div><div class="line">    <span class="comment">//得到1970年一月一日到现在的秒数</span></div><div class="line">    <span class="keyword">var</span> len = time1.getTime();</div><div class="line">    <span class="comment">//本地时间与GMT时间的时间偏移差</span></div><div class="line">    <span class="keyword">var</span> offset = <span class="number">-8</span> * <span class="number">3600000</span>; <span class="comment">// 东八区</span></div><div class="line">    <span class="comment">//得到现在的格林尼治时间 </span></div><div class="line">    <span class="keyword">var</span> utcTime = len + offset;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(utcTime + <span class="number">3600000</span> *gmtHours );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="二、Java"><a href="#二、Java" class="headerlink" title="二、Java"></a>二、Java</h2><h3 id="1-Date中保存的是什么"><a href="#1-Date中保存的是什么" class="headerlink" title="1.Date中保存的是什么"></a>1.Date中保存的是什么</h3><p>在java中，只要我们执行<br><code>Date date = new Date();</code><br>就可以得到当前时间。如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Date date = <span class="keyword">new</span> Date();  </div><div class="line">System.out.println(date);</div></pre></td></tr></table></figure></p>
+<p>输出结果是：<br><code>Thu Aug 24 10:15:29 CST 2017</code></p>
+<p>也就是我执行上述代码的时刻：2017年8月24日10点15分29秒。是不是Date对象里存了年月日时分秒呢？不是的，Date对象里存的只是一个long型的变量，其值为自1970年1月1日0点至Date对象所记录时刻经过的毫秒数，调用Date对象getTime()方法就可以返回这个毫秒数，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Date date = new Date();  </div><div class="line">System.out.println(date + &quot;, &quot; + date.getTime());</div></pre></td></tr></table></figure></p>
+<p>输出如下：<br><code>Thu Aug 24 10:48:05 CST 2017, 1503542885955</code><br>即上述程序执行的时刻是2017年8月24日10点48分05秒，该时刻距离1970年1月1日0点经过了1503542885955毫秒。反过来说，输出的年月日时分秒其实是根据这个毫秒数来反算出来的。</p>
+<h3 id="2-时区"><a href="#2-时区" class="headerlink" title="2.时区"></a>2.时区</h3><p>全球分为24个时区，相邻时区时间相差1个小时。比如北京处于东八时区，东京处于东九时区，北京时间比东京时间晚1个小时，而英国伦敦时间比北京晚7个小时（英国采用夏令时时，8月英国处于夏令时）。比如此刻北京时间是2017年8月24日11:17:10，则东京时间是2017年8月24日12:17:10，伦敦时间是2017年8月24日4:17:10。</p>
+<p>既然Date里存放的是当前时刻距1970年1月1日0点时刻的毫秒数，如果此刻在伦敦、北京、东京有三个程序员同时执行如下语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Date date = new Date();</div></pre></td></tr></table></figure></p>
+<p>那这三个date对象里存的毫秒数是相同的吗？还是北京的比东京的小3600000（北京时间比东京时间晚1小时，1小时为3600秒即3600000毫秒）？答案是，这3个Date里的毫秒数是完全一样的。确切的说，Date对象里存的是自格林威治时间（ GMT）1970年1月1日0点至Date对象所表示时刻所经过的毫秒数。所以，如果某一时刻遍布于世界各地的程序员同时执行new<br> Date语句，这些Date对象所存的毫秒数是完全一样的。也就是说，Date里存放的毫秒数是与时区无关的。</p>
+<p>继续上述例子，如果上述3个程序员调用那一刻的时间是2017年8月24日11:17:10，他们继续调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(date);</div></pre></td></tr></table></figure></p>
+<p>那么北京的程序员将会打印出2017年8月24日11:17:10，而东京的程序员会打印出2017年8月24日12:17:10，伦敦的程序员会打印出2017年8月24日4:17:10。既然Date对象只存了一个毫秒数，为什么这3个毫秒数完全相同的Date对象，可以打印出不同的时间呢？这是因为Sysytem.out.println函数在打印时间时，会取操作系统当前所设置的时区，然后根据这个时区将同毫秒数解释成该时区的时间。当然我们也可以手动设置时区，以将同一个Date对象按不同的时区输出。可以做如下实验验证：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Date date = <span class="keyword">new</span> Date(<span class="number">1503544630000L</span>);  <span class="comment">// 对应的北京时间是2017-08-24 11:17:10  </span></div><div class="line">  </div><div class="line">SimpleDateFormat bjSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);     <span class="comment">// 北京  </span></div><div class="line">bjSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>));  <span class="comment">// 设置北京时区  </span></div><div class="line">  </div><div class="line">SimpleDateFormat tokyoSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  <span class="comment">// 东京  </span></div><div class="line">tokyoSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Tokyo"</span>));  <span class="comment">// 设置东京时区  </span></div><div class="line">  </div><div class="line">SimpleDateFormat londonSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>); <span class="comment">// 伦敦  </span></div><div class="line">londonSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Europe/London"</span>));  <span class="comment">// 设置伦敦时区  </span></div><div class="line">  </div><div class="line">System.out.println(<span class="string">"毫秒数:"</span> + date.getTime() + <span class="string">", 北京时间:"</span> + bjSdf.format(date));  </div><div class="line">System.out.println(<span class="string">"毫秒数:"</span> + date.getTime() + <span class="string">", 东京时间:"</span> + tokyoSdf.format(date));  </div><div class="line">System.out.println(<span class="string">"毫秒数:"</span> + date.getTime() + <span class="string">", 伦敦时间:"</span> + londonSdf.format(date));</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">毫秒数:1503544630000, 北京时间:2017-08-24 11:17:10</div><div class="line">毫秒数:1503544630000, 东京时间:2017-08-24 12:17:10</div><div class="line">毫秒数:1503544630000, 伦敦时间:2017-08-24 04:17:10</div></pre></td></tr></table></figure></p>
+<p>可以看出，同一个Date对象，按不同的时间来格式化，将得到不同时区的时间。由此可见，Date对象里保存的毫秒数和具体输出的时间（即年月日时分秒）是模型和视图的关系，而时区（即Timezone)则决定了将同模型展示成什么样的视图。</p>
+<h3 id="3-从字符串中读取时间"><a href="#3-从字符串中读取时间" class="headerlink" title="3.从字符串中读取时间"></a>3.从字符串中读取时间</h3><p>有时我们会遇到从一个字符串中读取时间的要求，即从字符串中解析时间并得到一个Date对象，比如将”2017-8-24<br> 11:17:10”解析为一个Date对象。现在问题来了，这个时间到底指的是北京时间的2017年8月24日11:17:10，还是东京时间的2017年8月24日11:17:10？如果指的是北京时间，那么这个时间对应的东京时间2017年8月24日12:17:10；如果指的是东京时间，那么这个时间对应的北京时间就是2017年8月24日10:17:10。因此，只说年月日时分秒而不说是哪个时区的，是有歧义的，没有歧义的做法是，给出一个时间字符串，同时指明这是哪个时区的时间。<br>从字符串中解析时间的正确作法是：指定时区来解析。示例如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String timeStr = <span class="string">"2017-8-24 11:17:10"</span>; <span class="comment">// 字面时间  </span></div><div class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  </div><div class="line">sdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>)); <span class="comment">// 设置北京时区  </span></div><div class="line">Date d = sdf.parse(timeStr);  </div><div class="line">System.out.println(sdf.format(d) + <span class="string">", "</span> + d.getTime());</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><code>2017-08-24 11:17:10, 1503544630000</code>,</p>
+<p>将一个时间字符串按不同时区来解释，得到的Date对象的值是不同的。验证如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">String timeStr = <span class="string">"2017-8-24 11:17:10"</span>; <span class="comment">// 字面时间  </span></div><div class="line">SimpleDateFormat bjSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  </div><div class="line">bjSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>));  </div><div class="line">Date bjDate = bjSdf.parse(timeStr);  <span class="comment">// 解析  </span></div><div class="line">System.out.println(<span class="string">"字面时间: "</span> + timeStr +<span class="string">",按北京时间来解释:"</span> + bjSdf.format(bjDate) + <span class="string">", "</span> + bjDate.getTime());  </div><div class="line">  </div><div class="line">SimpleDateFormat tokyoSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  <span class="comment">// 东京  </span></div><div class="line">tokyoSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Tokyo"</span>));  <span class="comment">// 设置东京时区  </span></div><div class="line">Date tokyoDate = tokyoSdf.parse(timeStr); <span class="comment">// 解析  </span></div><div class="line">System.out.println(<span class="string">"字面时间: "</span> + timeStr +<span class="string">",按东京时间来解释:"</span>  + tokyoSdf.format(tokyoDate) + <span class="string">", "</span> + tokyoDate.getTime());</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">字面时间: 2017-8-24 11:17:10,按北京时间来解释:2017-08-24 11:17:10, 1503544630000</div><div class="line">字面时间: 2017-8-24 11:17:10,按东京时间来解释:2017-08-24 11:17:10, 1503541030000</div><div class="line">可以看出，对于&quot;2017-8-24 11:17:10&quot;这个字符串，按北京时间来解释得到Date对象的毫秒数是</div><div class="line">1503544630000；而按东京时间来解释得到的毫秒数是1503541030000，前者正好比后者大于3600000毫秒即1个小时，正好是北京时间和东京时间的时差。这很好理解，北京时间2017-08-24 11:17:10对应的毫秒数是1503544630000，而东京时间2017-08-24 11:17:10对应的北京时间其实是2017-08-24 10:17:10（因为北京时间比东京时间晚1个小时），北京时间2017-08-24</div><div class="line"> 10:17:10自然比北京时间2017-08-24 11:17:10少3600000毫秒。</div></pre></td></tr></table></figure></p>
+<h3 id="4-将字符串表示的时间转换成另一个时区的时间字符串"><a href="#4-将字符串表示的时间转换成另一个时区的时间字符串" class="headerlink" title="4.将字符串表示的时间转换成另一个时区的时间字符串"></a>4.将字符串表示的时间转换成另一个时区的时间字符串</h3><p>综合以上分析，如果给定一个时间字符串，并告诉你这是某个时区的时间，要将它转换为另一个时区的时间并输出，正确的做法是：</p>
+<ol>
+<li>将字符串按原时区转换成Date对象；</li>
+<li>将Date对象格式化成目标时区的时间。</li>
+</ol>
+<p>比如，将北京时间”2017-8-24 11:17:10”输出成东京时间，代码为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">String timeStr = <span class="string">"2017-8-24 11:17:10"</span>; <span class="comment">// 字面时间  </span></div><div class="line">SimpleDateFormat bjSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  </div><div class="line">bjSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Shanghai"</span>));  </div><div class="line">Date date = bjSdf.parse(timeStr);  <span class="comment">// 将字符串时间按北京时间解析成Date对象  </span></div><div class="line">  </div><div class="line">SimpleDateFormat tokyoSdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);  <span class="comment">// 东京  </span></div><div class="line">tokyoSdf.setTimeZone(TimeZone.getTimeZone(<span class="string">"Asia/Tokyo"</span>));  <span class="comment">// 设置东京时区  </span></div><div class="line">System.out.println(<span class="string">"北京时间: "</span> + timeStr +<span class="string">"对应的东京时间为:"</span>  + tokyoSdf.format(date));</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><code>北京时间:2017-8-24 11:17:10对应的东京时间为:2017-08-24 12:17:10</code></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/时区/" rel="tag">#时区</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/04/Spring AOP 详解和实例/" rel="next" title="Spring AOP 详解和实例">
+                <i class="fa fa-chevron-left"></i> Spring AOP 详解和实例
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/04/Java汉字转拼音pinyin4j用法/" rel="prev" title="Java汉字转拼音pinyin4j用法">
+                Java汉字转拼音pinyin4j用法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">184</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">133</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-JS"><span class="nav-number">1.</span> <span class="nav-text">一、 JS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两个函数"><span class="nav-number">1.1.</span> <span class="nav-text">两个函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用Date对象得到本地时间"><span class="nav-number">1.2.</span> <span class="nav-text">利用Date对象得到本地时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.3.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Java"><span class="nav-number">2.</span> <span class="nav-text">二、Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Date中保存的是什么"><span class="nav-number">2.1.</span> <span class="nav-text">1.Date中保存的是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-时区"><span class="nav-number">2.2.</span> <span class="nav-text">2.时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-从字符串中读取时间"><span class="nav-number">2.3.</span> <span class="nav-text">3.从字符串中读取时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-将字符串表示的时间转换成另一个时区的时间字符串"><span class="nav-number">2.4.</span> <span class="nav-text">4.将字符串表示的时间转换成另一个时区的时间字符串</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

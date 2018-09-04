@@ -1,0 +1,978 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,spring,AOP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七弦桐" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="概念面向切面编程(也叫面向方面编程)：Aspect Oriented Programming(AOP)，是软件开发中的一个热点，也是Spring框架中的一个重要内容。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。">
+<meta name="keywords" content="java,spring,AOP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring AOP 详解和实例">
+<meta property="og:url" content="http://chuanqiang.github.io/2018/09/04/Spring AOP 详解和实例/index.html">
+<meta property="og:site_name" content="七弦桐">
+<meta property="og:description" content="概念面向切面编程(也叫面向方面编程)：Aspect Oriented Programming(AOP)，是软件开发中的一个热点，也是Spring框架中的一个重要内容。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/20180904153604496563715.png">
+<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/20180904153604608697869.png">
+<meta property="og:updated_time" content="2018-09-04T08:19:22.722Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring AOP 详解和实例">
+<meta name="twitter:description" content="概念面向切面编程(也叫面向方面编程)：Aspect Oriented Programming(AOP)，是软件开发中的一个热点，也是Spring框架中的一个重要内容。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。">
+<meta name="twitter:image" content="http://oeckzejn4.bkt.clouddn.com/20180904153604496563715.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6328705881483511000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://chuanqiang.github.io/2018/09/04/Spring AOP 详解和实例/"/>
+
+  <title> Spring AOP 详解和实例 | 七弦桐 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c1de2e50d98f8abe301ec5554cbc5bfa";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">七弦桐</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">以梦为马，随处可栖</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-skill">
+          <a href="/skill" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-battery-full"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-edit"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/reading" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            读书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tv"></i> <br />
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Spring AOP 详解和实例
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-09-04T16:10:10+08:00" content="2018-09-04">
+              2018-09-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>面向切面编程(也叫面向方面编程)：Aspect Oriented Programming(AOP)，是软件开发中的一个热点，也是Spring框架中的一个重要内容。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<a id="more"></a>
+<p>主要的功能是：日志记录，性能统计，安全控制，事务处理，异常处理等等。</p>
+<p>主要的意图是：将日志记录，性能统计，安全控制，事务处理，异常处理等代码从业务逻辑代码中划分出来，通过对这些行为的分离，我们希望可以将它们独立到非指导业务逻辑的方法中，进而改变这些行为的时候不影响业务逻辑的代码。</p>
+<p><img src="http://oeckzejn4.bkt.clouddn.com/20180904153604496563715.png" alt=""></p>
+<p>我们要做的，是定义一个切面，在切面的纵向定义处理方法，处理完成后，回到横向业务流（静态代理模式实现 proxy）。</p>
+<p>因为Java 是一门静态的强类型语言， 代码一旦写好， 编译成 <code>java class</code> 以后 ，可以在运行时通过反射（Reflection）来查看类的信息， 但是对类进行修改的话很困难。有如下方式来实现：</p>
+<ol>
+<li>在编译的时候， 根据AOP的配置信息，悄悄的把日志，安全，事务等“切面”代码 和业务类编译到一起去。【预编译】</li>
+<li>在运行期，业务类加载以后， 通过Java动态代理技术为业务类生产一个代理类， 把“切面”代码放到代理类中，  Java 动态代理要求业务类需要实现接口才行。【运行期动态代理】</li>
+<li>在运行期， 业务类加载以后， 动态的使用字节码构建一个业务类的子类，将“切面”逻辑加入到子类当中去, CGLIB就是这么做的。</li>
+</ol>
+<p>spring 采用（1）+（2）方式</p>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="1-实现-AOP-接口"><a href="#1-实现-AOP-接口" class="headerlink" title="1. 实现 AOP 接口"></a>1. 实现 AOP 接口</h3><h3 id="2-通过-xml配置方式"><a href="#2-通过-xml配置方式" class="headerlink" title="2. 通过.xml配置方式"></a>2. 通过<code>.xml</code>配置方式</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"personDao"</span> <span class="attr">class</span>=<span class="string">"com.itheima12.spring.aop.xml.transaction.PersonDaoImpl"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transaction"</span> <span class="attr">class</span>=<span class="string">"com.itheima12.spring.aop.xml.transaction.Transaction"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></div><div class="line">      <span class="comment">&lt;!-- 切入点表达式  确定目标类 --&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">expression="execution(*</span> <span class="attr">com.itheima12.spring.aop.xml.transaction.PersonDaoImpl.</span>*(<span class="attr">..</span>))"  <span class="attr">id</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">      <span class="comment">&lt;!-- ref指向的对象就是切面 --&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">"transaction"</span>&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              前置通知</span></div><div class="line"><span class="comment">                 1、在目标方法执行之前</span></div><div class="line"><span class="comment">                 2、获取不到目标方法的返回值</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              &lt;aop:before method="beginTransaction" pointcut-ref="perform"/&gt;</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              后置通知</span></div><div class="line"><span class="comment">                 1、后置通知可以获取到目标方法的返回值</span></div><div class="line"><span class="comment">                 2、当目标方法抛出异常，后置通知将不再执行</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">           <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              &lt;aop:after-returning method="commit" pointcut-ref="perform" returning="val"/&gt;</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              最终通知</span></div><div class="line"><span class="comment">                 无论目标方法是否抛出异常都将执行</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">aop:after</span> <span class="attr">method</span>=<span class="string">"finallyMethod"</span> <span class="attr">pointcut-ref</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              异常通知（多个异常的处理）这个异常处理是完全独立于系统之外的，脱离业务逻辑</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">aop:after-throwing</span> <span class="attr">method</span>=<span class="string">"throwingMethod"</span> <span class="attr">throwing</span>=<span class="string">"ex"</span> <span class="attr">pointcut-ref</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">          <span class="comment">&lt;!-- </span></div><div class="line"><span class="comment">              环绕通知（可以进行权限管理，比如 shiro 底层）</span></div><div class="line"><span class="comment">                      1. 能控制目标方法的执行</span></div><div class="line"><span class="comment">                      2. 前置通知和后置通知能在目标方法的前面和后面加一些代码，但是不能控制目标方法的执行</span></div><div class="line"><span class="comment">           --&gt;</span></div><div class="line">              <span class="tag">&lt;<span class="name">aop:around</span> <span class="attr">method</span>=<span class="string">"aroundMethod"</span> <span class="attr">pointcut-ref</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h3><ul>
+<li>切面(aspect)：用来切插业务方法的类。</li>
+<li>连接点(joinpoint)：是切面类和业务类的连接点，其实就是封装了业务方法的一些基本属性，作为通知的参数来解析。</li>
+<li>通知(advice)：在切面类中，声明对业务方法做额外处理的方法。</li>
+<li>切入点(pointcut)：业务类中指定的方法，作为切面切入的点。其实就是指定某个方法作为切面切的地方。</li>
+<li>目标对象(target object)：被代理对象。</li>
+<li>AOP代理(aop proxy)：代理对象。</li>
+<li>通知<ul>
+<li>前置通知(before advice)：在切入点之前执行。</li>
+<li>后置通知(after returning advice)：在切入点执行完成后，执行通知。</li>
+<li>环绕通知(around advice)：包围切入点，调用方法前后完成自定义行为。</li>
+<li>异常通知(after throwing advice)：在切入点抛出异常后，执行通知。　　</li>
+</ul>
+</li>
+</ul>
+<h3 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h3><p><img src="http://oeckzejn4.bkt.clouddn.com/20180904153604608697869.png" alt="切入点表达式"></p>
+<h3 id="Spring-AOP-的原理："><a href="#Spring-AOP-的原理：" class="headerlink" title="Spring AOP 的原理："></a>Spring AOP 的原理：</h3><ol>
+<li>当spring启动的时候，加载两个bean，对两个bean进行实例化</li>
+<li>当spring容器对配置文件解析到<code>&lt;aop：config&gt;</code>的时候，把切入点表达式解析出来，按照切入点表达式匹配spring容器内的bean。</li>
+<li>如果匹配成功，则为该<code>bean</code>创建对象</li>
+<li>当客户端利用context.getBean获取一个对象时，如果该对象有代理对象，则返回代理对象。如果没有，则返回本身</li>
+</ol>
+<h2 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h2><h3 id="1-AOP-权限管理（环绕通知）"><a href="#1-AOP-权限管理（环绕通知）" class="headerlink" title="1. AOP 权限管理（环绕通知）"></a>1. AOP 权限管理（环绕通知）</h3><p>自定义注解<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Target</span>(ElementType.METHOD) <span class="comment">//范围：在方法上</span></div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> PrivlegeInfo &#123;</div><div class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编写注解解析器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnotationParse</span> </span>&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line"><span class="comment">     * targetClass  目标类的class形式</span></div><div class="line"><span class="comment">     * methodName  在客户端调用哪个方法，methodName就代表哪个方法</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">parse</span><span class="params">(Class targetClass,String methodName)</span> <span class="keyword">throws</span> Exception</span>&#123;</div><div class="line">        String methodAccess = <span class="string">""</span>;</div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">         * 该方法没有参数</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        Method method = targetClass.getMethod(methodName);</div><div class="line">        <span class="comment">//判断方法上面是否存在PrivilegeInfo注解</span></div><div class="line">        <span class="keyword">if</span>(method.isAnnotationPresent(PrivlegeInfo.class))&#123;</div><div class="line">            <span class="comment">//得到方法上面的注解</span></div><div class="line">            PrivlegeInfo privlegeInfo = method.getAnnotation(PrivlegeInfo.class);</div><div class="line">            methodAccess = privlegeInfo.name();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> methodAccess;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>service方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonServiceImpl</span> <span class="keyword">implements</span> <span class="title">PersonService</span></span>&#123;</div><div class="line">    <span class="meta">@PrivlegeInfo</span>(name=<span class="string">"savePerson"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"save person"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@PrivlegeInfo</span>(name=<span class="string">"updatePerson"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"update person"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>用户权限的切面类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrivilegeAspect</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 用户拥有的权限</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> List&lt;Privilege&gt; privileges = <span class="keyword">new</span> ArrayList&lt;Privilege&gt;();</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Privilege&gt; <span class="title">getPrivileges</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> privileges;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrivileges</span><span class="params">(List&lt;Privilege&gt; privileges)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.privileges = privileges;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isAccessMethod</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable</span>&#123;</div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">         * 1、获取访问目标方法应该具备的权限</span></div><div class="line"><span class="comment">         *     得到</span></div><div class="line"><span class="comment">         *        1、目标类的class形式</span></div><div class="line"><span class="comment">         *        2、方法的名称</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        Class targetClass = joinPoint.getTarget().getClass();</div><div class="line">        String methodName = joinPoint.getSignature().getName();</div><div class="line">        <span class="comment">//得到访问该方法的权限</span></div><div class="line">        String methodAccess = AnnotationParse.parse(targetClass, methodName);</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</div><div class="line">        <span class="comment">//遍历用户所有的权限，查看是否用访问该方法的权限</span></div><div class="line">        <span class="keyword">for</span> (Privilege privilege : privileges) &#123;</div><div class="line">            <span class="comment">//该用户能够访问目标方法</span></div><div class="line">            <span class="keyword">if</span>(methodAccess.equals(privilege.getName()))&#123;</div><div class="line">                flag = <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;        </div><div class="line">        <span class="keyword">if</span>(flag)&#123;<span class="comment">//访问目标方法</span></div><div class="line">            joinPoint.proceed();</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            System.out.println(<span class="string">"对不起，您没有权限访问"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>application 配置文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">aop:pointcut</span> </span></div><div class="line"><span class="tag">          <span class="attr">expression</span>=<span class="string">"execution(* com.itheima12.spring.aop.xml.privilege.service.impl.*.*(..))"</span> <span class="attr">id</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">"privilegeAspect"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">aop:around</span> <span class="attr">method</span>=<span class="string">"isAccessMethod"</span> <span class="attr">pointcut-ref</span>=<span class="string">"perform"</span>/&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>测试<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrivilegeTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrivilege</span><span class="params">()</span></span>&#123;</div><div class="line">        ApplicationContext context = </div><div class="line">            <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</div><div class="line">        <span class="comment">/**</span></div><div class="line"><span class="comment">         * 初始化用户的权限</span></div><div class="line"><span class="comment">         */</span></div><div class="line">        PrivilegeAspect privilegeAspect = (PrivilegeAspect)context.getBean(<span class="string">"privilegeAspect"</span>);</div><div class="line">        Privilege privilege1 = <span class="keyword">new</span> Privilege();</div><div class="line">        privilege1.setName(<span class="string">"savePerson"</span>);</div><div class="line"></div><div class="line">        Privilege privilege2 = <span class="keyword">new</span> Privilege();</div><div class="line">        privilege2.setName(<span class="string">"updatePerson"</span>);</div><div class="line"></div><div class="line">        privilegeAspect.getPrivileges().add(privilege2);</div><div class="line">        privilegeAspect.getPrivileges().add(privilege1);</div><div class="line"></div><div class="line">        PersonService personService = (PersonService)context.getBean(<span class="string">"personService"</span>);</div><div class="line">        personService.savePerson();</div><div class="line">        personService.updatePerson();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-AOP-缓存"><a href="#2-AOP-缓存" class="headerlink" title="2. AOP 缓存"></a>2. AOP 缓存</h3><p>application<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.itheima12.spring.aop.xml.transaction"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">aop:aspectj-autoproxy</span>&gt;</span><span class="tag">&lt;/<span class="name">aop:aspectj-autoproxy</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>切面类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * <span class="doctag">@Aspect</span></span></div><div class="line"><span class="comment"> * <span class="doctag">@Pointcut</span>("execution(* com.itheima12.spring.aop.xml.transaction.PersonDaoImpl.*(..))")</span></div><div class="line"><span class="comment"> * private void aa()&#123;&#125;</span></div><div class="line"><span class="comment">       就相当于</span></div><div class="line"><span class="comment"> * &lt;aop:config&gt;</span></div><div class="line"><span class="comment">          &lt;aop:pointcut </span></div><div class="line"><span class="comment">              expression="execution(* com.itheima12.spring.aop.xml.transaction.PersonDaoImpl.*(..))" </span></div><div class="line"><span class="comment">              id="aa()"/&gt;</span></div><div class="line"><span class="comment">   &lt;/aop:config&gt;</span></div><div class="line"><span class="comment"> * <span class="doctag">@author</span> zd</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="meta">@Component</span>(<span class="string">"transaction"</span>)  <span class="comment">// 加入到spring容器中</span></div><div class="line"><span class="meta">@Aspect</span>    <span class="comment">// 证明这个注解所在类是切面类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> </span>&#123;</div><div class="line">    <span class="meta">@Pointcut</span>(<span class="string">"execution(* com.itheima12.spring.aop.xml.transaction.PersonDaoImpl.*(..))"</span>)</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">aa</span><span class="params">()</span></span>&#123;&#125;  <span class="comment">//方法签名</span></div><div class="line"></div><div class="line">    <span class="meta">@Before</span>(<span class="string">"aa()"</span>)  <span class="comment">// 前置通知</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginTransaction</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"begin transaction"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@AfterReturning</span>(<span class="string">"aa()"</span>)  <span class="comment">// 后置通知</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"commit"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-AOP-日志管理"><a href="#3-AOP-日志管理" class="headerlink" title="3. AOP 日志管理"></a>3. AOP 日志管理</h3><p>此项目是在 spring boot 环境下实现。</p>
+<p>1、 添加maven依赖注解<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--springBoot 的aop--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2、添加数据库表<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="string">`journal`</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`journal`</span> (</div><div class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'日志id'</span>,</div><div class="line">  <span class="string">`uid`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户id'</span>,</div><div class="line">  <span class="string">`modularType`</span> <span class="built_in">int</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'模块类型'</span>,</div><div class="line">  <span class="string">`operationType`</span> <span class="built_in">int</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'操作类型：0：增/1：删/2：改/3：关闭/4：移动'</span>,</div><div class="line">  <span class="string">`operationTime`</span> datetime <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'操作时间'</span>,</div><div class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</div><div class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</div></pre></td></tr></table></figure></p>
+<p>3、增加对应的实体类</p>
+<p>4、日志添加 Mapper<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> /**</div><div class="line"> * 日志管理</div><div class="line"> * Created by 陈梓平 on 2017/8/12.</div><div class="line"> */</div><div class="line">public interface JournalMapper &#123;</div><div class="line">    /**日志添加*/</div><div class="line">    int addJournalInfo(JournalInfo journalInfo);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></div><div class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.chen.mapper.JournalMapper"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--添加日志信息--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addJournalInfo"</span>&gt;</span></div><div class="line">      INSERT INTO journal  (uid,modularType,operationType,operationTime)</div><div class="line">      VALUES (10086,#&#123;modularType&#125;,#&#123;operationType&#125;,NOW())</div><div class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>5、日志工具类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="meta">@Transactional</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JournalUtils</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> JournalMapper jouUtilsJournalMapper;</div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> JournalInfo journalInfo;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 添加日志</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> modeularType</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> operationType</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addJournalInfo</span><span class="params">(<span class="keyword">int</span> modeularType,<span class="keyword">int</span> operationType,<span class="keyword">int</span> uid)</span> </span>&#123;</div><div class="line">        journalInfo.setModularType(modeularType);</div><div class="line">        journalInfo.setOperationType(operationType);</div><div class="line">        journalInfo.setUid(uid);</div><div class="line">        jouUtilsJournalMapper.addJournalInfo(journalInfo);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6、静态类（包括模块和操作）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 静态信息</span></div><div class="line"><span class="comment"> * Created by Administrator on 2017/8/12.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticInfo</span> </span>&#123;</div><div class="line">    <span class="comment">/**--------------------  模块类型  ----------------*/</span></div><div class="line">    <span class="comment">//模块1</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> MODEULARTTYPE_FIRST= <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**--------------------  操作类别  ---------------*/</span></div><div class="line">    <span class="comment">//增加</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_ADD = <span class="number">0</span>;</div><div class="line">    <span class="comment">//删除</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_UPDATE = <span class="number">1</span>;</div><div class="line">    <span class="comment">//修改</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_DELETE = <span class="number">2</span>;</div><div class="line">    <span class="comment">//开启</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_OPEN = <span class="number">3</span>;</div><div class="line">    <span class="comment">//关闭</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_CLOSE = <span class="number">4</span>;</div><div class="line">    <span class="comment">//移动</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> OPERATIONTYPE_MOVER = <span class="number">5</span>;</div><div class="line"></div><div class="line">    <span class="comment">/**---------------   AOP代理  --------------------*/</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_OPERATION_TYPE_ADD =  <span class="string">"add"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_OPERATION_TYPE_EDIT =  <span class="string">"edit"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_OPERATION_TYPE_MOVE =  <span class="string">"move"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_OPERATION_TYPE_DELETE =  <span class="string">"delete"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_OPERATION_TYPE_OPENORCLOSE =  <span class="string">"openOrClose"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_MODULAR_TYPE_FIRST = <span class="string">"Journal"</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_SPIT_CLASSNAME = <span class="string">"impl."</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AOP_SPIT_MODULAR_TYPE= <span class="string">"ServiceImpl"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7、日志切面AOP<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="meta">@Aspect</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JournalAspect</span> </span>&#123;</div><div class="line">    <span class="comment">/**日志输出*/</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(JournalAspect.class);</div><div class="line"></div><div class="line">    <span class="comment">/**日志工具类*/</span></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> JournalUtils aspectJournalUtils;</div><div class="line"></div><div class="line">    <span class="comment">/**service层切面*/</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String POINT_CUT = <span class="string">"execution(* com.chen.service..*(..))"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Pointcut</span>(POINT_CUT)</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;&#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 后置最终通知（目标方法只要执行完了就会执行后置通知方法）</span></div><div class="line"><span class="comment">     * 日志管理</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> joinPoint</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="meta">@After</span>(value = <span class="string">"pointcut()"</span>)</div><div class="line">    <span class="meta">@Transactional</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfterAdvice</span><span class="params">(JoinPoint joinPoint)</span> <span class="keyword">throws</span> CustomException </span>&#123;</div><div class="line">        <span class="comment">//用的最多 通知的签名</span></div><div class="line">        Signature signature = joinPoint.getSignature();</div><div class="line">        <span class="comment">//1.获取模块类型</span></div><div class="line">        <span class="comment">//AOP代理类的名字（包括包名）</span></div><div class="line">        String declaringTypeName = signature.getDeclaringTypeName();</div><div class="line">        logger.info(<span class="string">"AOP代理类的名字"</span>+declaringTypeName);</div><div class="line">        <span class="comment">//获取代理类的类名</span></div><div class="line">        String[] split = declaringTypeName.split(StaticInfo.AOP_SPIT_CLASSNAME);</div><div class="line">        String className = split[<span class="number">1</span>];</div><div class="line">        <span class="comment">//获取模块名</span></div><div class="line">        String[] modularTypeNames = className.split(StaticInfo.AOP_SPIT_MODULAR_TYPE);</div><div class="line">        String modularTypeName = modularTypeNames[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> modulerType = -<span class="number">1</span>;</div><div class="line">        <span class="comment">//模块类型筛选</span></div><div class="line">        modulerType = <span class="keyword">this</span>.getModularType(modularTypeName, modulerType);</div><div class="line"></div><div class="line">        <span class="comment">//2.获取操作类型</span></div><div class="line">        <span class="comment">//代理的是哪一个方法</span></div><div class="line">        String  methodName = signature.getName();</div><div class="line">        logger.info(<span class="string">"AOP代理方法的名字"</span>+signature.getName());</div><div class="line">        <span class="keyword">int</span> opreationType = -<span class="number">1</span>;</div><div class="line">        opreationType = getOpreationType(joinPoint, signature, opreationType,methodName);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (modulerType==-<span class="number">1</span>&amp;&amp;opreationType==-<span class="number">1</span>)</div><div class="line">            <span class="keyword">if</span> (!StringUtils.isBlank(methodName)||!StringUtils.isBlank(modularTypeName))</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> CustomException(ResultEnum.JOURNAL_LOG_ERROR);</div><div class="line"></div><div class="line">        <span class="comment">//3.添加日志</span></div><div class="line">        <span class="keyword">if</span> (modulerType!=-<span class="number">1</span>&amp;&amp;opreationType!=-<span class="number">1</span>)</div><div class="line">            <span class="comment">//TODO 3.1 从请求获取用户id</span></div><div class="line">            aspectJournalUtils.addJournalInfo(modulerType,opreationType, <span class="number">10086</span>);</div><div class="line"></div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 模块类型筛选</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> modularTypeName</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> type</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getModularType</span><span class="params">(String modularTypeName, <span class="keyword">int</span> type)</span> </span>&#123;</div><div class="line">        <span class="comment">//模块类型筛选</span></div><div class="line">        <span class="keyword">switch</span> (modularTypeName)&#123;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_MODULAR_TYPE_FIRST:</div><div class="line">                type = StaticInfo.MODEULARTTYPE_FIRST;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">                <span class="comment">//多模块添加</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> type;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * 获取操作类型</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> joinPoint</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> signature</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> opreationType</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span></span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getOpreationType</span><span class="params">(JoinPoint joinPoint, Signature signature, <span class="keyword">int</span> opreationType,String  methodName )</span> </span>&#123;</div><div class="line">        <span class="keyword">switch</span> (methodName)&#123;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_OPERATION_TYPE_ADD:</div><div class="line">                opreationType = StaticInfo.OPERATIONTYPE_ADD;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_OPERATION_TYPE_EDIT:</div><div class="line">                opreationType = StaticInfo.OPERATIONTYPE_UPDATE;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_OPERATION_TYPE_MOVE:</div><div class="line">                opreationType = StaticInfo.OPERATIONTYPE_MOVER;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_OPERATION_TYPE_DELETE:</div><div class="line">                opreationType = StaticInfo.OPERATIONTYPE_DELETE;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> StaticInfo.AOP_OPERATION_TYPE_OPENORCLOSE:</div><div class="line">                Object[] obj = joinPoint.getArgs();</div><div class="line">                <span class="keyword">int</span> arg = (<span class="keyword">int</span>) obj[<span class="number">1</span>];</div><div class="line">                <span class="keyword">if</span> (arg==<span class="number">1</span>)</div><div class="line">                    opreationType = StaticInfo.OPERATIONTYPE_OPEN;</div><div class="line">                <span class="keyword">else</span></div><div class="line">                    opreationType = StaticInfo.OPERATIONTYPE_CLOSE;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> opreationType;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>8、添加Controller测试<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="meta">@RequestMapping</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JournalController</span> </span>&#123;</div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> JournalService journalService;</div><div class="line"></div><div class="line">    <span class="meta">@PostMapping</span>(value = <span class="string">"journalAdd"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> Result <span class="title">add</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> journalService.add();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>9、添加Service测试<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Service</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JournalServiceImpl</span> <span class="keyword">implements</span> <span class="title">JournalService</span> </span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Result <span class="title">add</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> ResultUtils.success(ResultEnum.OK);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-AOP-实现分布式锁"><a href="#4-AOP-实现分布式锁" class="headerlink" title="4. AOP 实现分布式锁"></a>4. AOP 实现分布式锁</h3><p>改造前：<br>所有应用分布式锁的地方都需要如下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">RLock redissonLock = redissonUtil.getRedisson().getLock(<span class="string">"saveCourseApplyResource"</span>+courseApplyResource.getUserId());</div><div class="line">    <span class="keyword">boolean</span> res = <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">//等待3秒，有效期5秒</span></div><div class="line">        res = redissonLock.tryLock(<span class="number">3</span>, <span class="number">5</span>, TimeUnit.SECONDS);</div><div class="line">        <span class="keyword">if</span>(res)&#123;</div><div class="line">            <span class="comment">//执行业务操作</span></div><div class="line">        &#125;</div><div class="line">    &#125;<span class="keyword">catch</span> (RuntimeException e)&#123;</div><div class="line">        <span class="keyword">throw</span> e;</div><div class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"网络错误，请重试"</span>);</div><div class="line">    &#125; <span class="keyword">finally</span> &#123;</div><div class="line">        <span class="keyword">if</span>(res)&#123;</div><div class="line">            redissonLock.unlock();</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>改造后： </p>
+<ol>
+<li><p>首先需要一个注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Description: 分布式锁应用注解&lt;br&gt;</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * <span class="doctag">@author</span>: name：yuxin &lt;br&gt;email: yuruixin@ixincheng.com &lt;br&gt;</span></div><div class="line"><span class="comment"> * Create Time:  2018/3/4 0004-下午 8:48&lt;br&gt;</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">import</span> java.lang.annotation.Documented;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.Target;</div><div class="line"></div><div class="line"><span class="meta">@Target</span>(&#123; ElementType.METHOD, ElementType.TYPE &#125;)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Lock &#123;</div><div class="line">    <span class="comment">//分布式锁的key前缀</span></div><div class="line">    <span class="function">String <span class="title">lockName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">    <span class="comment">//等待时长</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">waitTime</span><span class="params">()</span> <span class="keyword">default</span> 3</span>;</div><div class="line">    <span class="comment">//有效期时长</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">effectiveTime</span><span class="params">()</span> <span class="keyword">default</span> 5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，需要一个切面服务类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Description: 分布式锁切面服务&lt;br&gt;</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * <span class="doctag">@author</span>: name：yuxin &lt;br&gt;email: yuruixin@ixincheng.com &lt;br&gt;</span></div><div class="line"><span class="comment"> * Create Time:  2018/3/4 0004-下午 8:46&lt;br&gt;</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> com.xczhihui.bxg.online.common.utils.RedissonUtil;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Around;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</div><div class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</div><div class="line"><span class="keyword">import</span> org.redisson.api.RLock;</div><div class="line"><span class="keyword">import</span> org.slf4j.Logger;</div><div class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</div><div class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div><div class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.lang.reflect.Method;</div><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="meta">@Component</span></div><div class="line"><span class="meta">@Aspect</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LockService</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String LOCK_NAME = <span class="string">"lockName"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String WAIT_TIME = <span class="string">"waitTime"</span>;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String EFFECTIVE_TIME = <span class="string">"effectiveTime"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Autowired</span></div><div class="line">    <span class="keyword">private</span> RedissonUtil redissonUtil;</div><div class="line">    <span class="keyword">protected</span> Logger logger = LoggerFactory.getLogger(<span class="keyword">this</span>.getClass());</div><div class="line"></div><div class="line">    <span class="meta">@Pointcut</span>(<span class="string">"@annotation(com.xczhihui.common.Lock)"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lockPointcut</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Around</span>(<span class="string">"lockPointcut()"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">around</span><span class="params">(ProceedingJoinPoint point)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line"></div><div class="line">        Map&lt;String,Object&gt; map = getLockParams(point);</div><div class="line">        String lockName = (String) map.get(LOCK_NAME);</div><div class="line">        <span class="keyword">int</span> waitTime = (<span class="keyword">int</span>) map.get(WAIT_TIME);</div><div class="line">        <span class="keyword">int</span> effectiveTime = (<span class="keyword">int</span>) map.get(EFFECTIVE_TIME);</div><div class="line">        Object[] methodParam = <span class="keyword">null</span>;</div><div class="line">        Object object=<span class="keyword">null</span>;</div><div class="line">        <span class="keyword">boolean</span> resl = <span class="keyword">false</span>;</div><div class="line">        <span class="comment">//获取方法参数</span></div><div class="line">        methodParam = point.getArgs();</div><div class="line">        String lockKey = (String) methodParam[<span class="number">0</span>];</div><div class="line">        <span class="comment">// 获得锁对象实例</span></div><div class="line">        RLock redissonLock = redissonUtil.getRedisson().getLock(lockName+lockKey);</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//等待3秒 有效期8秒</span></div><div class="line">            resl = redissonLock.tryLock(waitTime, effectiveTime, TimeUnit.SECONDS);</div><div class="line">            <span class="keyword">if</span>(resl)&#123;</div><div class="line">               object = point.proceed(point.getArgs());</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">catch</span> (RuntimeException e)&#123;</div><div class="line">            <span class="keyword">throw</span> e;</div><div class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</div><div class="line">            e.printStackTrace();</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"网络错误，请重试"</span>);</div><div class="line">        &#125;<span class="keyword">finally</span> &#123;</div><div class="line">            <span class="keyword">if</span>(resl)&#123;</div><div class="line">                logger.info(<span class="string">"开锁,&#123;&#125;"</span>,lockName+lockKey);</div><div class="line">                redissonLock.unlock();</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                logger.error(<span class="string">"未获得锁,&#123;&#125;"</span>,lockName+lockKey);</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"网络错误，请重试"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> object;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Description：获取方法的中锁参数</span></div><div class="line"><span class="comment">     * creed: Talk is cheap,show me the code</span></div><div class="line"><span class="comment">     * <span class="doctag">@author</span> name：yuxin &lt;br&gt;email: yuruixin@ixincheng.com</span></div><div class="line"><span class="comment">     * <span class="doctag">@Date</span>: 2018/3/4 0004 下午 8:59</span></div><div class="line"><span class="comment">     **/</span></div><div class="line">    <span class="function"><span class="keyword">public</span>  Map&lt;String,Object&gt; <span class="title">getLockParams</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        String targetName = joinPoint.getTarget().getClass().getName();</div><div class="line">        String methodName = joinPoint.getSignature().getName();</div><div class="line">        Object[] arguments = joinPoint.getArgs();</div><div class="line"></div><div class="line">        Class targetClass = Class.forName(targetName);</div><div class="line">        Method[] method = targetClass.getMethods();</div><div class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">        <span class="keyword">for</span> (Method m : method) &#123;</div><div class="line">            <span class="keyword">if</span> (m.getName().equals(methodName)) &#123;</div><div class="line">                Class[] tmpCs = m.getParameterTypes();</div><div class="line">                <span class="keyword">if</span> (tmpCs.length == arguments.length) &#123;</div><div class="line">                    Lock lock = m.getAnnotation(Lock.class);</div><div class="line">                    <span class="keyword">if</span> (lock != <span class="keyword">null</span>) &#123;</div><div class="line">                        String lockName = lock.lockName();</div><div class="line">                        <span class="keyword">int</span> waitTime = lock.waitTime();</div><div class="line">                        <span class="keyword">int</span> effectiveTime = lock.effectiveTime();</div><div class="line">                        map.put(LOCK_NAME,lockName);</div><div class="line">                        map.put(WAIT_TIME,waitTime);</div><div class="line">                        map.put(EFFECTIVE_TIME,effectiveTime);</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> map;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在需要加锁的方法上添加注解:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Transactional</span>(propagation = Propagation.REQUIRES_NEW)</div><div class="line"><span class="meta">@Lock</span>(lockName = <span class="string">"addCollectionApply"</span>,waitTime = <span class="number">2</span>,effectiveTime = <span class="number">3</span>)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveCollectionApply4Lock</span><span class="params">(String lockKey,CourseApplyInfo courseApplyInfo)</span></span>&#123;</div><div class="line">    <span class="comment">//业务逻辑处理</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image.png" alt="七弦桐 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image.png" alt="七弦桐 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/spring/" rel="tag">#spring</a>
+          
+            <a href="/tags/AOP/" rel="tag">#AOP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/世间多少不平事/" rel="next" title="世间多少不平事">
+                <i class="fa fa-chevron-left"></i> 世间多少不平事
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/04/时区计算/" rel="prev" title="时区计算">
+                时区计算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="七弦桐" />
+          <p class="site-author-name" itemprop="name">七弦桐</p>
+          <p class="site-description motion-element" itemprop="description">仗剑天下，执笔柔情</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">184</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">133</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/jianshu" target="_blank" title="简书">
+                  
+                  简书
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com" target="_blank" title="Lofter">
+                  
+                  Lofter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://zcqqixiantong.lofter.com/weibo" target="_blank" title="微博">
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanqiang" target="_blank" title="GitHub">
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现方式"><span class="nav-number">2.</span> <span class="nav-text">实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-实现-AOP-接口"><span class="nav-number">2.1.</span> <span class="nav-text">1. 实现 AOP 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-通过-xml配置方式"><span class="nav-number">2.2.</span> <span class="nav-text">2. 通过.xml配置方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些概念"><span class="nav-number">2.3.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切入点表达式"><span class="nav-number">2.4.</span> <span class="nav-text">切入点表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-AOP-的原理："><span class="nav-number">2.5.</span> <span class="nav-text">Spring AOP 的原理：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用实例"><span class="nav-number">3.</span> <span class="nav-text">应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-AOP-权限管理（环绕通知）"><span class="nav-number">3.1.</span> <span class="nav-text">1. AOP 权限管理（环绕通知）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-AOP-缓存"><span class="nav-number">3.2.</span> <span class="nav-text">2. AOP 缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-AOP-日志管理"><span class="nav-number">3.3.</span> <span class="nav-text">3. AOP 日志管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-AOP-实现分布式锁"><span class="nav-number">3.4.</span> <span class="nav-text">4. AOP 实现分布式锁</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七弦桐</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
