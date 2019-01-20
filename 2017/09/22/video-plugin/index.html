@@ -94,12 +94,12 @@
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="Video.js 是一个通用的在网页上嵌入视频播放器的 JS 库，Video.js 自动检测浏览器对 HTML5 的支持情况，如果不支持 HTML5 则自动使用 Flash 播放器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png">
-<meta property="og:updated_time" content="2017-09-21T16:15:37.000Z">
+<meta property="og:image" content="http://image.zhangcq.vip/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png">
+<meta property="og:updated_time" content="2019-01-20T14:47:09.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="video.js 视频播放插件">
 <meta name="twitter:description" content="Video.js 是一个通用的在网页上嵌入视频播放器的 JS 库，Video.js 自动检测浏览器对 HTML5 的支持情况，如果不支持 HTML5 则自动使用 Flash 播放器。">
-<meta name="twitter:image" content="http://oeckzejn4.bkt.clouddn.com/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png">
+<meta name="twitter:image" content="http://image.zhangcq.vip/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png">
 
 
 
@@ -407,7 +407,7 @@
 <li>第三个参数是一个 ‘ready’ 回调。一旦 Video.js 初始化完成后，就会触发这个回调。</li>
 </ul>
 <h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>在动态加载HTML进行初始化<code>player</code>对象的时候，很容易出现播放界面混乱的情况，我做的时候就出现了比如播放条错位，缺少播放时间和全局时间的显示，有白点等问题。遇到这种情况先检查加载顺序，如果不是的话也不要慌，在浏览器里找到混乱的元素，自己进行调试，把修改的 css 样式放到 HTML 的 <code>&lt;style&gt;</code>块中，不要修改插件的 CSS 文件，因为是在 js 加载的时候更改的样式，要在自己的页面里修改，如果这时候修改还是没有起作用，css 属性后面用<code>!important</code>来强制提高样式加载的优先级。</p>
-<p>比如，如果页面有多余元素(例如白点)，浏览器调试找到，css 设置<code>display:none</code>；当页面元素错位(例如进度条、声音图标错位)，用<code>margin</code>来调节合适位置；当页面元素缺失，比如缺少播放时间、剩余时间等，在浏览器 F12 调试找到对应元素，设置<code>display:block</code>。<br><img src="http://oeckzejn4.bkt.clouddn.com/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png" alt="我做的项目中的使用效果"></p>
+<p>比如，如果页面有多余元素(例如白点)，浏览器调试找到，css 设置<code>display:none</code>；当页面元素错位(例如进度条、声音图标错位)，用<code>margin</code>来调节合适位置；当页面元素缺失，比如缺少播放时间、剩余时间等，在浏览器 F12 调试找到对应元素，设置<code>display:block</code>。<br><img src="http://image.zhangcq.vip/2017-09-21-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-21%20%E4%B8%8B%E5%8D%8811.31.43.png" alt="我做的项目中的使用效果"></p>
 <h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
 <li>播放：<code>myPlayer.play();</code></li>
 <li>暂停：<code>myPlayer.pause();</code></li>

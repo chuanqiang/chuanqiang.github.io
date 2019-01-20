@@ -94,13 +94,13 @@
 <meta property="og:site_name" content="七弦桐">
 <meta property="og:description" content="深入 Web 请求过程。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20170219-174503352.jpg">
-<meta property="og:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20170220-211544648.png">
-<meta property="og:updated_time" content="2017-02-25T10:07:14.000Z">
+<meta property="og:image" content="http://image.zhangcq.vip/blog/20170219-174503352.jpg">
+<meta property="og:image" content="http://image.zhangcq.vip/blog/20170220-211544648.png">
+<meta property="og:updated_time" content="2019-01-20T14:59:06.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入 Web 请求过程">
 <meta name="twitter:description" content="深入 Web 请求过程。">
-<meta name="twitter:image" content="http://oeckzejn4.bkt.clouddn.com/blog/20170219-174503352.jpg">
+<meta name="twitter:image" content="http://image.zhangcq.vip/blog/20170219-174503352.jpg">
 
 
 
@@ -395,7 +395,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="B-S-网络架构"><a href="#B-S-网络架构" class="headerlink" title="B/S 网络架构"></a>B/S 网络架构</h2><p>大多数传统的互联网应用程序采用长连接的交互模式，而 <strong>HTTP 协议采用无状态的短连接的通信方式</strong>。一次请求就完成了一次数据交互，通常也对应一个业务逻辑。网络架构如下:<br><img src="http://oeckzejn4.bkt.clouddn.com/blog/20170219-174503352.jpg" alt=""></p>
+<h2 id="B-S-网络架构"><a href="#B-S-网络架构" class="headerlink" title="B/S 网络架构"></a>B/S 网络架构</h2><p>大多数传统的互联网应用程序采用长连接的交互模式，而 <strong>HTTP 协议采用无状态的短连接的通信方式</strong>。一次请求就完成了一次数据交互，通常也对应一个业务逻辑。网络架构如下:<br><img src="http://image.zhangcq.vip/blog/20170219-174503352.jpg" alt=""></p>
 <h3 id="请求一个网址的步骤"><a href="#请求一个网址的步骤" class="headerlink" title="请求一个网址的步骤"></a>请求一个网址的步骤</h3><ul>
 <li>在浏览器中输入一个 URL。</li>
 <li>浏览器请求 DNS 把域名解析成对应的 IP 地址</li>
@@ -584,7 +584,7 @@
 <li>TXT记录：为某个主机名或域名设置说明</li>
 </ul>
 <h3 id="CDN-工作机制"><a href="#CDN-工作机制" class="headerlink" title="CDN 工作机制"></a>CDN 工作机制</h3><p>CND(Content Delivery Network)，内容分布网络，是构筑在现有Internet 上的一种先进的流量分布网络。目的是通过现有的 Internet 中增加一层新的网络架构，将网站的内容发布到最接近用户的网络“边缘”，使用户就近取得所有内容，提高用户访问速度。</p>
-<p><img src="http://oeckzejn4.bkt.clouddn.com/blog/20170220-211544648.png" alt="image"></p>
+<p><img src="http://image.zhangcq.vip/blog/20170220-211544648.png" alt="image"></p>
 <p>CDN=镜像（Mirror）+缓存（Cache）+整体负载均衡（GSLB）</p>
 <p>CDN 以缓存网站中的静态数据为主，如css、js、图片和静态页面等数据，用户从主站服务器请求到动态内容后再从 CDN 上下载这些静态数据，从而加速网页数据的下载内容。</p>
 <p><strong>CDN请求与处理流程</strong>：向Local DNS 服务器发送请求，一般经过迭代解析后回到这个域名的注册服务器解析（每个公司都会有一台DNS解析服务器），这个服务器会把请求重新CNAME解析到另一个域名，这个域名最终会指向CDN全局中的DNS负载均衡服务器，再由这个GTM来最终分配是哪个地方的访问用户吗，返回给离这个用户最近的CDN节点。</p>

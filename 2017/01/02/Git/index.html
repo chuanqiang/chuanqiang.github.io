@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/04.jpg">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/05.jpg">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/06.jpg">
-<meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/07.png?r=100">
+<meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/07.png">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/08.png">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/09.jpg">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/10.jpg">
@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/19.png">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/20.png">
 <meta property="og:image" content="http://chuanqiang.github.io/image/code/Git/git命令速查表.png">
-<meta property="og:updated_time" content="2017-01-05T13:57:34.000Z">
+<meta property="og:updated_time" content="2019-01-20T14:58:34.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git笔记">
 <meta name="twitter:description" content="本文为 Git教程的学习笔记，教程源自廖雪峰的博客。这是一个由浅入深，学完后能立刻上手的Git教程。另，附上另一本优秀的Git书籍的中文版:『Pro Git』.">
@@ -488,7 +488,7 @@
 <li>登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库。</li>
 <li>GitHub会提示如何从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后把本地仓库的内容推送到GitHub仓库。</li>
 </ol>
-<p><img src="/image/code/Git/07.png?r=100" alt=""><br><strong>注:</strong>由于远程库是空的，我们第一次推送master分支时，加上了<code>-u</code>参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<p><img src="/image/code/Git/07.png" alt=""><br><strong>注:</strong>由于远程库是空的，我们第一次推送master分支时，加上了<code>-u</code>参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
 <p>此时，本地提交后，就可以通过命令<code>$ git push origin master</code>，把本地<code>master</code>分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！</p>
 <h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h3><p>先创建远程库，然后克隆远程库。<br><img src="/image/code/Git/08.png" alt=""><br>复制下你远程库的地址，用命令<code>git clone</code>克隆一个本地库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/chuanqiang/learngit.git</div><div class="line">Cloning into &apos;learngit&apos;...</div><div class="line">remote: Counting objects: 12, done.</div><div class="line">remote: Compressing objects: 100% (5/5), done.</div><div class="line">remote: Total 12 (delta 0), reused 12 (delta 0), pack-reused 0</div><div class="line">Receiving objects: 100% (12/12), done.</div></pre></td></tr></table></figure></p>
 <p>进入目录，就可以看到克隆到本地的库了。<br><strong>注意</strong>:</p>
