@@ -4,153 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <url>http://chuanqiang.github.io/2019/07/25/%E6%B5%81%E6%B5%AA%E5%9C%B0%E7%90%83%E5%92%8C%E9%A3%9E%E9%A9%B0%E4%BA%BA%E7%94%9F/</url>
-      <content type="html"><![CDATA[
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="renderer" content="webkit">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="black" name="apple-mobile-web-app-status-bar-style">
-    <meta content="telephone=no" name="format-detection">
-    <meta name="renderer" content="webkit">
-    <title>流浪地球和飞驰人生</title>
-    <link rel="stylesheet" href="data:text/css;base64,CiAgICBoMSwgaDIsIGgzLCBoNSwgaDYsICBpbWcsIHN2ZywgcHJlLCB0YWJsZSwgdHIsIC5tZF9saW5le3BhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZH0KCgogICAgYm9keSB7CiAgICAgICAgYmFja2dyb3VuZDogIzE3MUQyMTsKICAgICAgICBmb250LXNpemU6IDE0cHg7CiAgICAgICAgbGluZS1oZWlnaHQ6MS45OwogICAgICAgIGZvbnQtZmFtaWx5OiAiUGluZ0ZhbmcgU0MiOwogICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgICAgICAgY29sb3I6ICNBNUIwQzA7CiAgICAgICAgcGFkZGluZzogMCAzOHB4OwogICAgICAgIG1heC13aWR0aDogODIwcHg7CiAgICAgICAgbWFyZ2luOiAwIGF1dG87CgogICAgICAgIHdvcmQtd3JhcDpicmVhay13b3JkOwogICAgICAgIHdvcmQtYnJlYWs6IG5vcm1hbDsKICAgICAgICBvdmVyZmxvdy13cmFwOmJyZWFrLXdvcmQ7CgoKICAgICAgICBvdmVyZmxvdy14OiBoaWRkZW47CiAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplTGVnaWJpbGl0eTsKICAgICAgICAtd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6IG5vbmU7CiAgICB9CgogICAgYnJ7CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuOTsKICAgIH0KCgoKICAgIEBtZWRpYSAobWF4LXdpZHRoOiA2MDBweCkgewogICAgICAgIGJvZHl7CiAgICAgICAgICAgIHBhZGRpbmc6IDAgMzBweDsKICAgICAgICB9CiAgICB9CgogICAgQG1lZGlhIChtYXgtd2lkdGg6IDQ4MHB4KSB7CiAgICAgICAgYm9keXsKICAgICAgICAgICAgcGFkZGluZzogMCAyMHB4OwogICAgICAgIH0KICAgIH0KCiAgICAuZ2lzdHsKICAgICAgICB3b3JkLWJyZWFrOiBub3JtYWw7CiAgICB9CgogICAgLnBvc3R7CiAgICAgICAgbWFyZ2luLXRvcDogMTBweDsKICAgICAgICBtYXJnaW4tYm90dG9tOiA1MHB4OwogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgIH0KCgoKICAgIGltZ3sKICAgICAgICBtYXgtd2lkdGg6IDk4JTsKICAgICAgICBtYXJnaW46IDAuOGVtIGF1dG8gMC44ZW0gYXV0bzsKICAgIH0KCiAgICBoMSBpbWcsIGgyIGltZywgaDMgaW1nLCBoNCBpbWcsIGg1IGltZywgaDYgaW1newogICAgICAgIG1hcmdpbjogYXV0bzsKICAgIH0KCiAgICAueDJfaW1hZ2V7CiAgICAgICAgem9vbTogNTAlOwogICAgfQoKICAgIC54M19pbWFnZXsKICAgICAgICB6b29tOiAzMy4zMyU7CiAgICB9CgogICAgLng0X2ltYWdlewogICAgICAgIHpvb206IDI1JTsKICAgIH0KCgogICAgcCBpbWd7CiAgICAgICAgbWFyZ2luOiAwIGF1dG87CiAgICB9CgogICAgcHsKICAgICAgICAvKm92ZXJmbG93OmhpZGRlbjsqLwogICAgICAgIG1hcmdpbjogMS4wZW0gMCAxLjRlbSAwOwogICAgfQoKICAgIHAubWRfYmxvY2tfYXNfb3BlbmluZ3sKICAgICAgICBtYXJnaW4tYm90dG9tOiAtMC41ZW0gIWltcG9ydGFudDsKICAgIH0KCiAgICBsaSBwewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjcxOwogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICAucF9wYXJ0IHsKICAgICAgICBtYXJnaW46IDEwcHggMDsKICAgIH0KCiAgICAucF9wYXJ0IHB7CiAgICAgICAgbWFyZ2luOiAwIDAgMC42ZW0gMDsKICAgIH0KCiAgICAvKiB0ZXh0IGluZGVudCBmb3IgY2hpbmVzZSBzdGFydHMqLwogICAgLypoMiwgaDMsIGg0LCBoNSwgaDYsIC5wX3BhcnQgcCwgLnRvZG9faXRlbSwgcHsKICAgICAgICB0ZXh0LWluZGVudDogMHB4OwogICAgfSovCiAgICB0YWJsZSwgcHJlLCBzdmcsIC5jb2RlaGlsaXRldGFibGV7CiAgICAgICAgbWFyZ2luLWxlZnQ6IDBweDsKICAgICAgICBtYXJnaW4tcmlnaHQ6IDBweDsKICAgIH0KCiAgICAuY29kZWhpbGl0ZXRhYmxlIHByZXsKICAgICAgICBtYXJnaW4tbGVmdDogMDsKICAgICAgICBtYXJnaW4tcmlnaHQ6IDA7CgogICAgfQoKICAgIC5jb2RlaGlsaXRldGFibGUgLmNvZGVoaWxpdGUgcHJlewogICAgICAgIGJvcmRlci1sZWZ0OiBub25lOwogICAgfQoKICAgIC8qIHRleHQgaW5kZW50IGZvciBjaGluZXNlIGVuZHMqLwoKCiAgICBibG9ja3F1b3RlIC5wX3BhcnQgcCwgbGkgLnBfcGFydCBwewogICAgICAgIHRleHQtaW5kZW50OiAwICFpbXBvcnRhbnQ7CiAgICB9CgoKICAgIGhyewogICAgICAgIG1hcmdpbjogMzhweCAwOwogICAgICAgIGJvcmRlcjogbm9uZTsKICAgICAgICBib3JkZXItYm90dG9tOiAxcHggZGFzaGVkIHJnYmEoMjA1LCAyMDUsIDIwNSwgMC4zNSk7CiAgICAgICAgY29sb3I6IHJnYmEoMjA1LCAyMDUsIDIwNSwgMC4zNSk7CiAgICAgICAgaGVpZ2h0OiAxcHg7CiAgICAgICAgbGluZS1oZWlnaHQ6MXB4OwogICAgICAgIGZvbnQtc2l6ZToxcHg7CiAgICAgICAgb3ZlcmZsb3cteTogaGlkZGVuOwogICAgfQoKCiAgICBoMXsKICAgICAgICBjb2xvcjogI0Q1RjBGODsKICAgICAgICBmb250LXNpemU6IDEuN2VtOwogICAgICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICAgICAgbWFyZ2luOiAwOwogICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuN2VtOwogICAgICAgIG1hcmdpbi10b3A6IDAuOGVtOwogICAgICAgIG1hcmdpbi1ib3R0b206IDAuNmVtOwogICAgfQoKICAgIGgxLCBoMiwgaDMsIGg0ewogICAgICAgIGNvbG9yOiAjRDVGMEY4OwogICAgfQogICAgCiAgICBoMXtjb2xvcjojRDVGMEY4fQoKCgogICAgaDIsIGgzewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjVlbTsKICAgICAgICBtYXJnaW4tdG9wOiAxLjhlbTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjVlbTsKICAgIH0KCiAgICAuaDE2Lm1kX2ZpcnN0X2gubWRfZmlyc3RfcGFydCB7CiAgICAgICAgbWFyZ2luLXRvcDogNXB4OwogICAgfQoKICAgIGgyIHsKICAgICAgICBmb250LXNpemU6IDEuNWVtOwogICAgfQoKICAgIGgzIHsKICAgICAgICBmb250LXNpemU6IDEuMjVlbQogICAgfQoKICAgIGg0IHsKICAgICAgICBmb250LXNpemU6IDEuMTVlbTsKICAgIH0KCiAgICBoNSB7CiAgICAgICAgZm9udC1zaXplOiAxLjFlbTsKICAgIH0KCiAgICBoNiB7Zm9udC1zaXplOiAxZW19CgoKICAgIGgxLCBoMiwgaDMsIGg0LCBoNSwgaDZ7CiAgICAgICAgZm9udC1mYW1pbHk6ICJIZWx2ZXRpY2EgTmV1ZSIsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsKICAgIH0KCgogICAgb2wgewogICAgICAgIG1hcmdpbjogMDsKICAgIH0KCiAgICB1bHsKICAgICAgICBwYWRkaW5nOiA1cHggMzhweDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CgogICAgdWwgbGksIGxpewogICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQoKICAgIHVsIHAsIG9sIHB7CiAgICAgICAgb3ZlcmZsb3c6IHZpc2libGU7CiAgICB9CgoKICAgIGJsb2NrcXVvdGUgewogICAgICAgIC1tb3otYm94LXNpemluZzogYm9yZGVyLWJveDsKICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIG1hcmdpbjogMS42ZW0gMDsKICAgICAgICBwYWRkaW5nOiAwIDAgMCAxLjJlbTsKICAgICAgICBib3JkZXItbGVmdDogMC40ZW0gc29saWQgIzRGNTU1RTsKICAgICAgICBjb2xvcjogIzlBOUE5QTsKICAgICAgICBtaW4taGVpZ2h0OjIwcHg7CiAgICB9CgoKICAgIGJsb2NrcXVvdGUgcCB7CiAgICAgICAgbWFyZ2luOiAwLjhlbSAwOwogICAgfQoKICAgIGJsb2NrcXVvdGUgc3Bhbi5tZF9saW5lIHsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjI1ZW07CiAgICAgICAgbWFyZ2luLXRvcDogMC4yNWVtOwogICAgfQoKICAgIGJsb2NrcXVvdGUgdWx7CiAgICAgICAgcGFkZGluZzogMCAxNXB4OwogICAgfQoKICAgIGJsb2NrcXVvdGUgc21hbGwgewogICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsKICAgICAgICBtYXJnaW46IDAuOGVtIDAgMC44ZW0gMS41ZW07CiAgICAgICAgZm9udC1zaXplOiAwLjllbTsKICAgICAgICBjb2xvcjogI2NjYzsKICAgIH0KCgoKCgoKICAgIHRhYmxlIHsKICAgICAgICBsaW5lLWhlaWdodDogMS43OwogICAgICAgIC1tb3otYm94LXNpemluZzogYm9yZGVyLWJveDsKICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIG1hcmdpbjogMWVtIDA7CiAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgbWF4LXdpZHRoOiAxMDAlOwogICAgICAgIGJvcmRlci13aWR0aDogMXB4OwogICAgICAgIGJvcmRlci1zdHlsZTogc29saWQ7CiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgICAgICAgYm9yZGVyLXNwYWNpbmc6IDA7CiAgICAgICAgd29yZC1icmVhazogbm9ybWFsOwogICAgfQogICAgCiAgICAvKiBmb3Igd2VjaGF0IG9ubHkgc3RhcnRzICovCiAgICB0YWJsZSB0cnsKICAgICAgICBib3JkZXItcmlnaHQtc3R5bGU6IHNvbGlkOwogICAgICAgIGJvcmRlci1yaWdodC13aWR0aDogMXB4OwogICAgfQogICAgCiAgICB0YWJsZSB0Ym9keXsKICAgICAgICBib3JkZXItYm90dG9tLXdpZHRoOiAxcHg7CiAgICAgICAgYm9yZGVyLWJvdHRvbS1zdHlsZTogc29saWQ7CiAgICB9CiAgICAvKiBmb3Igd2VjaGF0IG9ubHkgZW5kcyAqLwoKCiAgICB0YWJsZSwgdGFibGUgdHIsIHRhYmxlIHRyIHRkLCB0YWJsZSB0ciB0aCwgdGFibGUgdGJvZHkgewogICAgICAgIGJvcmRlci1jb2xvcjogcmdiYSgyMDUsIDIwNSwgMjA1LCAwLjM1KTsKICAgIH0KCiAgICB0YWJsZSB0aCB7CiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgICB9CgogICAgdHIgdGggewogICAgICAgIGJvcmRlci1ib3R0b20td2lkdGg6IDFweDsKICAgICAgICBib3JkZXItYm90dG9tLXN0eWxlOiBzb2xpZDsKICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0OwogICAgfQoKICAgIHRyIHRoLCB0ciB0ZCB7CiAgICAgICAgcGFkZGluZzogMTBweCAyMHB4OwogICAgICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkOwogICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCByZ2JhKDIwNSwgMjA1LCAyMDUsIDAuMzUpOwogICAgfQoKICAgIHRib2R5IHRyOmxhc3QtY2hpbGQgdGR7CiAgICAgICAgYm9yZGVyLWJvdHRvbTogMDsKICAgIH0KCiAgICB0ciB0aDpsYXN0LWNoaWxkLCB0ciB0ZDpsYXN0LWNoaWxkIHsKICAgICAgICBib3JkZXItcmlnaHQ6IDA7CiAgICB9CgogICAgdGFibGUgdGJvZHkgPiB0cjpudGgtY2hpbGQob2RkKSA+IHRkLCB0YWJsZSB0Ym9keSA+IHRyOm50aC1jaGlsZChvZGQpID4gdGggewogICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4yKTsKICAgIH0KCgoKCiAgICBjb2RlewogICAgICAgIGJhY2tncm91bmQ6IHJnYmEoMjM1LCAyMzUsIDIzNSwgMC4zNSk7CiAgICAgICAgY29sb3I6ICM3OEUyOTE7CiAgICAgICAgcGFkZGluZzogMCA1cHg7CiAgICAgICAgbWFyZ2luOiAwIDJweDsKICAgIH0KCiAgICBwcmV7CiAgICAgICAgbWFyZ2luLXRvcDogMS4yZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMS4yZW07CiAgICAgICAgcGFkZGluZzogMTVweCAxMHB4OwogICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIC8qIG92ZXJmbG93OiBhdXRvOyAqLwogICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMjA1LCAyMDUsIDIwNSwgMC4zNSk7CiAgICAgICAgLypiYWNrZ3JvdW5kOiByZ2JhKDIzNSwgMjM1LCAyMzUsIDAuMzUpOyovCiAgICAgICAgZm9udC1zaXplOiA5MCU7CiAgICAgICAgbGluZS1oZWlnaHQ6MS45OwogICAgICAgIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDsKICAgIH0KCiAgICAuaGlnaGxpZ2h0dGFibGUgdGR7CiAgICAgICAgLypiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDIzNSwgMjM1LCAyMzUsIDAuMzUpICFpbXBvcnRhbnQ7Ki8KICAgIH0KCiAgICAud2l0aF9saW5lcyBwcmV7CiAgICAgICAgYm9yZGVyOm5vbmU7CiAgICAgICAgbWFyZ2luLXRvcDogMC4yZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC4yZW07CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7CiAgICB9CgogICAgLmlzX2NvZGVfZmlsZSBwcmV7CiAgICAgICAgYm9yZGVyOiBub25lOwogICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwogICAgfQoKICAgIC5jb2RlaGlsaXRlIHByZXsKICAgICAgICAvKndvcmQtd3JhcDogbm9ybWFsOyovCiAgICAgICAgZm9udC1zaXplOiAxM3B4OwogICAgfQoKICAgIHByZSBjb2RlewogICAgICAgIGJvcmRlcjpub25lOwogICAgICAgIGJhY2tncm91bmQ6IG5vbmU7CiAgICAgICAgcGFkZGluZzogMDsKICAgICAgICBtYXJnaW46IDA7CiAgICB9CgogICAgcHJlIHB7CiAgICAgICAgbWFyZ2luOiAwOwogICAgICAgIHBhZGRpbmc6IDA7CiAgICB9CgogICAgLmNvZGVoaWxpdGUgdGgsIC5jb2RlaGlsaXRlIHRkewogICAgICAgIGxpbmUtaGVpZ2h0OiAxLjhlbTsKICAgIH0KCgogICAgYXsKICAgICAgICBjb2xvcjogIzc3Qjg3RjsKICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7CiAgICAgICAgLy9ib3JkZXItYm90dG9tOiAxcHggc29saWQgdHJhbnNwYXJlbnQ7CiAgICB9CgogICAgYTpob3ZlcnsKICAgICAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsKICAgICAgICAvL2JvcmRlci1ib3R0b206IDFweCBzb2xpZCAjNzdCODdGOwogICAgfQoKICAgIHN0cm9uZyB7CiAgICAgICAgY29sb3I6ICNGRkZGRkY7CiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgICB9CgoKICAgIC8qIGZvciBtYXJrZG93biAqLwoKICAgIC5saW5lbm9zIHByZXsKCQliYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsKCQlib3JkZXI6IG5vbmU7Cgl9CgoJLmxpbmVub3N7CgkgICAgcGFkZGluZzogMCA1cHggMCA1cHg7CgkgICAgd2lkdGg6IDAuMDAxJTsKCX0KCgkuaGlnaGxpZ2h0dGFibGUgcHJlewoJICAgIHBhZGRpbmc6IDVweCAxMHB4OwoJfQoKICAgIC50b2N7CiAgICAgICAgYmFja2dyb3VuZDogTm9uZTsKICAgICAgICBib3JkZXItcmFkaXVzOiA1cHg7CiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgTm9uZTsKICAgICAgICBtYXJnaW46IDI3cHggMCA0N3B4IDA7CiAgICAgICAgcGFkZGluZzogMTBweCAwOwogICAgfQoKICAgIC50b2MgdWx7CiAgICAgICAgLy9wYWRkaW5nOiA1cHggNDJweDsKICAgIH0KCiAgICAudG9jIHVsIGxpewogICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgbWFyZ2luOiAwOwogICAgfQogICAgLnRvYyBhewogICAgICAgIGNvbG9yOiAjQTVCMEMwOwogICAgfQoKCgogICAgLnRvZG9faXRlbXsKICAgICAgICBsaXN0LXN0eWxlOiBub25lOwogICAgICAgIG1hcmdpbi1sZWZ0OiAtMS41ZW0KICAgIH0KICAgIC50b2RvX2l0ZW0gLnRvZG9faXRlbSB7CiAgICAgICAgbWFyZ2luLWxlZnQ6IGF1dG87CiAgICB9CgogICAgLnRvZG9fZG9uZV9pdGVtewogICAgICAgIGNvbG9yOiAjNTU1NTU1OwogICAgfQoKICAgIC50b2RvX3VuZG9uZV9pdGVtewogICAgICAgIGNvbG9yOiAjREREREREOwogICAgfQoKCiAgICB1bCBsaS50b2RvX2l0ZW17CglsaXN0LXN0eWxlLXR5cGU6IG5vbmU7CiAgICB9CgogICAgdWwgbGkudG9kb19pdGVtOmJlZm9yZXsKICAgICAgICBjb250ZW50OiAn4piQJzsKICAgICAgICAvKnBhZGRpbmctcmlnaHQ6IDAuMmVtOyovCiAgICAgICAgZm9udC1mYW1pbHk6IGFyaWFsOwogICAgfQoKICAgIHVsIGxpLnRvZG9fZG9uZV9pdGVtOmJlZm9yZXsKICAgICAgICBjb250ZW50OiAn4piRJzsKICAgICAgICAvKnBhZGRpbmctcmlnaHQ6IDAuMmVtOyovCiAgICAgICAgZm9udC1mYW1pbHk6IGFyaWFsOwogICAgfQoKICAgIHVsIGxpLnRvZG9faXRlbSBpbnB1dHsKICAgICAgICBkaXNwbGF5Om5vbmUKICAgIH0KCgogICAgLypweWdtZW50cyovCgogICAgLmNvZGVoaWxpdGV7CiAgICAgICAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQgIWltcG9ydGFudDsKICAgIH0KCiAgICB0YWJsZS5jb2RlaGlsaXRldGFibGV7IGJvcmRlcjpub25lOyB9CgoKICAgIC5jb2RlaGlsaXRldGFibGUgdGR7IGJvcmRlcjogbm9uZTsgcGFkZGluZzogMDt9CgogICAgLmZsb3ctZ3JhcGhpYywgLm1kX2Jsb2NrX3NlY3Rpb25fZm9yX2Zsb3dfZ3JhcGhpY3t0ZXh0LWFsaWduOiBjZW50ZXJ9CiAgICAuZmxvdy1ncmFwaGljIHsgb3ZlcmZsb3cteDogYXV0bzt9CiAgICAubWVybWFpZCwgLm1kX2Jsb2NrX3NlY3Rpb25fZm9yX21lcm1haWR7dGV4dC1hbGlnbjogY2VudGVyfQoKCiAgICB0YWJsZSwgdHIsIHRkLCB0aCwgdGJvZHksIHRoZWFkLCB0Zm9vdCwgLm1kX2VjaGFydHMsIGJsb2NrcXVvdGUgLm1kX2xpbmV7CiAgICAgICAgcGFnZS1icmVhay1pbnNpZGU6IGF2b2lkICFpbXBvcnRhbnQ7CiAgICB9CgogICAgLmZvb3Rub3RlcyAubWRfbGluZXsKICAgICAgICBkaXNwbGF5OiBpbmxpbmUgIWltcG9ydGFudDsKICAgIH0KCgogICAgLmltZ19ydF85MHsKICAgICAgICB0cmFuc2Zvcm06cm90YXRlKDkwZGVnKTsKICAgICAgICAtbXMtdHJhbnNmb3JtOnJvdGF0ZSg5MGRlZyk7CiAgICAgICAgLW1vei10cmFuc2Zvcm06cm90YXRlKDkwZGVnKTsKICAgICAgICAtd2Via2l0LXRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgICAgIC1vLXRyYW5zZm9ybTpyb3RhdGUoOTBkZWcpOwogICAgfQogICAgLmltZ19ydF8xODB7CiAgICAgICAgdHJhbnNmb3JtOnJvdGF0ZSgxODBkZWcpOwogICAgICAgIC1tcy10cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICAgICAgLW1vei10cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06cm90YXRlKDE4MGRlZyk7CiAgICAgICAgLW8tdHJhbnNmb3JtOnJvdGF0ZSgxODBkZWcpOwogICAgfQogICAgLmltZ19ydF8yNzB7CiAgICAgICAgdHJhbnNmb3JtOnJvdGF0ZSgyNzBkZWcpOwogICAgICAgIC1tcy10cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICAgICAgLW1vei10cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICAgICAgLXdlYmtpdC10cmFuc2Zvcm06cm90YXRlKDI3MGRlZyk7CiAgICAgICAgLW8tdHJhbnNmb3JtOnJvdGF0ZSgyNzBkZWcpOwogICAgfQoKICAgIC5tZF9oYXNfYmxvY2tfYmVsb3d7CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC4xZW0gIWltcG9ydGFudDsKICAgIH0KICAgIC5tZF9oYXNfYmxvY2tfYmVsb3dfaW1newogICAgICAgIG1hcmdpbi1ib3R0b206IC0wLjZlbSAhaW1wb3J0YW50OwogICAgfQoKCiAgICAuY29kZWhpbGl0ZSAuZXJyewogICAgICAgIGJvcmRlcjogbm9uZSAhaW1wb3J0YW50OwogICAgICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7CiAgICB9CgoKCiAgICAgICAgc3Bhbi5tZF9saW5le21hcmdpbi1ib3R0b206MC41ZW07IGRpc3BsYXk6YmxvY2s7IGxpbmUtaGVpZ2h0OjEuNjQzNX0KICAgICAgICAubWRfbGluZSBicnsgZGlzcGxheTogbm9uZTt9CiAgICAgICAgLmNvZGVoaWxpdGUgLmhsbCB7IGJhY2tncm91bmQtY29sb3I6ICB9Ci5jb2RlaGlsaXRlICB7IGJhY2tncm91bmQ6ICMyNzI4MjI7IGNvbG9yOiAjZjhmOGYyIH0KLmNvZGVoaWxpdGUgLmMgeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQgKi8KLmNvZGVoaWxpdGUgLmVyciB7IGNvbG9yOiAjOTYwMDUwOyBiYWNrZ3JvdW5kLWNvbG9yOiAjMWUwMDEwIH0gLyogRXJyb3IgKi8KLmNvZGVoaWxpdGUgLmsgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQgKi8KLmNvZGVoaWxpdGUgLmwgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwgKi8KLmNvZGVoaWxpdGUgLm4geyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUgKi8KLmNvZGVoaWxpdGUgLm8geyBjb2xvcjogI2Y5MjY3MiB9IC8qIE9wZXJhdG9yICovCi5jb2RlaGlsaXRlIC5wIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBQdW5jdHVhdGlvbiAqLwouY29kZWhpbGl0ZSAuY2ggeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQuSGFzaGJhbmcgKi8KLmNvZGVoaWxpdGUgLmNtIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50Lk11bHRpbGluZSAqLwouY29kZWhpbGl0ZSAuY3AgeyBjb2xvcjogIzc1NzE1ZSB9IC8qIENvbW1lbnQuUHJlcHJvYyAqLwouY29kZWhpbGl0ZSAuY3BmIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50LlByZXByb2NGaWxlICovCi5jb2RlaGlsaXRlIC5jMSB7IGNvbG9yOiAjNzU3MTVlIH0gLyogQ29tbWVudC5TaW5nbGUgKi8KLmNvZGVoaWxpdGUgLmNzIHsgY29sb3I6ICM3NTcxNWUgfSAvKiBDb21tZW50LlNwZWNpYWwgKi8KLmNvZGVoaWxpdGUgLmdkIHsgY29sb3I6ICNmOTI2NzIgfSAvKiBHZW5lcmljLkRlbGV0ZWQgKi8KLmNvZGVoaWxpdGUgLmdpIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBHZW5lcmljLkluc2VydGVkICovCi5jb2RlaGlsaXRlIC5ndSB7IGNvbG9yOiAjNzU3MTVlIH0gLyogR2VuZXJpYy5TdWJoZWFkaW5nICovCi5jb2RlaGlsaXRlIC5rYyB7IGNvbG9yOiAjNjZkOWVmIH0gLyogS2V5d29yZC5Db25zdGFudCAqLwouY29kZWhpbGl0ZSAua2QgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuRGVjbGFyYXRpb24gKi8KLmNvZGVoaWxpdGUgLmtuIHsgY29sb3I6ICNmOTI2NzIgfSAvKiBLZXl3b3JkLk5hbWVzcGFjZSAqLwouY29kZWhpbGl0ZSAua3AgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuUHNldWRvICovCi5jb2RlaGlsaXRlIC5rciB7IGNvbG9yOiAjNjZkOWVmIH0gLyogS2V5d29yZC5SZXNlcnZlZCAqLwouY29kZWhpbGl0ZSAua3QgeyBjb2xvcjogIzY2ZDllZiB9IC8qIEtleXdvcmQuVHlwZSAqLwouY29kZWhpbGl0ZSAubGQgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuRGF0ZSAqLwouY29kZWhpbGl0ZSAubSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIgKi8KLmNvZGVoaWxpdGUgLnMgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nICovCi5jb2RlaGlsaXRlIC5uYSB7IGNvbG9yOiAjYTZlMjJlIH0gLyogTmFtZS5BdHRyaWJ1dGUgKi8KLmNvZGVoaWxpdGUgLm5iIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBOYW1lLkJ1aWx0aW4gKi8KLmNvZGVoaWxpdGUgLm5jIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkNsYXNzICovCi5jb2RlaGlsaXRlIC5ubyB7IGNvbG9yOiAjNjZkOWVmIH0gLyogTmFtZS5Db25zdGFudCAqLwouY29kZWhpbGl0ZSAubmQgeyBjb2xvcjogI2E2ZTIyZSB9IC8qIE5hbWUuRGVjb3JhdG9yICovCi5jb2RlaGlsaXRlIC5uaSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5FbnRpdHkgKi8KLmNvZGVoaWxpdGUgLm5lIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkV4Y2VwdGlvbiAqLwouY29kZWhpbGl0ZSAubmYgeyBjb2xvcjogI2E2ZTIyZSB9IC8qIE5hbWUuRnVuY3Rpb24gKi8KLmNvZGVoaWxpdGUgLm5sIHsgY29sb3I6ICNmOGY4ZjIgfSAvKiBOYW1lLkxhYmVsICovCi5jb2RlaGlsaXRlIC5ubiB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5OYW1lc3BhY2UgKi8KLmNvZGVoaWxpdGUgLm54IHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLk90aGVyICovCi5jb2RlaGlsaXRlIC5weSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5Qcm9wZXJ0eSAqLwouY29kZWhpbGl0ZSAubnQgeyBjb2xvcjogI2Y5MjY3MiB9IC8qIE5hbWUuVGFnICovCi5jb2RlaGlsaXRlIC5udiB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZSAqLwouY29kZWhpbGl0ZSAub3cgeyBjb2xvcjogI2Y5MjY3MiB9IC8qIE9wZXJhdG9yLldvcmQgKi8KLmNvZGVoaWxpdGUgLncgeyBjb2xvcjogI2JiYmJiYiB9IC8qIFRleHQuV2hpdGVzcGFjZSAqLwouY29kZWhpbGl0ZSAubWIgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLkJpbiAqLwouY29kZWhpbGl0ZSAubWYgeyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLkZsb2F0ICovCi5jb2RlaGlsaXRlIC5taCB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIuSGV4ICovCi5jb2RlaGlsaXRlIC5taSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5OdW1iZXIuSW50ZWdlciAqLwouY29kZWhpbGl0ZSAubW8geyBjb2xvcjogI2FlODFmZiB9IC8qIExpdGVyYWwuTnVtYmVyLk9jdCAqLwouY29kZWhpbGl0ZSAuc2EgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLkFmZml4ICovCi5jb2RlaGlsaXRlIC5zYiB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuQmFja3RpY2sgKi8KLmNvZGVoaWxpdGUgLnNjIHsgY29sb3I6ICNlNmRiNzQgfSAvKiBMaXRlcmFsLlN0cmluZy5DaGFyICovCi5jb2RlaGlsaXRlIC5kbCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRGVsaW1pdGVyICovCi5jb2RlaGlsaXRlIC5zZCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRG9jICovCi5jb2RlaGlsaXRlIC5zMiB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuRG91YmxlICovCi5jb2RlaGlsaXRlIC5zZSB7IGNvbG9yOiAjYWU4MWZmIH0gLyogTGl0ZXJhbC5TdHJpbmcuRXNjYXBlICovCi5jb2RlaGlsaXRlIC5zaCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuSGVyZWRvYyAqLwouY29kZWhpbGl0ZSAuc2kgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLkludGVycG9sICovCi5jb2RlaGlsaXRlIC5zeCB7IGNvbG9yOiAjZTZkYjc0IH0gLyogTGl0ZXJhbC5TdHJpbmcuT3RoZXIgKi8KLmNvZGVoaWxpdGUgLnNyIHsgY29sb3I6ICNlNmRiNzQgfSAvKiBMaXRlcmFsLlN0cmluZy5SZWdleCAqLwouY29kZWhpbGl0ZSAuczEgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLlNpbmdsZSAqLwouY29kZWhpbGl0ZSAuc3MgeyBjb2xvcjogI2U2ZGI3NCB9IC8qIExpdGVyYWwuU3RyaW5nLlN5bWJvbCAqLwouY29kZWhpbGl0ZSAuYnAgeyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuQnVpbHRpbi5Qc2V1ZG8gKi8KLmNvZGVoaWxpdGUgLmZtIHsgY29sb3I6ICNhNmUyMmUgfSAvKiBOYW1lLkZ1bmN0aW9uLk1hZ2ljICovCi5jb2RlaGlsaXRlIC52YyB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZS5DbGFzcyAqLwouY29kZWhpbGl0ZSAudmcgeyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuVmFyaWFibGUuR2xvYmFsICovCi5jb2RlaGlsaXRlIC52aSB7IGNvbG9yOiAjZjhmOGYyIH0gLyogTmFtZS5WYXJpYWJsZS5JbnN0YW5jZSAqLwouY29kZWhpbGl0ZSAudm0geyBjb2xvcjogI2Y4ZjhmMiB9IC8qIE5hbWUuVmFyaWFibGUuTWFnaWMgKi8KLmNvZGVoaWxpdGUgLmlsIHsgY29sb3I6ICNhZTgxZmYgfSAvKiBMaXRlcmFsLk51bWJlci5JbnRlZ2VyLkxvbmcgKi8KICAgIC8qIHBhZ2VfY3NzICovCgogICAgCiAgICBodG1sewogICAgICAgIGJhY2tncm91bmQ6ICMxMDE2MUE7CiAgICB9CiAgICBib2R5ewogICAgICAgIHdpZHRoOiA5MCU7CiAgICAgICAgbWF4LXdpZHRoOiA5NjBweDsKICAgICAgICBiYWNrZ3JvdW5kOiAjMTcxRDIxOwogICAgICAgIG1hcmdpbjogM2VtIGF1dG8gMDsKICAgICAgICBwYWRkaW5nLXRvcDogMmVtOwogICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICMxMDE2MUE7CiAgICAgICAgYm9yZGVyLXdpZHRoOiAwIDFweDsKICAgIH0KCiAgICAucG9zdHsKICAgICAgICBwYWRkaW5nOiA1JSAxMCU7CiAgICAgICAgbWFyZ2luLXRvcDogMDsKICAgICAgICBtYXJnaW4tYm90dG9tOiAwOwogICAgfQogICAgCgogICAgLnRpdGxlX2NvbnRhaW5lcnsKICAgICAgICBtYXJnaW46IC0yZW0gMCAzLjVlbTsKICAgICAgICBwYWRkaW5nLWJvdHRvbTogMmVtOwogICAgICAgIGJvcmRlci1ib3R0b206IDNweCBkb3VibGUgIzEwMTYxQTsKICAgIH0KICAgIC50aXRsZV9jb250YWluZXIgaDF7CiAgICAgICAgbWFyZ2luLXRvcDogMS4yZW07CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMC42ZW07CiAgICAgICAgbGluZS1oZWlnaHQ6IDEuMzU7CiAgICAgICAgZm9udC1zaXplOiAyLjI1ZW07CiAgICB9CiAgICAudGl0bGVfY29udGFpbmVyIGgyewogICAgICAgIGNvbG9yOiAjOUE5QTlBOwogICAgICAgIGZvbnQtc2l6ZTogMWVtOwogICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgICAgICAgcGFkZGluZy1ib3R0b206IDJlbTsKICAgICAgICBsaW5lLWhlaWdodDogMS4zNTsKICAgICAgICBtYXJnaW4tYm90dG9tOiAtMmVtOwogICAgfQoKICAgIEBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1heC13aWR0aDogNzYwcHgpewogICAgICAgIGh0bWx7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OwogICAgICAgIH0KICAgICAgICBib2R5ewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgfQogICAgICAgIC5wb3N0ewogICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgIH0KICAgIH0KICAgIC8qIHBhZ2VfY3NzICovCgogICAg">
-    <!--header_scripts-->
-</head>
-<body>
-    <div class="post">
-        <div class="post_body">
-            
-                <div class="title_container">
-                    <h1> 流浪地球和飞驰人生 </h1>
-                    
-                </div>
-            
-            <p class="md_block">
-    <span class="md_line md_line_start md_line_end">梭罗说，日出未必意味着光明，太阳也无非是一颗晨星而已，只有在我们醒着时，才是真正的破晓。每天东升西落，朝九晚五，究竟我们的白天能有时间几许呢？</span>
-</p>
-
-<a id="more"></a>
-
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">春节档的电影充斥着国产的烂片，所谓春节档就是国产电影保护壁垒下捞钱的合家欢电影大集合。星爷的《新喜剧之王》烂出新高度，观众早已不欠他的电影票，而是他欠观众一部出色的电影。当然，也有两部电影还可以，一部是《流浪地球》，另一部是韩寒的《飞驰人生》。</span>
-</p>
-
-
-<p class="md_block">
-    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://i.loli.net/2019/07/25/5d39cc165b0ab30964.png" alt="流浪地球海报" title=""></span>
-</p>
-
-
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">《流浪地球》是一部不错的灾难片，却也是一部糟糕的科幻片，就像波米在『反派影评』里说的那样：『不是特效越多就越科幻，‘毁天灭地’那是灾难片的标配；拍科幻也不是造航母搞核弹，没必要天天强煽‘中国科幻零的突破’。可以说，科幻提供一切但恰恰不提供民族情绪的出口，如果影片全凭激发民族自豪感而成功，这本身就是对科幻二字的羞辱』。之后我也看了刘慈欣的电影同名小说，相比于原著的宏大设定，电影只是取了里面的一个小片段进行了放大和改编，具有工业级别的水准，但也只是在灾难片的范畴中而已。而在原著《流浪地球》中，作者用很简短的篇幅叙述出了一段波澜壮阔的人类逃亡旅程。其实里面的内容完全可以展开，写成一部浩瀚的科幻历史长卷，但大刘总是立意先行的作者，好像是先抓住心中一闪而过的灵光而进行的匆忙记录。</span>
-</p>
-
-
-<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_blockquote">
-    <span class="md_line md_line_start md_line_end">书中记录了人类流亡的历程：</span>
-</p>
-
-
-<blockquote class="blockquote_lines_1">
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">人类的逃亡分为五步：第一步，用地球发动机使地球停止转动，使发动机喷口固定在地球运行的反方向；第二步，全功率开动地球发动机，使地球加速到逃逸速度，飞出太阳系；第三步，在外太空继续加速，飞向比邻星；第四步，在中途使地球重新自转，掉转发动机方向，开始减速；第五步，地球泊入比邻星轨道，成为这颗恒星的卫星。人们把这五步分别称为刹车时代、逃逸时代、流浪时代I（加速）、流浪时代II（减速）、新太阳时代。 </span>
-</p>
-
-</blockquote>
-
-<p class="md_block  md_has_block_below md_has_block_below_blockquote">
-    <span class="md_line md_line_start md_line_end">在那个时代下，人们的信仰都消失，上帝已死亡。人们眼中的死亡都是雪亮的。</span>
-</p>
-
-
-<blockquote class="blockquote_lines_1">
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">在这个时代，人们在看四个世纪以前的电影和小说时都莫名其妙，他们不明白，前太阳时代的人怎么会在不关生死的事情上倾注那么多的感情。当看到男女主人公为爱情而痛苦或哭泣时，他们的惊奇是难以言表的。在这个时代，死亡的威胁和逃生的欲望压倒了一切，除了当前太阳的状态和地球的位置，没有什么能真正引起他们的注意并打动他们了。这种注意力高度集中的关注，渐渐从本质上改变了人类的心理状态和精神生活，对于爱情这类东西，他们只是用余光瞥一下而已，就像赌徒在盯着轮盘的间隙抓住几秒钟喝口水一样。</span>
-</p>
-
-</blockquote>
-
-<blockquote class="blockquote_lines_1">
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">我想象中的死亡之墙应该是雪亮的，这就是为什么那道等离子体墙让我想起了它。这个时代，死亡不再是黑色的，它是闪电的颜色，当那最后的闪电到来时，世界将在瞬间变成蒸气。</span>
-</p>
-
-</blockquote>
-
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">无论还是在电影或者小说中，当人们面对毁天灭地的大灾难的时候，我们和西方国家的处理方式截然不同，西方普遍是『飞船派』——地球只是一个居所，毁灭了就用飞行器去其他星球。但《流浪地球》中却是携全球之力，带着地球出逃，这种故土情结很好的体现了我们自己的科幻元素，只是故事关于科幻内核的东西展现的不够。</span>
-</p>
-
-
-<p class="md_block">
-    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/763193-7b4db16beac224f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="飞驰人生海报" title=""></span>
-</p>
-
-
-<p class="md_block">
-    <span class="md_line md_line_start md_line_end">《飞驰人生》是韩寒的又一新作，作品相比较韩寒之前的作品还可以，是一部照顾到情怀和市场的商业片，前半段很烂，后半段很燃。电影之后，看了『晓说』里高晓松对韩寒的节目，作为一代人学生时代的记忆，韩寒更像是一个符号，一个被捧上神坛代表『叛逆』、『不羁』的符号，而现在的韩寒温柔可掬，在节目里会自嘲和为对方找补，许多人说韩寒变了，他背叛了曾经支持他的那一代人，成为了之前我们讨厌的那群人。但其实这是一种成长和包容，更加客观的认识自己和这个世界。</span>
-</p>
-
-
-<p class="md_block md_block_as_opening md_has_block_below md_has_block_below_blockquote">
-    <span class="md_line md_line_start md_line_end">十八岁的韩寒，认为《三重门》的爆红，几乎全凭他的实力；《三重门》刚出版时，韩寒曾说：『《三重门》五十年内无人能及』，这显然是自大蒙蔽了双眼，无论哪个角度，《三重门》都没有好到那个地步。在《晓说》里韩寒坦言：</span>
-</p>
-
-
-<blockquote class="blockquote_lines_4">
-<p class="md_block">
-    <span class="md_line md_line_start">这本书现在看来，多有幼稚和卖弄<br></span>
-    <span class="md_line">我当年之所以那么写，是想模仿梁实秋和钱钟书<br></span>
-    <span class="md_line">写完《三重门》后我开始反思，觉得这样太做作<br></span>
-    <span class="md_line md_line_end">从第二本小说开始，我彻底抛弃了这个风格</span>
-</p>
-
-</blockquote>
-
-<blockquote class="blockquote_lines_5">
-<p class="md_block">
-    <span class="md_line md_line_start">我自己当时 无论是知识储备<br></span>
-    <span class="md_line">（还是）我的自我认知，与我获得的关注跟地位<br></span>
-    <span class="md_line">我自己觉得是没有匹配的<br></span>
-    <span class="md_line">我应该是一个更强的自己<br></span>
-    <span class="md_line md_line_end">才能匹配到那样的地位</span>
-</p>
-
-</blockquote>
-
-<p class="md_block">
-    <span class="md_line md_line_dom_embed md_line_with_image md_line_start md_line_end"><img class="md_compiled " src="https://upload-images.jianshu.io/upload_images/763193-d1b81ac86132d1ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1988：我想和这个世界谈谈" title=""></span>
-</p>
-
-
-<p class="md_block  md_has_block_below md_has_block_below_blockquote">
-    <span class="md_line md_line_start md_line_end">这是成长后对自我认知的提升，成长就是不断发现自己无知的过程。之后又重新读了韩寒的《1988：我想和这个世界谈谈》，感觉这应该是韩寒写的最好的一本书了，他以一种『在路上』的方式，试图与这个世界谈谈，试图寻找令人信服的价值。</span>
-</p>
-
-
-<blockquote class="blockquote_lines_2">
-<p class="md_block">
-    <span class="md_line md_line_start"> 真实总是没有错，但我们的面具只要不狰狞，是不是已经足够。<br></span>
-    <span class="md_line md_line_dom_embed md_line_end"><!--blockquote--></span>
-</p>
-
-</blockquote>
-        </div>
-    </div>
-    <!--mathjax-->
-    <!--mermaid-->
-</body>
-</html>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[富爸爸，穷爸爸 - 书摘]]></title>
       <url>http://chuanqiang.github.io/2019/07/18/%E5%AF%8C%E7%88%B8%E7%88%B8%EF%BC%8C%E7%A9%B7%E7%88%B8%E7%88%B8%20-%20%E4%B9%A6%E6%91%98/</url>
       <content type="html"><![CDATA[<p>年少不知钱之贵，只知「千金散尽还复来」的潇洒豪迈，虽然至今我骨子里都是感性和文艺的，没有那么向往去当「有钱人」，但随着年岁有加，我也愈来愈明白，在弱肉强食的社会，金钱自始至终都是最强有力的通行证。尤其是当你肩负起越来越多的责任，还有人在江湖的「不由己」，让我开始正视财务，想知道除了朝九晚五的工作，还有什么方式能增加自己的财富。为此，准备涉猎一些理财方面的书籍，提高财商，也增加应对这个瞬息万变、充满天灾人祸的社会的能力。</p>
@@ -500,9 +353,9 @@
         
         <tags>
             
-            <tag> 随笔 </tag>
-            
             <tag> 读书 </tag>
+            
+            <tag> 随笔 </tag>
             
             <tag> 老罗 </tag>
             
@@ -4223,39 +4076,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[在初创公司你能得到什么]]></title>
-      <url>http://chuanqiang.github.io/2017/06/17/start-up-company/</url>
-      <content type="html"><![CDATA[<p>进入一个初创的互联网公司意味着你选择了一条充满荆棘的路。工作强度高，因为一些制度的不完善导致额外的工作量;因为公司资金短缺，福利待遇也不尽人意.唯一欣慰的可能就是面试时谈好的工资能按时发，虽然还可能面临公司经营不善倒闭的风，不过进入这种初创公司也能有不一般的体验和成长。</p>
-<a id="more"></a>
-<p>首先，小公司没有那么多条条框框，能够做到扁平化管理。就比如我们公司，领导员工都坐一块，没有经理、组长、老板的官衔儿，都磊哥、冰哥的叫。公司搞技术的不管什么职位，都忙忙碌碌的写代码。一般来说，公司氛围很好，制度不那么严苛，不像大公司的压抑和那么浓烈的阶级味道。</p>
-<p>其次，小公司工作流程还没行程精细化的分配，可能前段后台，数据库表的设计都要你自己来，可能部署、维护、优化都要你亲力亲为。这样的结果是你可以涉及到一个项目的方方面面，而不只是在在后台开发这一亩三分地上耕作，很助于面向全栈开发，虽然累一些，需要学的东西多一些，但对于你技术的积累是很有帮助的。</p>
-<p>另外，在初创公司，你可以见证公司的成长。一方面，你可以见证公司技术的更新迭代。初创公司刚开始在技术选型和前期代码的实现上都是不完善的，开始用户量少，没有那么大的并发，加上资金有限和开发周期短，对于一些高并发，分布式可能顾及不到。之后随着用户量的增多，之前的一些技术框架和代码实现肯定要经历重构，这个时候对你来说，可以见证从旧到新的迭代过程，一些框架底层的原理和深层次的意义可以理解的更透彻。</p>
-<p>另一方面，你不光能经历一个公司技术的更新迭代，还能见证一个创业公司的成长，看一个创业公司如何从无到有，从小到大。公司成长中的资源分配，人事变迁，制度完善等等，这些对于拥有创业想法的人来说，是十分宝贵的。它能提高你的『逆商』。所谓逆商就是处于一种绝境状态下的自我修复能力。也就是说，人的一生中要经历非常多的挫折和打击，你会发现，抗打击能力强的人，会越挫越勇。大公司里其实都是相对业务上比较成功的公司，其实很难真正让你面对失败，而人只有多吃亏，才能更快成长和进步，这个大公司不会给你，只有创业公司才可以给你。初创公司的成长是一个不断试错的过程，而在这个过程中你能得到历练，并且失败了也是公司承担，对于你个人来说没有什么损失。</p>
-<p>最后，在小公司你能获得更快的晋升机会，锻炼管理能力。小公司的人员流动尤其是人才流入是很快的，并且由于受资金限制，也不会招很多大牛。这样当你成长够快的时候，你就能脱颖而出，快速展露头脚。而如果是在一个成熟的大公司，这样的机会是很少的，即所谓的『乱世枭雄』。</p>
-<p>综上，要珍惜当下的机遇，快速成长，这才是王道。</p>
-<hr>
-<p>更新历史</p>
-<ul>
-<li>2017-06-17:完成初稿</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 独白 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 初创公司 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[第三周 - 成长路上的三个问题]]></title>
       <url>http://chuanqiang.github.io/2017/06/17/three-question/</url>
       <content type="html"><![CDATA[<p>有三个问题，是一直在思考的:</p>
@@ -4307,6 +4127,39 @@
             <tag> 周记 </tag>
             
             <tag> 公司 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[在初创公司你能得到什么]]></title>
+      <url>http://chuanqiang.github.io/2017/06/17/start-up-company/</url>
+      <content type="html"><![CDATA[<p>进入一个初创的互联网公司意味着你选择了一条充满荆棘的路。工作强度高，因为一些制度的不完善导致额外的工作量;因为公司资金短缺，福利待遇也不尽人意.唯一欣慰的可能就是面试时谈好的工资能按时发，虽然还可能面临公司经营不善倒闭的风，不过进入这种初创公司也能有不一般的体验和成长。</p>
+<a id="more"></a>
+<p>首先，小公司没有那么多条条框框，能够做到扁平化管理。就比如我们公司，领导员工都坐一块，没有经理、组长、老板的官衔儿，都磊哥、冰哥的叫。公司搞技术的不管什么职位，都忙忙碌碌的写代码。一般来说，公司氛围很好，制度不那么严苛，不像大公司的压抑和那么浓烈的阶级味道。</p>
+<p>其次，小公司工作流程还没行程精细化的分配，可能前段后台，数据库表的设计都要你自己来，可能部署、维护、优化都要你亲力亲为。这样的结果是你可以涉及到一个项目的方方面面，而不只是在在后台开发这一亩三分地上耕作，很助于面向全栈开发，虽然累一些，需要学的东西多一些，但对于你技术的积累是很有帮助的。</p>
+<p>另外，在初创公司，你可以见证公司的成长。一方面，你可以见证公司技术的更新迭代。初创公司刚开始在技术选型和前期代码的实现上都是不完善的，开始用户量少，没有那么大的并发，加上资金有限和开发周期短，对于一些高并发，分布式可能顾及不到。之后随着用户量的增多，之前的一些技术框架和代码实现肯定要经历重构，这个时候对你来说，可以见证从旧到新的迭代过程，一些框架底层的原理和深层次的意义可以理解的更透彻。</p>
+<p>另一方面，你不光能经历一个公司技术的更新迭代，还能见证一个创业公司的成长，看一个创业公司如何从无到有，从小到大。公司成长中的资源分配，人事变迁，制度完善等等，这些对于拥有创业想法的人来说，是十分宝贵的。它能提高你的『逆商』。所谓逆商就是处于一种绝境状态下的自我修复能力。也就是说，人的一生中要经历非常多的挫折和打击，你会发现，抗打击能力强的人，会越挫越勇。大公司里其实都是相对业务上比较成功的公司，其实很难真正让你面对失败，而人只有多吃亏，才能更快成长和进步，这个大公司不会给你，只有创业公司才可以给你。初创公司的成长是一个不断试错的过程，而在这个过程中你能得到历练，并且失败了也是公司承担，对于你个人来说没有什么损失。</p>
+<p>最后，在小公司你能获得更快的晋升机会，锻炼管理能力。小公司的人员流动尤其是人才流入是很快的，并且由于受资金限制，也不会招很多大牛。这样当你成长够快的时候，你就能脱颖而出，快速展露头脚。而如果是在一个成熟的大公司，这样的机会是很少的，即所谓的『乱世枭雄』。</p>
+<p>综上，要珍惜当下的机遇，快速成长，这才是王道。</p>
+<hr>
+<p>更新历史</p>
+<ul>
+<li>2017-06-17:完成初稿</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 独白 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 初创公司 </tag>
             
         </tags>
         
@@ -8294,9 +8147,9 @@
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> 技术 </tag>
             
             <tag> SQL </tag>
             
@@ -8427,11 +8280,11 @@
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> 数据库 </tag>
             
             <tag> Oracle </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -8635,11 +8488,11 @@
         
         <tags>
             
-            <tag> 技术 </tag>
-            
             <tag> 数据库 </tag>
             
             <tag> Oracle </tag>
+            
+            <tag> 技术 </tag>
             
         </tags>
         
@@ -8761,6 +8614,64 @@
     </entry>
     
     <entry>
+      <title><![CDATA[小李飞刀：多情剑客无情剑]]></title>
+      <url>http://chuanqiang.github.io/2016/09/04/%E5%B0%8F%E6%9D%8E%E9%A3%9E%E5%88%80%EF%BC%9A%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/</url>
+      <content type="html"><![CDATA[<ol>
+<li>冷风如刀，以大地为砧板，视众生为鱼肉。万里飞雪，将穹苍作洪炉，熔万物为白银。 雪将住，风未定，一辆马车自北而来，滚动的车轮辗碎了地上的冰雪，却辗不碎天地间的寂寞。<a id="more"></a></li>
+<li>酒虽不佳，但那地方面对青山，襟带绿水，春日里的游人很多，他望着那些欢笑着的红男绿女，一杯杯喝着自己的苦酒，准备从此向这十丈软红告别，这印象令他永远也不能忘记。</li>
+<li>虬髯大汉叹道：“世人眼中的小人，固然未必全都是小人，世人眼中的君子，又有几个是真君子呢？”</li>
+<li>虬髯大汉扶着李寻欢走过小桥，就望见梅树丛中，有三五石屋，红花白屋，风物宛如图画。</li>
+<li>雪花轻轻地洒在窗子上，宛如情人的细语。</li>
+<li>有时‘时间’仿佛过得很慢，但等它真过去时，你才会发现它快得令你吃惊。</li>
+<li>她全身虽然没有一处不令人销魂，但最销魂处还是她的眼睛，没有男人能抗拒她这双眼睛</li>
+<li>一灯如豆，灯光下看来，他眼角的皱纹似更深了。</li>
+<li>屋顶上有个蜘蛛正开始结网，人岂非也和蜘蛛一样？世上每个人都在结网，然后将自己网在中央。</li>
+<li>冷风如刀，积雪的屋脊上突有一群寒鸦惊起，接着，屋脊后就响起了一阵清亮却凄凉的钟声。</li>
+<li>后墙外，有条小小的衖堂，起风时这里尘土飞扬，下雨时这里泥泞没足，高墙挡住了日色，衖堂里几乎终年见不到阳光。 但无论多卑贱、多阴暗的地方，都有人在默默地活着。 这也许是因为他们根本没有别处可去，也许是因为他们对人生已厌倦，宁愿躲在这种地方，被世人遗忘。 衖堂里有个鸡毛小店，前面卖些粗粝的饮食，后面有三五间简陋的客房，店主人孙驼子是个残废的侏儒。</li>
+<li>夜雾凄迷，木叶凋零，荷塘内落满了枯叶，小路上荒草没径，昔日花红柳绿、梅香菊冷的庭院，如今竟充满了森森鬼气。 小桥的尽头，有三五精舍，正是“冷香小筑”。 在这里住过的有武林中第一位名侠，江湖中第一位美人，昔日此时，梅花已将吐艳，香气醉沁人心。 但现在，墙角结着蛛网，窗台积着灰尘，早已不复再见昔日的风流遗迹，连不老的梅树都已枯萎。 小楼上的灯火仍未熄，远方传来零落的更鼓。 已是四更。 漫漫长夜已将尽，浓雾中忽然出现了一条人影。 这究竟是深夜无寐的人，还是来自地府的幽灵？ 只见他头发蓬乱，衣衫不整，看来是那么落魄、憔悴，但他的神采看来却仍然是那么潇洒，目光也亮得像是秋夜的寒星。 他萧然走过小桥，看到枯萎了的梅树，他不禁发出了深长的叹息。梅花本也是他昔日的良伴，今日却已和人同样憔悴。 然后他的人忽然如燕子般飞起！</li>
+<li>风吹过，卷起了漫天红叶。 枫林里的秋色似乎比林外更浓了。 剑气袭人，天地间充满了凄凉肃杀之意。 郭嵩阳反手拔剑，平举当胸，目光始终不离李寻欢的手。 他知道这是只可怕的手。</li>
+<li>李寻欢一向认为世上只有两件事最令他头疼。 第一件就是吃饭时忽然发现满桌上的人都是不喝酒的。 第二件就是忽然遇着个多嘴的女人。 这第二件事往往比第一件事更令他头疼十倍。 奇怪的是，他现在非但一点也不觉得头疼，反而觉得很愉快。</li>
+<li>一个人若已抹了十四年桌子，无论他以前是什么人，都会变成这样子的，因为当他在抹着桌上油垢的时候，也就是在抹着自己的光彩。 粗糙的桌子被抹光，凌厉的锋芒也被磨平了。</li>
+<li>山村。 山脚下，枫林里，高高挑起一面青布酒旗。 酒铺的名字很雅，有七个字：“停车爱醉枫林晚。” 只看这名字，李寻欢就已将醉了。 酒不醇，却很清，很冽，是山泉酿成的。 山泉由后山流到这里，清可见底，李寻欢知道沿着这道泉水走到后山，就可在一片默林深处找到三五间精致的木屋。 阿飞和林仙儿就在那木屋里</li>
+<li>秋已残。 木叶凋零。 风不大，但黄叶萧萧而落，难道是被他们的杀气所摧落的？ 天地间的确充满了一种说不出的萧索凄凉之意。 两人的剑虽然还都插在腰带上，两人虽然还都连手指都没有动，但龙啸云父子却已紧张得透不过气来。 突然间，寒光闪动。 十余道寒光带着尖锐的风声，击向阿飞。 龙啸云竟先出了手。</li>
+<li>阿飞瞧了瞧自己的手，目中突然露出一种说不出的凄凉萧索之意，缓缓转过身，在旁边的桌上坐下，道：“酒，白干。” 店伙赔着笑，道：“客官要什么菜下酒？” 阿飞道：“酒，黄酒。” 会喝酒的人都知道，一个人若想快醉，最好的法子就是用酒来下酒，用黄酒来下白干。 只不过这种法子虽然人人都知道，却很少有人用，因为一个人心里若没有很深的痛苦，总希望自己醉得愈慢愈好。</li>
+<li>他的衣衫已很陈旧残破，已有多日未洗涤。 又有谁能想到在如此衰弱、如此僵偻的躯壳里，竟藏着那么坚强的意志，那么高尚的人格，那么伟大的灵魂！ 《古龙文集（第一辑套装共27册） (古龙)》 您在位置 #10594-10596的标注 2016-09-01 08:12:28</li>
+<li>说完了这句话，他就走了出去。 他头也不回地走了出去。 眼泪本是咸的。 但有些泪却只能往肚里流，那就不但咸，而且苦。 血，本也是咸的。 但一个人的心若碎了，自心里滴出的血，就比泪更酸苦。 李寻欢也不知道已咳了多久，衣袖已被染红。</li>
+<li>在这一瞬间，林仙儿才知道自己错了。 她本来一直以为自己已完全控制住阿飞，现在才知道这想法错得多么厉害。 阿飞的确是爱她的，爱得很深。 但在一个男人的生命中，却还有很多很多比“爱”更重要的事——比生命都重要的事。</li>
+<li>他始终没有流泪。 不流泪的人，只流血</li>
+<li>院子里一株孤零零的白杨正在秋风中叹息，叹息着生命的短促，人的愚蠢，竟不知对这短促的生命多加珍惜。</li>
+<li>少女道：“这么说来，武学的真谛，岂非和禅宗一样？” 老人道：“普天之下，万事万物，到了巅峰时，道理本就全差不多。”</li>
+<li>灯在风中摇晃，酒在杯中摇晃。 浑浊的酒，黯淡的灯光。 他喝酒的地方，只不过是个很小的面摊子。 这一排都是小摊子，到这种地方来的，都是很平凡的小人物，谁都不认得他，他也不认得别人。 他喜欢这种情调，带着些萧索，带着些寂寞，却又带着几分洒脱。 世间的荣辱，生命的悲欢，在这些人心目中，都已算不了什么，只要有一杯在手，就已足够。 在这里，既没有得意的长笑，也没有慷慨的悲歌。</li>
+<li>无论多聪明的人，心里若有些畏惧，也会变笨的。</li>
+<li>若有人能看到女人心里复杂微妙的变化，一定就会觉得女人的决斗比世上所有男人的决斗都更精彩，更别致。 女人就是女人，永远和男人不同。 谁若想反驳这道理，谁就是呆子。 这道理既明白，又简单。 奇怪的是，世上偏偏有些人想不到。</li>
+<li>他觉得你也和他是同样的人，所以才佩服你，欣赏你——一个人最欣赏的人，本就必定是和他自己同样的人，因为每个人都一定很欣赏自己。</li>
+<li>亭，是八角亭，就在山脚下的树林外。 林已枯，八角亭栏杆上的红漆也已剥落。 西风肃杀，大地萧索。 李寻欢徘徊在林下，几乎将这里每一寸土地都踏过。 “后天，就是后天。” 夕阳已西，又是一天将过去。 后天，就在这里，就在这夕阳西下的时候，李寻欢和上官金虹之间所有的恩怨都将了结。</li>
+<li>两个聪明才智相差很远的人，也许可以结成朋友，却绝不会成为敌人，所以只有上官金虹才有资格做李寻欢的仇敌，别的人简直不配。</li>
+<li>你若是多加注意，就会发觉一个女人死的时候，身上最后僵硬的一个地方就是她的舌头。这只因女人舌头上的肌肉永远都比其他任何地方灵敏得多。</li>
+<li>只有懦夫和呆子才会永远为“昨天”的事而流泪。 真正有勇气承认自己错误的人，也就会同样有勇气面对现实，绝不会将自己埋葬在眼泪里。</li>
+<li>到现在，她才知道阿飞对她是多么重要。 因为她已失去了他。</li>
+<li>李寻欢的神情很特别，“喜酒”这两个字，似乎令他有些不知所措，过了很久，他才缓缓道：“我什么酒都请人喝过，就是从未请人喝过喜酒，你可知道为了什么？” 阿飞当然不知道，李寻欢也不想要他回答。 李寻欢自己说了出来，道：“因为喜酒太贵了。” 阿飞怔了怔，道：“太贵？” 李寻欢笑了笑道：“因为一个男人若要请人喝喜酒，那就表示他一辈子都得慢慢地来付这笔账，只可惜我又偏偏不愿令朋友失望。”</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 书摘 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 古龙 </tag>
+            
+            <tag> 武侠 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[泛若不系之舟-书摘]]></title>
       <url>http://chuanqiang.github.io/2016/09/04/%E6%B3%9B%E8%8B%A5%E4%B8%8D%E7%B3%BB%E4%B9%8B%E8%88%9F-%E4%B9%A6%E6%91%98/</url>
       <content type="html"><![CDATA[<ol>
@@ -8840,64 +8751,6 @@
         <tags>
             
             <tag> 游记 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[小李飞刀：多情剑客无情剑]]></title>
-      <url>http://chuanqiang.github.io/2016/09/04/%E5%B0%8F%E6%9D%8E%E9%A3%9E%E5%88%80%EF%BC%9A%E5%A4%9A%E6%83%85%E5%89%91%E5%AE%A2%E6%97%A0%E6%83%85%E5%89%91/</url>
-      <content type="html"><![CDATA[<ol>
-<li>冷风如刀，以大地为砧板，视众生为鱼肉。万里飞雪，将穹苍作洪炉，熔万物为白银。 雪将住，风未定，一辆马车自北而来，滚动的车轮辗碎了地上的冰雪，却辗不碎天地间的寂寞。<a id="more"></a></li>
-<li>酒虽不佳，但那地方面对青山，襟带绿水，春日里的游人很多，他望着那些欢笑着的红男绿女，一杯杯喝着自己的苦酒，准备从此向这十丈软红告别，这印象令他永远也不能忘记。</li>
-<li>虬髯大汉叹道：“世人眼中的小人，固然未必全都是小人，世人眼中的君子，又有几个是真君子呢？”</li>
-<li>虬髯大汉扶着李寻欢走过小桥，就望见梅树丛中，有三五石屋，红花白屋，风物宛如图画。</li>
-<li>雪花轻轻地洒在窗子上，宛如情人的细语。</li>
-<li>有时‘时间’仿佛过得很慢，但等它真过去时，你才会发现它快得令你吃惊。</li>
-<li>她全身虽然没有一处不令人销魂，但最销魂处还是她的眼睛，没有男人能抗拒她这双眼睛</li>
-<li>一灯如豆，灯光下看来，他眼角的皱纹似更深了。</li>
-<li>屋顶上有个蜘蛛正开始结网，人岂非也和蜘蛛一样？世上每个人都在结网，然后将自己网在中央。</li>
-<li>冷风如刀，积雪的屋脊上突有一群寒鸦惊起，接着，屋脊后就响起了一阵清亮却凄凉的钟声。</li>
-<li>后墙外，有条小小的衖堂，起风时这里尘土飞扬，下雨时这里泥泞没足，高墙挡住了日色，衖堂里几乎终年见不到阳光。 但无论多卑贱、多阴暗的地方，都有人在默默地活着。 这也许是因为他们根本没有别处可去，也许是因为他们对人生已厌倦，宁愿躲在这种地方，被世人遗忘。 衖堂里有个鸡毛小店，前面卖些粗粝的饮食，后面有三五间简陋的客房，店主人孙驼子是个残废的侏儒。</li>
-<li>夜雾凄迷，木叶凋零，荷塘内落满了枯叶，小路上荒草没径，昔日花红柳绿、梅香菊冷的庭院，如今竟充满了森森鬼气。 小桥的尽头，有三五精舍，正是“冷香小筑”。 在这里住过的有武林中第一位名侠，江湖中第一位美人，昔日此时，梅花已将吐艳，香气醉沁人心。 但现在，墙角结着蛛网，窗台积着灰尘，早已不复再见昔日的风流遗迹，连不老的梅树都已枯萎。 小楼上的灯火仍未熄，远方传来零落的更鼓。 已是四更。 漫漫长夜已将尽，浓雾中忽然出现了一条人影。 这究竟是深夜无寐的人，还是来自地府的幽灵？ 只见他头发蓬乱，衣衫不整，看来是那么落魄、憔悴，但他的神采看来却仍然是那么潇洒，目光也亮得像是秋夜的寒星。 他萧然走过小桥，看到枯萎了的梅树，他不禁发出了深长的叹息。梅花本也是他昔日的良伴，今日却已和人同样憔悴。 然后他的人忽然如燕子般飞起！</li>
-<li>风吹过，卷起了漫天红叶。 枫林里的秋色似乎比林外更浓了。 剑气袭人，天地间充满了凄凉肃杀之意。 郭嵩阳反手拔剑，平举当胸，目光始终不离李寻欢的手。 他知道这是只可怕的手。</li>
-<li>李寻欢一向认为世上只有两件事最令他头疼。 第一件就是吃饭时忽然发现满桌上的人都是不喝酒的。 第二件就是忽然遇着个多嘴的女人。 这第二件事往往比第一件事更令他头疼十倍。 奇怪的是，他现在非但一点也不觉得头疼，反而觉得很愉快。</li>
-<li>一个人若已抹了十四年桌子，无论他以前是什么人，都会变成这样子的，因为当他在抹着桌上油垢的时候，也就是在抹着自己的光彩。 粗糙的桌子被抹光，凌厉的锋芒也被磨平了。</li>
-<li>山村。 山脚下，枫林里，高高挑起一面青布酒旗。 酒铺的名字很雅，有七个字：“停车爱醉枫林晚。” 只看这名字，李寻欢就已将醉了。 酒不醇，却很清，很冽，是山泉酿成的。 山泉由后山流到这里，清可见底，李寻欢知道沿着这道泉水走到后山，就可在一片默林深处找到三五间精致的木屋。 阿飞和林仙儿就在那木屋里</li>
-<li>秋已残。 木叶凋零。 风不大，但黄叶萧萧而落，难道是被他们的杀气所摧落的？ 天地间的确充满了一种说不出的萧索凄凉之意。 两人的剑虽然还都插在腰带上，两人虽然还都连手指都没有动，但龙啸云父子却已紧张得透不过气来。 突然间，寒光闪动。 十余道寒光带着尖锐的风声，击向阿飞。 龙啸云竟先出了手。</li>
-<li>阿飞瞧了瞧自己的手，目中突然露出一种说不出的凄凉萧索之意，缓缓转过身，在旁边的桌上坐下，道：“酒，白干。” 店伙赔着笑，道：“客官要什么菜下酒？” 阿飞道：“酒，黄酒。” 会喝酒的人都知道，一个人若想快醉，最好的法子就是用酒来下酒，用黄酒来下白干。 只不过这种法子虽然人人都知道，却很少有人用，因为一个人心里若没有很深的痛苦，总希望自己醉得愈慢愈好。</li>
-<li>他的衣衫已很陈旧残破，已有多日未洗涤。 又有谁能想到在如此衰弱、如此僵偻的躯壳里，竟藏着那么坚强的意志，那么高尚的人格，那么伟大的灵魂！ 《古龙文集（第一辑套装共27册） (古龙)》 您在位置 #10594-10596的标注 2016-09-01 08:12:28</li>
-<li>说完了这句话，他就走了出去。 他头也不回地走了出去。 眼泪本是咸的。 但有些泪却只能往肚里流，那就不但咸，而且苦。 血，本也是咸的。 但一个人的心若碎了，自心里滴出的血，就比泪更酸苦。 李寻欢也不知道已咳了多久，衣袖已被染红。</li>
-<li>在这一瞬间，林仙儿才知道自己错了。 她本来一直以为自己已完全控制住阿飞，现在才知道这想法错得多么厉害。 阿飞的确是爱她的，爱得很深。 但在一个男人的生命中，却还有很多很多比“爱”更重要的事——比生命都重要的事。</li>
-<li>他始终没有流泪。 不流泪的人，只流血</li>
-<li>院子里一株孤零零的白杨正在秋风中叹息，叹息着生命的短促，人的愚蠢，竟不知对这短促的生命多加珍惜。</li>
-<li>少女道：“这么说来，武学的真谛，岂非和禅宗一样？” 老人道：“普天之下，万事万物，到了巅峰时，道理本就全差不多。”</li>
-<li>灯在风中摇晃，酒在杯中摇晃。 浑浊的酒，黯淡的灯光。 他喝酒的地方，只不过是个很小的面摊子。 这一排都是小摊子，到这种地方来的，都是很平凡的小人物，谁都不认得他，他也不认得别人。 他喜欢这种情调，带着些萧索，带着些寂寞，却又带着几分洒脱。 世间的荣辱，生命的悲欢，在这些人心目中，都已算不了什么，只要有一杯在手，就已足够。 在这里，既没有得意的长笑，也没有慷慨的悲歌。</li>
-<li>无论多聪明的人，心里若有些畏惧，也会变笨的。</li>
-<li>若有人能看到女人心里复杂微妙的变化，一定就会觉得女人的决斗比世上所有男人的决斗都更精彩，更别致。 女人就是女人，永远和男人不同。 谁若想反驳这道理，谁就是呆子。 这道理既明白，又简单。 奇怪的是，世上偏偏有些人想不到。</li>
-<li>他觉得你也和他是同样的人，所以才佩服你，欣赏你——一个人最欣赏的人，本就必定是和他自己同样的人，因为每个人都一定很欣赏自己。</li>
-<li>亭，是八角亭，就在山脚下的树林外。 林已枯，八角亭栏杆上的红漆也已剥落。 西风肃杀，大地萧索。 李寻欢徘徊在林下，几乎将这里每一寸土地都踏过。 “后天，就是后天。” 夕阳已西，又是一天将过去。 后天，就在这里，就在这夕阳西下的时候，李寻欢和上官金虹之间所有的恩怨都将了结。</li>
-<li>两个聪明才智相差很远的人，也许可以结成朋友，却绝不会成为敌人，所以只有上官金虹才有资格做李寻欢的仇敌，别的人简直不配。</li>
-<li>你若是多加注意，就会发觉一个女人死的时候，身上最后僵硬的一个地方就是她的舌头。这只因女人舌头上的肌肉永远都比其他任何地方灵敏得多。</li>
-<li>只有懦夫和呆子才会永远为“昨天”的事而流泪。 真正有勇气承认自己错误的人，也就会同样有勇气面对现实，绝不会将自己埋葬在眼泪里。</li>
-<li>到现在，她才知道阿飞对她是多么重要。 因为她已失去了他。</li>
-<li>李寻欢的神情很特别，“喜酒”这两个字，似乎令他有些不知所措，过了很久，他才缓缓道：“我什么酒都请人喝过，就是从未请人喝过喜酒，你可知道为了什么？” 阿飞当然不知道，李寻欢也不想要他回答。 李寻欢自己说了出来，道：“因为喜酒太贵了。” 阿飞怔了怔，道：“太贵？” 李寻欢笑了笑道：“因为一个男人若要请人喝喜酒，那就表示他一辈子都得慢慢地来付这笔账，只可惜我又偏偏不愿令朋友失望。”</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 书摘 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 古龙 </tag>
-            
-            <tag> 武侠 </tag>
             
         </tags>
         
@@ -11515,32 +11368,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[人格分裂——你肿么了]]></title>
-      <url>http://chuanqiang.github.io/2015/05/23/%E4%BA%BA%E6%A0%BC%E5%88%86%E8%A3%82%E2%80%94%E2%80%94%E4%BD%A0%E8%82%BF%E4%B9%88%E4%BA%86/</url>
-      <content type="html"><![CDATA[<p>张传强，你肿么了！我最近对你很失望啊。你真是糟糕透顶。算了，你改名吧，省着连累我丢人。<br><a id="more"></a><br>张传强你为什么浮躁呢？心像轻飘飘的柳絮，像棉花，像尘埃，像一切没有重量的东西。我都怀疑你的心是不是还在你的肚子里，不是飘飘然飞走了吧。我问你，单词为什么记不住，它都快记住你了，你还记不住它。效率为什么这么低，你这样让蜗牛情何以堪！你为什么老走神，自己的脑子都管不住，你以后还想管谁！旁边有点动静，心思就飞走了。丫的！又不是美女，你瞎愁啥！</p>
-<p>张传强你为什么老是纠结呢？纠结于选择，纠结于对错，纠结于成败，不行你蒙一个行不行，又不是什么大不了的事，跟着感觉走行不行。你简单，世界对你就简单。大丈夫磨磨唧唧，知不知道什么叫雷厉风行，什么叫做果敢刚毅。这点破事你都花时间寻思纠结，那要是以后事关生男生女，你不得纠结到七老八十！点儿出息！</p>
-<p>张传强你为什么老师半途而废呢？计划是给我看的吗！计划的牛逼哄哄，永远虎头蛇尾。语言的巨人，行动的矮子！丢不丢人，懂不懂言必信，行必果。你是一男的，现在这个样，以后怎么混社会！闭门思过去吧您！</p>
-<blockquote>
-<p>知道错了吗？<br> “。。。。。。”<br> 你怎么不说话？<br>“我在想，改个什么名字好呢。。？”<br>！@#￥%%…………<br>打死你！</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> 独白 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 独白 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[出名与娱乐圈]]></title>
       <url>http://chuanqiang.github.io/2015/05/23/%E5%87%BA%E5%90%8D%E4%B8%8E%E5%A8%B1%E4%B9%90%E5%9C%88/</url>
       <content type="html"><![CDATA[<p><code>**出名要趁早**</code>最早出自张爱玲，此后，就成为追求功成名就之人信奉的一个法则。似乎出名就应该越早越好，否则，就会像张爱玲说的，“来得晚的话，快乐不那么痛快”。</p>
@@ -11564,6 +11391,32 @@
             <tag> 评议 </tag>
             
             <tag> 娱乐圈 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[人格分裂——你肿么了]]></title>
+      <url>http://chuanqiang.github.io/2015/05/23/%E4%BA%BA%E6%A0%BC%E5%88%86%E8%A3%82%E2%80%94%E2%80%94%E4%BD%A0%E8%82%BF%E4%B9%88%E4%BA%86/</url>
+      <content type="html"><![CDATA[<p>张传强，你肿么了！我最近对你很失望啊。你真是糟糕透顶。算了，你改名吧，省着连累我丢人。<br><a id="more"></a><br>张传强你为什么浮躁呢？心像轻飘飘的柳絮，像棉花，像尘埃，像一切没有重量的东西。我都怀疑你的心是不是还在你的肚子里，不是飘飘然飞走了吧。我问你，单词为什么记不住，它都快记住你了，你还记不住它。效率为什么这么低，你这样让蜗牛情何以堪！你为什么老走神，自己的脑子都管不住，你以后还想管谁！旁边有点动静，心思就飞走了。丫的！又不是美女，你瞎愁啥！</p>
+<p>张传强你为什么老是纠结呢？纠结于选择，纠结于对错，纠结于成败，不行你蒙一个行不行，又不是什么大不了的事，跟着感觉走行不行。你简单，世界对你就简单。大丈夫磨磨唧唧，知不知道什么叫雷厉风行，什么叫做果敢刚毅。这点破事你都花时间寻思纠结，那要是以后事关生男生女，你不得纠结到七老八十！点儿出息！</p>
+<p>张传强你为什么老师半途而废呢？计划是给我看的吗！计划的牛逼哄哄，永远虎头蛇尾。语言的巨人，行动的矮子！丢不丢人，懂不懂言必信，行必果。你是一男的，现在这个样，以后怎么混社会！闭门思过去吧您！</p>
+<blockquote>
+<p>知道错了吗？<br> “。。。。。。”<br> 你怎么不说话？<br>“我在想，改个什么名字好呢。。？”<br>！@#￥%%…………<br>打死你！</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 独白 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 独白 </tag>
             
         </tags>
         
